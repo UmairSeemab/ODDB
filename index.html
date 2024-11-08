@@ -29,6 +29,34 @@
 <!-- Modernizer for Portfolio -->
 <script src="js/modernizer.js"></script>
 <!-- [if lt IE 9] -->
+<style>
+    .button-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: flex-end; /* Align buttons to the right */
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            margin-left: 10px;
+            border-radius: 4px;
+        }
+        .button.active {
+            background-color: #007BFF;
+            color: white;
+        }
+        .iframe-container iframe {
+            display: none; /* Hide the iframe */
+            width: 100%;
+            height: 900px;
+            border: none;
+        }
+        .iframe-container iframe.active {
+            display: block; /* Show the iframe */
+        }
+</style>
 </head>
 
 <body class="clinic_version">
@@ -81,14 +109,22 @@
 
                   </div>
                   
-                  <iframe src="https://occular-force.vercel.app/" width="100%" height="900" style="overflow: hidden; border: none;"
-        title="Example Site" scrolling="no"></iframe>
+                   <div class="button-container">
+                        <button class="button active" id="button1" onclick="showIframe(1)">Anatomy based categorization</button>
+                        <button class="button" id="button2" onclick="showIframe(2)">Inheritance based categorization</button>
+                    </div>
+                
+                    <div class="iframe-container">
+        <iframe src="https://occular-force-part-2.vercel.app/" class="active" id="iframe1"  scrolling="no"></iframe>
+        <iframe src="https://occular-force.vercel.app/" id="iframe2"  scrolling="no"></iframe>
+    </div>
+
 
                   
 
 
                </div>
-               <div class="container">
+    
                <div class="container">
                   <div class="heading" style="margin-top: 30px;">
                      <span class="icon-logo"><img src="images/icon-logo1.jpg" alt="#"></span>
@@ -136,7 +172,7 @@
                   </div>
                   <div id="googleMap" style="width:100%;height:450px;"></div>
                </div>
-            </div>
+           
             <footer id="footer" class="footer-area wow fadeIn">
                <div class="container">
                   <div class="row">
@@ -206,6 +242,31 @@
                   </div>
                </div>
             </div>
+            <script>
+        function showIframe(iframeNumber) {
+            // Get buttons and iframes
+            var button1 = document.getElementById('button1');
+            var button2 = document.getElementById('button2');
+            var iframe1 = document.getElementById('iframe1');
+            var iframe2 = document.getElementById('iframe2');
+
+            // Toggle active classes based on the clicked button
+            if (iframeNumber === 1) {
+                button1.classList.add('active');
+                button2.classList.remove('active');
+                iframe1.classList.add('active');
+                iframe2.classList.remove('active');
+            } else {
+                button1.classList.remove('active');
+                button2.classList.add('active');
+                iframe1.classList.remove('active');
+                iframe2.classList.add('active');
+
+                // Reload the second iframe to ensure it loads the content
+                iframe2.src = iframe2.src;
+            }
+        }
+    </script>
             <!-- end copyrights -->
             <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
             <!-- all js files -->
@@ -215,6 +276,8 @@
             <!-- map -->
             <script
                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
+              
 </body>
+
 
 </html>
