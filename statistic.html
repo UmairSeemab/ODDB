@@ -49,19 +49,38 @@
             </div>
             
             <!-- Navigation with custom class for padding adjustments -->
-            <div class="col-md-8 text-right custom-nav">
-               <div id="navbar" class="navbar-collapse collapse">
-                  <ul class="nav navbar-nav d-flex justify-content-end">
-                     <li><a class="active nav-li" href="index.html">Home</a></li>
-                     <li><a class="nav-li" data-scroll href="about_us.html">About us</a></li>
-                     <li><a class="nav-li" data-scroll href="#Tutorial">Tutorial</a></li>
-                     <li><a class="nav-li" data-scroll href="#Analysis">Analysis</a></li>
-                     <li><a class="nav-li" data-scroll href="statistic.html">Statistic</a></li>
-                     <li><a class="nav-li" data-scroll href="#Download">Download</a></li>
-                     <li><a class="nav-li" data-scroll href="#getintouch">Contact Us</a></li>
-                  </ul>
+             <div class="col-md-8 text-right custom-nav">
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav d-flex justify-content-end">
+                        <li><a class="active nav-li" href="index.html">Home</a></li>
+                        <li><a class="nav-li" data-scroll href="about_us.html">About us</a></li>
+                        <li><a class="nav-li" data-scroll href="#Tutorial">Tutorial</a></li>
+                       <!-- Dropdown Start -->
+                        <li class="dropdown">
+                        <a class="nav-li dropdown-toggle">Analysis</a>
+                        <ul class="dropdown-menu">
+                           <li><a href="Drug-based-stat.html">Drug based analysis</a></li>
+                           <li><a href="Gene-based-stat.html">Gene based analysis</a></li>
+                           <li><a href="MOI-stat.html">Inheritance based analysis</a></li>
+                           <li><a href="Variant-based-stat.html">Variant based analysis</a></li>
+                        </ul>
+                        </li>
+                        <!-- Dropdown End -->
+                         <li class="dropdown">
+                        <a class="nav-li dropdown-toggle">Statistic</a>
+                        <ul class="dropdown-menu">
+                           <li><a href="Drug.html">Drug based statistic</a></li>
+                           <li><a href="Gene.html">Gene based statistic</a></li>
+                           <li><a href="Inheritance.html">Inheritance based statistic</a></li>
+                           <li><a href="Variant.html">Variant based statistic</a></li>
+                        </ul>
+                        </li>
+                        <!-- Dropdown End -->
+                        <li><a class="nav-li" data-scroll href="#Download">Download</a></li>
+                        <li><a class="nav-li" data-scroll href="#getintouch">Contact Us</a></li>
+                     </ul>
+                  </div>
                </div>
-            </div>
          </div>
       </div>
    </div>

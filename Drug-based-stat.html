@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Drug-based Ocular Disease Statistics (by Phase)</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <!-- Site Icons -->
+  <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h2 { margin-bottom: 8px; }
+    .sub { color:#555; margin-top:0; }
+    #chart { width: 900px; height: 600px; max-width: 100%; }
+    .controls { margin: 15px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+    .button { padding: 8px 16px; background-color: #007bff; color: white; border: none; cursor: pointer; font-size: 14px; border-radius: 6px; }
+    .button:hover { background-color: #0056b3; }
+    select { font-size: 14px; }
+    #columns { min-width: 260px; }
+    table { border-collapse: collapse; margin-top: 20px; width: 100%; }
+    th, td { border: 1px solid #666; padding: 8px 12px; text-align: left; }
+    th { background-color: #f2f2f2; }
+    .hint { color:#666; font-style: italic; }
+    .spacer { flex: 1 1 auto; }
+  </style>
+</head>
+<body>
+
+<h2>Distribution by Clinical Phase</h2>
+<p class="sub">Data source: <code>Eye_Disease_Drugs.xlsx</code>. Click a donut slice to view records for that Phase.</p>
+
+<div id="chart"></div>
+
+<div class="controls">
+  <label for="countBy"><strong>Count uniques by:</strong></label>
+  <select id="countBy">
+    <!-- options are injected dynamically depending on available columns -->
+  </select>
+
+  <span class="spacer"></span>
+
+  <label for="columns"><strong>Select columns to display:</strong></label>
+  <select id="columns" multiple size="6"></select>
+
+  <button class="button" id="update-table-btn">Update Table</button>
+  <button class="button" id="download-csv-btn">Download Table as CSV</button>
+  <button class="button" id="download-svg-btn">Download Chart as SVG</button>
+</div>
+
+<div id="table-hint" class="hint"><i>Select a Phase slice and choose columns to populate the table.</i></div>
+<div id="disease-table"></div>
+
+<script>
+/* ---------- helpers ---------- */
+function findColumn(objKeys, candidates) {
+  // return the first case-sensitive match; also try case-insensitive
+  for (const c of candidates) { if (objKeys.includes(c)) return c; }
+  const lower = objKeys.map(k => k.toLowerCase());
+  for (const c of candidates) {
+    const idx = lower.indexOf(c.toLowerCase());
+    if (idx !== -1) return objKeys[idx];
+  }
+  return null;
+}
+
+function uniqueCount(rows, key) {
+  const s = new Set();
+  rows.forEach(r => { if (r[key] != null && r[key] !== '') s.add(String(r[key])); });
+  return s.size;
+}
+
+/* ---------- state ---------- */
+let fullData = [];
+let phaseKey = null;
+let drugKey = null;
+let diseaseKey = null;
+let countByKey = null;      // what we’re counting uniques of (drugKey preferred)
+let grouped = [];           // [{phase, count, records}]
+let selectedPhaseRecords = [];
+
+/* ---------- main ---------- */
+async function init() {
+  // 1) load workbook
+  const response = await fetch('data/Eye_Disease_Drugs.xlsx');
+  const data = await response.arrayBuffer();
+  const workbook = XLSX.read(data, { type: 'array' });
+  const sheetName = workbook.SheetNames[0];
+  const worksheet = workbook.Sheets[sheetName];
+  fullData = XLSX.utils.sheet_to_json(worksheet);
+
+  if (!fullData.length) {
+    alert('No rows found in Eye_Disease_Drugs.xlsx');
+    return;
+  }
+
+  // 2) detect columns
+  const keys = Object.keys(fullData[0]);
+  phaseKey   = findColumn(keys, ['Phase','Clinical.Phase','Trial.Phase']);
+  drugKey    = findColumn(keys, ['Drug','Drug.Name','API']);
+  diseaseKey = findColumn(keys, ['Ocular.disease','Disease','Disease.name']);
+
+  if (!phaseKey) {
+    alert('Could not find a Phase column. Tried: Phase, Clinical.Phase, Trial.Phase.\nFound columns: ' + keys.join(', '));
+    return;
+  }
+
+  // choose default counting key: prefer Drug; else Disease; else fallback to first non-empty key
+  if (drugKey) countByKey = drugKey;
+  else if (diseaseKey) countByKey = diseaseKey;
+  else {
+    // find any non-phase key with at least some values to count
+    countByKey = keys.find(k => k !== phaseKey);
+  }
+
+  // 3) setup "count by" selector
+  const countSel = document.getElementById('countBy');
+  countSel.innerHTML = '';
+  if (drugKey) {
+    const opt = document.createElement('option');
+    opt.value = drugKey; opt.textContent = `Drug (${drugKey})`;
+    countSel.appendChild(opt);
+  }
+  if (diseaseKey) {
+    const opt = document.createElement('option');
+    opt.value = diseaseKey; opt.textContent = `Disease (${diseaseKey})`;
+    countSel.appendChild(opt);
+  }
+  // if neither exists, just show the chosen fallback key
+  if (!countSel.options.length && countByKey) {
+    const opt = document.createElement('option');
+    opt.value = countByKey; opt.textContent = `Unique values of: ${countByKey}`;
+    countSel.appendChild(opt);
+  }
+  if (countByKey) countSel.value = countByKey;
+  countSel.addEventListener('change', () => {
+    countByKey = countSel.value;
+    buildChart();  // rebuild donut counts when metric changes
+  });
+
+  // 4) populate columns multi-select
+  const columnsSelect = document.getElementById('columns');
+  columnsSelect.innerHTML = '';
+  keys.forEach(col => {
+    const option = document.createElement('option');
+    option.value = col;
+    option.textContent = col;
+    columnsSelect.appendChild(option);
+  });
+
+  // 5) listeners
+  document.getElementById('update-table-btn').addEventListener('click', updateTable);
+  document.getElementById('download-csv-btn').addEventListener('click', downloadCSV);
+  document.getElementById('download-svg-btn').addEventListener('click', downloadSVG);
+
+  // 6) draw chart
+  buildChart();
+}
+
+function buildChart() {
+  // group rows by Phase
+  const phaseMap = {};
+  fullData.forEach(row => {
+    const p = row[phaseKey] ?? 'Unknown';
+    if (!phaseMap[p]) phaseMap[p] = [];
+    phaseMap[p].push(row);
+  });
+
+  grouped = Object.entries(phaseMap).map(([phase, records]) => ({
+    phase,
+    count: countByKey ? uniqueCount(records, countByKey) : records.length,
+    records
+  }));
+
+  // sort phases by count desc for a nicer order
+  grouped.sort((a,b) => b.count - a.count);
+
+  const values = grouped.map(d => d.count);
+  const labels = grouped.map(d => `${d.phase} (${d.count})`);
+
+  const trace = {
+    type: 'pie',
+    values: values,
+    labels: labels,
+    hole: 0.4,
+    textinfo: 'percent',
+    textposition: 'inside',
+    hovertemplate: `%{label}<extra></extra>`
+  };
+  const layout = {
+    title: `Distribution by ${phaseKey} — counting unique ${(countByKey || 'rows')}`,
+    showlegend: true,
+    margin: { t: 60, b: 40, l: 10, r: 10 }
+  };
+
+  Plotly.newPlot('chart', [trace], layout);
+
+  document.getElementById('chart').on('plotly_click', function (data) {
+    const idx = data.points[0].pointNumber;
+    selectedPhaseRecords = grouped[idx].records;
+    document.getElementById('table-hint').style.display = 'none';
+    updateTable();
+  });
+}
+
+function updateTable() {
+  const tableDiv = document.getElementById('disease-table');
+  const selectedCols = Array.from(document.getElementById('columns').selectedOptions).map(o => o.value);
+
+  if (!selectedCols.length || !selectedPhaseRecords.length) {
+    tableDiv.innerHTML = '<p class="hint"><i>Select a Phase slice and choose columns to display.</i></p>';
+    return;
+  }
+
+  let html = '<table id="drugPhaseTable"><thead><tr>';
+  selectedCols.forEach(col => { html += `<th>${col}</th>`; });
+  html += '</tr></thead><tbody>';
+
+  selectedPhaseRecords.forEach(row => {
+    html += '<tr>';
+    selectedCols.forEach(col => {
+      const val = row[col] == null ? '' : String(row[col]);
+      html += `<td>${val}</td>`;
+    });
+    html += '</tr>';
+  });
+
+  html += '</tbody></table>';
+  tableDiv.innerHTML = html;
+}
+
+function downloadCSV() {
+  const selectedCols = Array.from(document.getElementById('columns').selectedOptions).map(o => o.value);
+  if (!selectedCols.length || !selectedPhaseRecords.length) return;
+
+  let csv = selectedCols.join(',') + '\n';
+  selectedPhaseRecords.forEach(row => {
+    const line = selectedCols.map(col => {
+      const v = row[col] == null ? '' : String(row[col]).replace(/"/g,'""');
+      return `"${v}"`;
+    }).join(',');
+    csv += line + '\n';
+  });
+
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'drug_phase_table.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function downloadSVG() {
+  Plotly.downloadImage('chart', {
+    format: 'svg',
+    filename: 'drug_phase_donut_chart',
+    height: 600,
+    width: 900
+  });
+}
+
+// boot
+init();
+</script>
+
+</body>
+</html>
+
