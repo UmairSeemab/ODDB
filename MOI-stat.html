@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Donut Chart: Ocular Diseases by Inheritance</title>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-   <!-- Site Icons -->
+  <!-- Site Icons -->
   <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- ALL VERSION CSS -->
+  <link rel="stylesheet" href="css/versions.css">
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+  <!-- Modernizer for Portfolio -->
+  <script src="js/modernizer.js"></script>
+  <!-- [if lt IE 9] -->
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
     }
+
     table {
       border-collapse: collapse;
       margin-top: 20px;
       width: 100%;
     }
-    th, td {
+
+    th,
+    td {
       border: 1px solid #666;
       padding: 8px 12px;
       text-align: left;
     }
+
     th {
       background-color: #f2f2f2;
     }
+
     .controls {
       margin: 15px 0;
     }
+
     .button {
       padding: 8px 16px;
       background-color: #007bff;
@@ -38,158 +58,209 @@
       font-size: 14px;
       margin-right: 10px;
     }
+
     .button:hover {
       background-color: #0056b3;
     }
+
     select {
       margin-left: 10px;
       font-size: 14px;
     }
   </style>
 </head>
+
 <body>
+  <header>
+    <div class="header-top wow fadeIn ">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Logo -->
+          <div class="col-md-4">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/logoo.png" alt="image" style="width:100px;margin-top:-10px">
+            </a>
+          </div>
 
-<h2>Distribution of Ocular Diseases by Mode of Inheritance</h2>
-<div id="chart" style="width:800px;height:600px;"></div>
+          <!-- Navigation with custom class for padding adjustments -->
+          <div class="col-md-8 text-right custom-nav">
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav d-flex justify-content-end">
+                <li><a class="active nav-li" href="index.html">Home</a></li>
+                <li><a class="nav-li" data-scroll href="about_us.html">About us</a></li>
+                <li><a class="nav-li" data-scroll href="#Tutorial">Tutorial</a></li>
+                <!-- Dropdown Start -->
+                <li class="dropdown">
+                  <a class="nav-li dropdown-toggle">Analysis</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="Drug-based-stat.html">Drug based analysis</a></li>
+                    <li><a href="Gene-based-stat.html">Gene based analysis</a></li>
+                    <li><a href="MOI-stat.html">Inheritance based analysis</a></li>
+                    <li><a href="Variant-based-stat.html">Variant based analysis</a></li>
+                  </ul>
+                </li>
+                <!-- Dropdown End -->
+                <li class="dropdown">
+                  <a class="nav-li dropdown-toggle">Statistic</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="Drug.html">Drug based statistic</a></li>
+                    <li><a href="Gene.html">Gene based statistic</a></li>
+                    <li><a href="Inheritance.html">Inheritance based statistic</a></li>
+                    <li><a href="Variant.html">Variant based statistic</a></li>
+                  </ul>
+                </li>
+                <!-- Dropdown End -->
+                <li><a class="nav-li" data-scroll href="#Download">Download</a></li>
+                <li><a class="nav-li" data-scroll href="#getintouch">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<div class="controls">
-  <label for="columns">Select columns to display:</label>
-  <select id="columns" multiple size="5"></select>
-  <button class="button" onclick="updateTable()">Update Table</button>
-  <button id="download-csv-btn" class="button">Download Table as CSV</button>
-  <button id="download-svg-btn" class="button">Download Chart as SVG</button>
-</div>
+  <h2 style="margin-top: 120px;">Distribution of Ocular Diseases by Mode of Inheritance</h2>
+  <div id="chart" style="width:800px;height:600px;"></div>
 
-<div id="disease-table"></div>
+  <div class="controls">
+    <label for="columns">Select columns to display:</label>
+    <select id="columns" multiple size="5"></select>
+    <button class="button" onclick="updateTable()">Update Table</button>
+    <button id="download-csv-btn" class="button">Download Table as CSV</button>
+    <button id="download-svg-btn" class="button">Download Chart as SVG</button>
+  </div>
 
-<script>
-let fullData = [];
-let selectedCategoryData = [];
-let availableColumns = [];
+  <div id="disease-table"></div>
 
-async function loadExcelAndRenderChart() {
-  const response = await fetch('data/Inheritance_Based_file.xlsx');
-  const data = await response.arrayBuffer();
-  const workbook = XLSX.read(data, { type: 'array' });
-  const sheetName = workbook.SheetNames[0];
-  const worksheet = workbook.Sheets[sheetName];
-  fullData = XLSX.utils.sheet_to_json(worksheet);
+  <script>
+    let fullData = [];
+    let selectedCategoryData = [];
+    let availableColumns = [];
 
-  // Populate column dropdown
-  if (fullData.length > 0) {
-    availableColumns = Object.keys(fullData[0]);
-    const select = document.getElementById('columns');
-    availableColumns.forEach(col => {
-      const option = document.createElement('option');
-      option.value = col;
-      option.textContent = col;
-      select.appendChild(option);
-    });
-  }
+    async function loadExcelAndRenderChart() {
+      const response = await fetch('data/Inheritance_Based_file.xlsx');
+      const data = await response.arrayBuffer();
+      const workbook = XLSX.read(data, { type: 'array' });
+      const sheetName = workbook.SheetNames[0];
+      const worksheet = workbook.Sheets[sheetName];
+      fullData = XLSX.utils.sheet_to_json(worksheet);
 
-  // Group by MODE.OF.INHERITANCE
-  const inheritanceMap = {};
-  fullData.forEach(row => {
-    const mode = row['MODE.OF.INHERITANCE'];
-    if (!inheritanceMap[mode]) inheritanceMap[mode] = [];
-    inheritanceMap[mode].push(row);
-  });
+      // Populate column dropdown
+      if (fullData.length > 0) {
+        availableColumns = Object.keys(fullData[0]);
+        const select = document.getElementById('columns');
+        availableColumns.forEach(col => {
+          const option = document.createElement('option');
+          option.value = col;
+          option.textContent = col;
+          select.appendChild(option);
+        });
+      }
 
-  const chartData = Object.entries(inheritanceMap).map(([mode, records]) => {
-    return {
-      mode,
-      count: new Set(records.map(r => r['Ocular.disease'])).size,
-      records
-    };
-  });
+      // Group by MODE.OF.INHERITANCE
+      const inheritanceMap = {};
+      fullData.forEach(row => {
+        const mode = row['MODE.OF.INHERITANCE'];
+        if (!inheritanceMap[mode]) inheritanceMap[mode] = [];
+        inheritanceMap[mode].push(row);
+      });
 
-  const values = chartData.map(d => d.count);
-  const labels = chartData.map(d => `${d.mode} (${d.count})`);
+      const chartData = Object.entries(inheritanceMap).map(([mode, records]) => {
+        return {
+          mode,
+          count: new Set(records.map(r => r['Ocular.disease'])).size,
+          records
+        };
+      });
 
-  const trace = {
-    type: 'pie',
-    values,
-    labels,
-    hole: 0.6,
-    textinfo: 'percent',
-    textposition: 'inside',
-    hoverinfo: 'label'
-  };
+      const values = chartData.map(d => d.count);
+      const labels = chartData.map(d => `${d.mode} (${d.count})`);
 
-  const layout = {
-    title: 'Distribution of Ocular Diseases by Inheritance'
-  };
+      const trace = {
+        type: 'pie',
+        values,
+        labels,
+        hole: 0.6,
+        textinfo: 'percent',
+        textposition: 'inside',
+        hoverinfo: 'label'
+      };
 
-  Plotly.newPlot('chart', [trace], layout);
+      const layout = {
+        title: 'Distribution of Ocular Diseases by Inheritance'
+      };
 
-  document.getElementById('chart').on('plotly_click', function(data) {
-    const idx = data.points[0].pointNumber;
-    selectedCategoryData = chartData[idx].records;
-    updateTable();
-  });
-}
+      Plotly.newPlot('chart', [trace], layout);
 
-function updateTable() {
-  const tableDiv = document.getElementById('disease-table');
-  const selectedCols = Array.from(document.getElementById('columns').selectedOptions).map(o => o.value);
-  if (!selectedCols.length || !selectedCategoryData.length) {
-    tableDiv.innerHTML = '<p><i>Select a category and columns to display table.</i></p>';
-    return;
-  }
+      document.getElementById('chart').on('plotly_click', function (data) {
+        const idx = data.points[0].pointNumber;
+        selectedCategoryData = chartData[idx].records;
+        updateTable();
+      });
+    }
 
-  let tableHTML = '<table id="diseaseTable"><thead><tr>';
-  selectedCols.forEach(col => {
-    tableHTML += `<th>${col}</th>`;
-  });
-  tableHTML += '</tr></thead><tbody>';
+    function updateTable() {
+      const tableDiv = document.getElementById('disease-table');
+      const selectedCols = Array.from(document.getElementById('columns').selectedOptions).map(o => o.value);
+      if (!selectedCols.length || !selectedCategoryData.length) {
+        tableDiv.innerHTML = '<p><i>Select a category and columns to display table.</i></p>';
+        return;
+      }
 
-  selectedCategoryData.forEach(row => {
-    tableHTML += '<tr>';
-    selectedCols.forEach(col => {
-      tableHTML += `<td>${row[col] || ''}</td>`;
-    });
-    tableHTML += '</tr>';
-  });
+      let tableHTML = '<table id="diseaseTable"><thead><tr>';
+      selectedCols.forEach(col => {
+        tableHTML += `<th>${col}</th>`;
+      });
+      tableHTML += '</tr></thead><tbody>';
 
-  tableHTML += '</tbody></table>';
-  tableDiv.innerHTML = tableHTML;
-}
+      selectedCategoryData.forEach(row => {
+        tableHTML += '<tr>';
+        selectedCols.forEach(col => {
+          tableHTML += `<td>${row[col] || ''}</td>`;
+        });
+        tableHTML += '</tr>';
+      });
 
-function downloadCSV() {
-  const selectedCols = Array.from(document.getElementById('columns').selectedOptions).map(o => o.value);
-  if (!selectedCols.length || !selectedCategoryData.length) return;
+      tableHTML += '</tbody></table>';
+      tableDiv.innerHTML = tableHTML;
+    }
 
-  let csvContent = selectedCols.join(',') + '\n';
-  selectedCategoryData.forEach(row => {
-    const line = selectedCols.map(col => `"${(row[col] || '').toString().replace(/"/g, '""')}"`);
-    csvContent += line.join(',') + '\n';
-  });
+    function downloadCSV() {
+      const selectedCols = Array.from(document.getElementById('columns').selectedOptions).map(o => o.value);
+      if (!selectedCols.length || !selectedCategoryData.length) return;
 
-  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'ocular_disease_inheritance_table.csv';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
+      let csvContent = selectedCols.join(',') + '\n';
+      selectedCategoryData.forEach(row => {
+        const line = selectedCols.map(col => `"${(row[col] || '').toString().replace(/"/g, '""')}"`);
+        csvContent += line.join(',') + '\n';
+      });
 
-function downloadSVG() {
-  Plotly.downloadImage('chart', {
-    format: 'svg',
-    filename: 'ocular_disease_inheritance_donut_chart',
-    height: 600,
-    width: 800
-  });
-}
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'ocular_disease_inheritance_table.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
 
-document.getElementById('download-csv-btn').addEventListener('click', downloadCSV);
-document.getElementById('download-svg-btn').addEventListener('click', downloadSVG);
+    function downloadSVG() {
+      Plotly.downloadImage('chart', {
+        format: 'svg',
+        filename: 'ocular_disease_inheritance_donut_chart',
+        height: 600,
+        width: 800
+      });
+    }
 
-loadExcelAndRenderChart();
-</script>
+    document.getElementById('download-csv-btn').addEventListener('click', downloadCSV);
+    document.getElementById('download-svg-btn').addEventListener('click', downloadSVG);
+
+    loadExcelAndRenderChart();
+  </script>
 
 </body>
-</html>
 
+</html>

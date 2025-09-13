@@ -2169,3 +2169,6 @@ select.mobile-device {
   background: #f5f5f5;
   color: #39b49a !important;
 }
+a:hover{
+  color: #39b49a !important;
+}
