@@ -249,7 +249,7 @@ header {
     color: #222;
     opacity: 1;
 }
-.icon {
+/* .icon {
     background: #fff;
     border-radius: 100%;
     width: 100px;
@@ -263,7 +263,7 @@ header {
 .icon img {
     width: 50px;
     margin-top: 2px;
-}
+} */
 .text-contant .center {
     float: left;
     width: 100%;
