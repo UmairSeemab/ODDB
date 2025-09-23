@@ -226,7 +226,6 @@
             <h1 style="text-align:left;font-weight:600;">
               Visitors count: <span id="visitorCount">0</span>
             </h1>
-
             <div style="max-height:128px; overflow-y:auto; border:1px solid #ccc;">
               <table border="1" cellspacing="0" cellpadding="8"
                 style="width:100%; text-align:center; border-collapse:collapse;">
@@ -236,7 +235,6 @@
           </div>
 
           <script type="module">
-            // Firebase imports from CDN
             import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
             import {
               getFirestore,
@@ -244,11 +242,9 @@
               addDoc,
               getDocs,
               query,
-              where,
-              getDocs as getQueryDocs
+              where
             } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
-            // 🔹 Your Firebase config
             const firebaseConfig = {
               apiKey: "AIzaSyA5VIAFJB1buNlmwNbbxyEpJmQdlVH5_84",
               authDomain: "daring-acumen-427809-i1.firebaseapp.com",
@@ -259,11 +255,9 @@
               measurementId: "G-XYH6N9K123"
             };
 
-            // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const db = getFirestore(app);
 
-            // 🔹 Save visitor to Firestore (with duplicate IP check per day)
             async function logVisitor() {
               try {
                 const res = await fetch("https://get.geojs.io/v1/ip/geo.json");
@@ -271,7 +265,6 @@
 
                 const ip = data.ip || "Unknown IP";
 
-                // Smarter location fallback
                 let location = "Unknown Location";
                 if (data.city && data.country) {
                   location = `${data.city}, ${data.country}`;
@@ -283,15 +276,13 @@
 
                 const now = new Date();
 
-                // Extract only the DATE part in US timezone
                 const visitDate = now.toLocaleDateString("en-US", {
                   timeZone: "America/New_York"
                 });
 
-                // 🔹 Check if same IP visited today
                 const visitorsRef = collection(db, "visitors");
                 const q = query(visitorsRef, where("ip", "==", ip), where("date", "==", visitDate));
-                const existing = await getQueryDocs(q);
+                const existing = await getDocs(q);
 
                 if (!existing.empty) {
                   console.log("IP already visited today, skipping add:", ip);
@@ -299,11 +290,10 @@
                   return;
                 }
 
-                // Save visitor log in Firestore
                 await addDoc(visitorsRef, {
                   ip,
                   location,
-                  date: visitDate, // store plain date
+                  date: visitDate,
                   time: now.toLocaleString("en-US", {
                     timeZone: "America/New_York",
                     year: "numeric",
@@ -323,7 +313,6 @@
               }
             }
 
-            // 🔹 Fetch all visitors & render table (most recent first)
             async function renderTable() {
               const tbody = document.getElementById("statsTable");
               const visitorCount = document.getElementById("visitorCount");
@@ -332,8 +321,14 @@
 
               try {
                 const snapshot = await getDocs(collection(db, "visitors"));
-                // reverse() so most recent is first
-                const logs = snapshot.docs.map(doc => doc.data()).reverse();
+                let logs = snapshot.docs.map(doc => doc.data());
+
+                // 🔹 Convert string "time" → Date object, then sort
+                logs.sort((a, b) => {
+                  const dateA = new Date(a.time);
+                  const dateB = new Date(b.time);
+                  return dateB - dateA; // newest first
+                });
 
                 visitorCount.textContent = logs.length;
                 tbody.innerHTML = "";
@@ -343,6 +338,7 @@
                   return;
                 }
 
+                // Show latest 15 visitors
                 logs.slice(0, 15).forEach(log => {
                   const tr = document.createElement("tr");
                   tr.innerHTML = `<td>${log.location}</td><td>${log.time}</td>`;
@@ -353,7 +349,6 @@
               }
             }
 
-            // Run on page load
             document.addEventListener("DOMContentLoaded", logVisitor);
           </script>
         </div>
