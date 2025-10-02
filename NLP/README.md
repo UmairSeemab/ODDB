@@ -35,3 +35,37 @@ pip install biopython transformers torch requests pandas tqdm
 ```bash
 export ENTREZ_EMAIL="your.email@example.com"
 ```
+Optional: set an NCBI API key for higher request limits.
+
+2. Run the script
+
+```bash
+python biobert_pubmed_extractor.py
+```
+
+3. Outputs
+
+Results are saved in biobert_pubmed_outputs/:
+
+- pubmed_ocular_biobert.jsonl – one JSON record per article
+
+- pubmed_ocular_biobert.csv – tabular version
+
+
+## Configuration
+
+You can override defaults with environment variables:
+
+- PUBMED_QUERY – PubMed query string
+
+- RETMAX – number of records to fetch (default 300)
+
+- NER_MODEL – BioBERT model or fine-tuned checkpoint (default: kamalkraj/BioBERT-NER)
+
+- OUT_DIR – output folder (default: biobert_pubmed_outputs)
+
+Example:
+
+```bash
+PUBMED_QUERY="retinitis pigmentosa[Title]" RETMAX=100 python biobert_pubmed_extractor.py
+```
