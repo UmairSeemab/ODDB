@@ -25,4 +25,13 @@ Install once:
 
 ```bash
 pip install biopython transformers torch requests pandas tqdm
+```
+## Usage
 
+1. Set your NCBI Entrez email
+
+   Edit in the script or set as environment variable:
+
+```bash
+export ENTREZ_EMAIL="your.email@example.com"
+```
