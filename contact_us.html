@@ -1,22 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ODDB - Contact Us</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<style>
-body { margin-top:100px; font-family: Arial; }
-.contact-container {
-  max-width: 600px; margin:auto; background:#f9f9f9; padding:30px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-.form-control { margin-bottom:15px; }
-#successMsg, #errorMsg { display:none; font-weight:600; margin-top:10px; }
-#successMsg { color:green; }
-#errorMsg { color:red; }
-</style>
+<head>
+  <meta charset="UTF-8">
+  <title>Donut Chart: Ocular Diseases by Inheritance</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <!-- Site Icons -->
+  <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- ALL VERSION CSS -->
+  <link rel="stylesheet" href="css/versions.css">
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+  <!-- Modernizer for Portfolio -->
+  <script src="js/modernizer.js"></script>
+  <!-- [if lt IE 9] -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /*padding: 20px;*/
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #666;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .controls {
+      margin: 15px 0;
+    }
+
+    .button {
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    select {
+      margin-left: 10px;
+      font-size: 14px;
+    }
+  </style>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin-top: 0px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    td {
+      color: #999;
+    }
+
+    th {
+      background: #fff;
+      color: #157fda
+    }
+  </style>
+</head>
 
 <body>
 <div class="container">
