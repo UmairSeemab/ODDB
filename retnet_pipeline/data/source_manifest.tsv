@@ -1,0 +1,3 @@
+Source	URL	Accessed	Purpose	Public release rule
+RetNet	https://retnet.org/summaries	2026-09-28	Candidate discovery, completeness check, inheritance/locus staging	Keep provenance internally; independently verify before public ODDB promotion
+HGNC	https://www.genenames.org/download/	future pipeline run	Approved symbol and HGNC ID normalization	Use approved symbols in public ODDB

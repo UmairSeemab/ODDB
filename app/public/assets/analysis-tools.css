@@ -1,0 +1,17 @@
+/* ODDB v1 analysis sessions and feedback v0.7.6 */
+.analysis-feedback[hidden],.analysis-dialog [hidden] {display:none !important;}
+.analysis-feedback {display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid #dce7f7;background:#eff6ff;color:#1e40af;font-size:12px;line-height:1.5;}
+.analysis-feedback.has-error {background:#fff7ed;color:#9a3412;border-color:#fed7aa;}
+#analysisBusy:not([hidden])::before {content:'';display:inline-block;width:10px;height:10px;margin-right:7px;border:2px solid #b8cff6;border-top-color:#2563eb;border-radius:50%;animation:oddb-analysis-spin .8s linear infinite;}
+.analysis-feedback button {border:1px solid currentColor;border-radius:6px;background:transparent;color:inherit;padding:3px 8px;font:inherit;cursor:pointer;}
+.analysis-dialog {width:min(720px,calc(100vw - 32px));max-height:calc(100vh - 48px);padding:0;border:1px solid #dbe3ef;border-radius:14px;color:#172033;box-shadow:0 24px 80px rgba(15,23,42,.25);}
+.analysis-dialog::backdrop {background:rgba(15,23,42,.35);}
+.analysis-dialog-header {padding:20px 22px 12px;}
+.analysis-dialog h2 {margin:0 0 10px;font-size:20px;font-weight:600;}
+.analysis-dialog p {font-size:13px;line-height:1.6;margin:0 0 12px;}
+.analysis-dialog-details {padding:0 22px 16px;max-height:48vh;overflow:auto;overflow-wrap:anywhere;}
+.analysis-dialog-details li {font-size:12px;line-height:1.6;margin-bottom:8px;}
+.analysis-dialog-actions {display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;padding:14px 22px;border-top:1px solid #e4e9f1;background:#f8fafc;}
+.analysis-dialog-actions .btn {min-height:36px;font-size:13px;}
+@keyframes oddb-analysis-spin {to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){#analysisBusy:not([hidden])::before{animation:none;}}

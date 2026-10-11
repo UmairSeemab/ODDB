@@ -1,0 +1,215 @@
+/* ODDB v1 image-led 8-second intro v0.5.5
+   Uses the supplied ODDB artwork as the visual source of truth.
+*/
+:root{
+ --oddb-intro-bg:#f8fbff;
+ --oddb-intro-ink:#0f172a;
+ --oddb-intro-muted:#64748b;
+ --oddb-intro-blue:#2563eb;
+}
+
+body.oddb-intro-lock{overflow:hidden!important}
+
+.oddb-intro{
+ position:fixed;
+ inset:0;
+ z-index:5000;
+ overflow:hidden;
+ display:grid;
+ place-items:center;
+ background:
+   radial-gradient(circle at 20% 10%,rgba(99,102,241,.08),transparent 30%),
+   radial-gradient(circle at 82% 18%,rgba(59,130,246,.09),transparent 30%),
+   linear-gradient(180deg,#fff,var(--oddb-intro-bg));
+ color:var(--oddb-intro-ink);
+ opacity:1;
+ visibility:visible;
+ transition:opacity .58s ease,visibility .58s ease;
+}
+
+.oddb-intro.is-hidden{
+ opacity:0;
+ visibility:hidden;
+ pointer-events:none;
+}
+
+/* The previous generated headings / label overlays are intentionally hidden:
+   the supplied artwork already contains the exact titles and labels. */
+.oddb-intro-brand,
+.intro-stage-1 .intro-kicker,
+.intro-stage-2 .intro-heading,
+.intro-stage-2 .anatomy-label,
+.intro-stage-3 .intro-heading,
+.intro-stage-3 .disease-cloud{
+ display:none!important;
+}
+
+.oddb-intro-shell{
+ position:relative;
+ width:100vw;
+ height:100vh;
+ min-height:100vh;
+ display:grid;
+ place-items:center;
+}
+
+.oddb-intro-stage{
+ position:absolute;
+ inset:0;
+ display:grid;
+ place-items:center;
+ padding:0;
+ opacity:0;
+ visibility:hidden;
+ pointer-events:none;
+ transition:opacity .52s ease,visibility .52s ease;
+}
+
+.oddb-intro-stage img{
+ display:block;
+ width:auto;
+ height:100vh;
+ max-width:100vw;
+ object-fit:contain;
+ object-position:center;
+ filter:drop-shadow(0 18px 40px rgba(37,99,235,.07));
+ transform:scale(1.018);
+ transition:transform 2.35s cubic-bezier(.18,.72,.24,1);
+ user-select:none;
+ -webkit-user-drag:none;
+}
+
+.oddb-intro.stage-1 .intro-stage-1,
+.oddb-intro.stage-2 .intro-stage-2,
+.oddb-intro.stage-3 .intro-stage-3{
+ opacity:1;
+ visibility:visible;
+}
+
+.oddb-intro.stage-1 .intro-stage-1 img,
+.oddb-intro.stage-2 .intro-stage-2 img,
+.oddb-intro.stage-3 .intro-stage-3 img{
+ transform:scale(1);
+}
+
+/* Stage 3 uses a third supplied image. JS swaps the existing stage-3 <img>
+   source to oddb-eye-diseases.svg, so no extra index.php markup is required. */
+.intro-stage-3 img{
+ filter:drop-shadow(0 18px 42px rgba(124,58,237,.06));
+}
+
+/* Soft transition veil makes image-to-image crossfades feel intentional. */
+.oddb-intro::after{
+ content:"";
+ position:absolute;
+ inset:0;
+ pointer-events:none;
+ background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(238,244,255,.02));
+ opacity:.45;
+}
+
+.intro-skip{
+ position:absolute;
+ top:max(14px,env(safe-area-inset-top));
+ right:max(14px,env(safe-area-inset-right));
+ z-index:30;
+ display:inline-flex;
+ align-items:center;
+ min-height:38px;
+ padding:.48rem .78rem;
+ border:1px solid rgba(148,163,184,.38);
+ border-radius:999px;
+ background:rgba(255,255,255,.78);
+ color:#475569;
+ font:800 .72rem/1 system-ui,-apple-system,"Segoe UI",sans-serif;
+ cursor:pointer;
+ backdrop-filter:blur(10px);
+ -webkit-backdrop-filter:blur(10px);
+ box-shadow:0 8px 24px rgba(15,23,42,.05);
+}
+
+.intro-skip:hover,
+.intro-skip:focus-visible{
+ background:#fff;
+ color:#111827;
+ border-color:#b8c4d5;
+ outline:none;
+}
+
+.intro-time{
+ position:absolute;
+ left:max(14px,env(safe-area-inset-left));
+ bottom:max(12px,env(safe-area-inset-bottom));
+ z-index:30;
+ display:flex;
+ align-items:center;
+ gap:.48rem;
+ padding:.35rem .52rem;
+ border-radius:999px;
+ background:rgba(255,255,255,.60);
+ color:#7b88a1;
+ font:800 .62rem/1 system-ui,-apple-system,"Segoe UI",sans-serif;
+ letter-spacing:.05em;
+ text-transform:uppercase;
+ backdrop-filter:blur(8px);
+ -webkit-backdrop-filter:blur(8px);
+}
+
+.intro-time::before{
+ content:"";
+ width:7px;
+ height:7px;
+ border-radius:50%;
+ background:#22c55e;
+ box-shadow:0 0 0 4px rgba(34,197,94,.10);
+}
+
+.oddb-intro.stage-exit .oddb-intro-stage{
+ opacity:0!important;
+ visibility:hidden!important;
+}
+
+.oddb-intro.stage-exit{
+ background:rgba(248,251,255,.30);
+}
+
+/* Desktop / landscape:
+   keep the portrait artwork intact rather than cropping labels off-screen. */
+@media(min-aspect-ratio:1/1){
+ .oddb-intro-stage img{
+  height:min(100vh,980px);
+  width:auto;
+  max-width:min(100vw,720px);
+ }
+}
+
+/* Narrow phones */
+@media(max-width:520px){
+ .intro-skip{
+  top:max(10px,env(safe-area-inset-top));
+  right:max(10px,env(safe-area-inset-right));
+  min-height:34px;
+  padding:.42rem .65rem;
+  font-size:.66rem;
+ }
+ .intro-time{
+  left:max(10px,env(safe-area-inset-left));
+  bottom:max(9px,env(safe-area-inset-bottom));
+  font-size:.56rem;
+ }
+}
+
+/* Very short landscape screens */
+@media(max-height:620px) and (orientation:landscape){
+ .oddb-intro-stage img{
+  height:100vh;
+  max-width:64vh;
+ }
+ .intro-time{display:none}
+}
+
+/* Accessibility: don't force an animation on users who request reduced motion. */
+@media(prefers-reduced-motion:reduce){
+ .oddb-intro{display:none!important}
+ body.oddb-intro-lock{overflow:auto!important}
+}

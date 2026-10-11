@@ -1,0 +1,20 @@
+{
+  "release_tag": "v2026-09-01",
+  "release_name": "v2026-09-01",
+  "published_at": "2026-09-01T17:41:30Z",
+  "html_url": "https://github.com/monarch-initiative/mondo/releases/tag/v2026-09-01",
+  "files": {
+    "mondo-base.obo": {
+      "path": "data/raw/mondo/v2026-09-01/mondo-base.obo",
+      "download_url": "https://github.com/monarch-initiative/mondo/releases/download/v2026-09-01/mondo-base.obo",
+      "source_type": "GitHub release asset",
+      "sha256": "b617457ad70f5eba773700eecf013e59e752096bd57f88821876c3150e148dd6"
+    },
+    "mondo.sssom.tsv": {
+      "path": "data/raw/mondo/v2026-09-01/mondo.sssom.tsv",
+      "download_url": "https://raw.githubusercontent.com/monarch-initiative/mondo/v2026-09-01/src/ontology/mappings/mondo.sssom.tsv",
+      "source_type": "same-tag GitHub source tree",
+      "sha256": "317ac4bf93be1deff4406b4d7d18bb730ead3c4f5c7c814f75d24be7f6ef302f"
+    }
+  }
+}

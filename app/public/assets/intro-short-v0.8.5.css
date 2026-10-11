@@ -1,0 +1,44 @@
+/* ODDB short eye intro. The page stays usable without JavaScript. */
+#oddbIntro.oddb-short-intro {display:none;}
+html.oddb-intro-pending {overflow:hidden;}
+html.oddb-intro-pending #oddbIntro.oddb-short-intro {
+ position:fixed; inset:0; z-index:5000; display:grid; place-items:center;
+ overflow:auto; background:radial-gradient(ellipse at 75% 30%,#edf6ff,transparent 65%),linear-gradient(180deg,#fff,#f8fbff);
+ color:#10374c; opacity:1; transition:opacity 180ms ease;
+}
+html.oddb-intro-pending #oddbIntro.oddb-short-intro.is-leaving {opacity:0; pointer-events:none;}
+.oddb-short-intro .intro-skip {
+ position:absolute; top:max(16px,env(safe-area-inset-top)); right:max(16px,env(safe-area-inset-right));
+ min-height:44px; padding:.6rem 1rem; border:1px solid #c8dae5; border-radius:999px;
+ background:#fff; color:#10374c; font:600 .85rem/1.3 system-ui,sans-serif; cursor:pointer;
+}
+.oddb-short-intro .intro-skip:focus-visible {outline:3px solid #087c91; outline-offset:4px;}
+.oddb-short-intro .oddb-short-shell {width:min(720px,calc(100vw - 40px)); padding:64px 0 36px; text-align:center;}
+.oddb-short-intro .oddb-short-title {font:700 clamp(1.35rem,3.8vw,2.15rem)/1.2 system-ui,sans-serif; margin:0 0 12px; letter-spacing:-.025em;}
+.oddb-short-intro .oddb-short-eye {display:block; width:min(100%,600px); height:auto; max-height:55vh; object-fit:contain; margin:0 auto;}
+.oddb-short-intro .oddb-short-caption {font:.9rem/1.6 system-ui,sans-serif; color:#5b7182; margin:12px auto 22px; max-width:600px;}
+.oddb-short-intro .oddb-short-progress {height:5px; width:min(360px,76%); margin:auto; overflow:hidden; border-radius:999px; background:#d8e7ef;}
+.oddb-short-intro .oddb-short-progress span {display:block; width:100%; height:100%; border-radius:inherit; background:#087c91; transform:scaleX(0); transform-origin:left; animation:oddb-short-fill 1.8s cubic-bezier(.25,.6,.35,1) forwards;}
+@keyframes oddb-short-fill {to {transform:scaleX(1);}}
+#oddbAboutFigures {margin-top:2rem; padding:1rem 1.25rem; border:1px solid #d8e6ed; border-radius:16px; background:#f8fbff;}
+#oddbAboutFigures summary {cursor:pointer; color:#10374c; font-weight:650;}
+#oddbAboutFigures summary:focus-visible {outline:2px solid #087c91; outline-offset:4px;}
+#oddbAboutFigures .oddb-about-figure-grid {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; margin-top:1.25rem;}
+#oddbAboutFigures figure {margin:0;}
+#oddbAboutFigures img {display:block; width:100%; height:auto; border-radius:12px; background:#fff;}
+#oddbAboutFigures figcaption {font-size:.85rem; color:#5b7182; margin-top:.6rem;}
+@media(max-width:575.98px) {
+ .oddb-short-intro .oddb-short-caption {font-size:.8rem;}
+ #oddbAboutFigures .oddb-about-figure-grid {grid-template-columns:1fr;}
+}
+@media(max-height:450px) and (orientation:landscape) {
+ .oddb-short-intro .oddb-short-shell {padding:30px 0 16px;}
+ .oddb-short-intro .oddb-short-eye {max-height:43vh;}
+ .oddb-short-intro .oddb-short-caption {margin:4px auto 10px;}
+}
+@media(prefers-reduced-motion:reduce) {
+ html.oddb-intro-pending #oddbIntro.oddb-short-intro {display:none;}
+ html.oddb-intro-pending {overflow:auto;}
+ .oddb-short-intro .oddb-short-progress span {animation:none;}
+}
+@media print {#oddbIntro.oddb-short-intro {display:none !important;} html.oddb-intro-pending {overflow:visible;}}

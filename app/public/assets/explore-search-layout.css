@@ -1,0 +1,189 @@
+/* ODDB Explore search layout v0.7.4b. Integrated with the category card. */
+.entity-search-strip.entity-search-integrated {
+ position: relative;
+ z-index: 1100;
+ width: 100%;
+ margin: 0 0 24px;
+ padding: 0 0 24px;
+ background: transparent;
+ border: 0;
+ border-bottom: 1px solid #e6ebf2;
+}
+.entity-search-strip .oddb-explore-search-inner {
+ display: grid;
+ grid-template-columns: minmax(240px, .75fr) minmax(0, 1.25fr);
+ align-items: start;
+ justify-content: normal;
+ column-gap: 40px;
+ row-gap: 10px;
+ width: 100%;
+ max-width: none;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+.entity-search-strip .entity-search-title-row {
+ grid-column: 1;
+ grid-row: 1 / span 3;
+ display: block;
+ margin: 0;
+}
+.entity-search-strip .entity-search-heading {
+ margin: 0 0 8px;
+ color: var(--text, #172033);
+ font-size: 24px;
+ line-height: 1.25;
+ font-weight: 700;
+ letter-spacing: -.025em;
+ text-transform: none;
+}
+.entity-search-strip .entity-search-description {
+ margin: 0;
+ max-width: 440px;
+ color: var(--muted, #64748b);
+ font-size: 14px;
+ line-height: 1.6;
+}
+.entity-search-strip .entity-search-field {
+ grid-column: 2;
+ position: relative;
+ width: 100%;
+ min-width: 0;
+}
+.entity-search-strip .oddb-explore-search-inner #globalSearch {
+ display: block;
+ width: 100% !important;
+ max-width: none;
+ min-width: 0;
+ height: 48px;
+ min-height: 48px;
+ margin: 0;
+ padding: 0 82px 0 43px;
+ border: 1px solid #d7e0ec;
+ border-radius: 10px;
+ box-sizing: border-box;
+ background: #f8fafc;
+ color: var(--text, #172033);
+ font: inherit;
+ font-size: 14px;
+ line-height: normal;
+ appearance: none;
+ -webkit-appearance: none;
+ transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.entity-search-strip #globalSearch::placeholder {color: #64748b; opacity: 1;}
+.entity-search-strip #globalSearch::-webkit-search-cancel-button {display: none;}
+.entity-search-strip .oddb-explore-search-inner #globalSearch:focus {
+ outline: none;
+ border-color: var(--blue, #0d6efd);
+ box-shadow: 0 0 0 3px rgba(13,110,253,.10);
+ background: #fff;
+}
+.entity-search-strip .entity-search-icon {
+ position: absolute;
+ left: 15px;
+ top: 14px;
+ width: 20px;
+ height: 20px;
+ color: #64748b;
+ pointer-events: none;
+}
+.entity-search-strip .entity-search-clear {
+ position: absolute;
+ right: 6px;
+ top: 6px;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ height: 36px;
+ padding: 0 12px;
+ border: 0;
+ border-radius: 7px;
+ background: transparent;
+ color: #64748b;
+ font: inherit;
+ font-size: 13px;
+ cursor: pointer;
+}
+.entity-search-strip .entity-search-clear:hover {background: #eaf0f7; color: #172033;}
+.entity-search-strip .entity-search-filters {
+ grid-column: 2;
+ display: flex;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: 7px;
+ margin: 0;
+}
+.entity-search-strip .entity-search-filter {
+ flex: 0 0 auto;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ min-height: 32px;
+ padding: 5px 12px;
+ border: 1px solid #e1e7f0;
+ border-radius: 999px;
+ background: #fff;
+ color: #475569;
+ font: inherit;
+ font-size: 13px;
+ font-weight: 500;
+ line-height: 1.3;
+ white-space: nowrap;
+ cursor: pointer;
+}
+.entity-search-strip .entity-search-filter:hover {border-color: #aac9fa; background: #f5f9ff;}
+.entity-search-strip .entity-search-filter.active {
+ border-color: var(--blue, #0d6efd);
+ background: var(--blue, #0d6efd);
+ color: #fff;
+}
+.entity-search-strip button:focus-visible {outline: 2px solid var(--blue, #0d6efd); outline-offset: 3px;}
+.entity-search-strip .entity-search-status {
+ grid-column: 2;
+ min-height: 0;
+ margin: 0;
+ color: #64748b;
+ font-size: 12px;
+ line-height: 18px;
+ overflow-wrap: anywhere;
+}
+.entity-search-strip .entity-search-status:empty {display: none;}
+.entity-search-strip .entity-search-results {
+ position: absolute;
+ top: calc(100% + 8px);
+ left: 0;
+ right: 0;
+ width: 100%;
+ max-height: min(60vh, 520px);
+ box-sizing: border-box;
+ overflow: auto;
+ border: 1px solid #dbe3ef;
+ border-radius: 12px;
+ background: #fff;
+ box-shadow: 0 16px 36px rgba(15,23,42,.13);
+}
+.entity-search-strip .entity-search-result-main strong {font-size: 14px;}
+.entity-search-strip .entity-search-result-main .small {font-size: 13px; overflow-wrap: anywhere;}
+.entity-search-strip .entity-search-id {font-size: 12px;}
+.entity-search-strip .entity-search-group-title {font-size: 12px;}
+.entity-search-strip .entity-search-actions .btn {font-size: 12px; min-height: 32px;}
+@media (max-width: 991.98px) {
+ .entity-search-strip .oddb-explore-search-inner {grid-template-columns: minmax(0, 1fr); row-gap: 12px;}
+ .entity-search-strip .entity-search-title-row {grid-column: 1; grid-row: auto; margin-bottom: 3px;}
+ .entity-search-strip .entity-search-field,
+ .entity-search-strip .entity-search-filters,
+ .entity-search-strip .entity-search-status {grid-column: 1;}
+ .entity-search-strip .entity-search-description {max-width: 680px;}
+}
+@media (max-width: 575.98px) {
+ .entity-search-strip.entity-search-integrated {margin-bottom: 20px; padding-bottom: 20px;}
+ .entity-search-strip .entity-search-heading {font-size: 22px;}
+ .entity-search-strip .entity-search-description {font-size: 13px;}
+ .entity-search-strip .entity-search-filter {font-size: 12px; padding: 5px 10px;}
+ .entity-search-strip .entity-search-result {grid-template-columns: minmax(0,1fr);}
+ .entity-search-strip .entity-search-actions {justify-content: flex-start;}
+}
+@media (prefers-reduced-motion: reduce) {
+ .entity-search-strip .oddb-explore-search-inner #globalSearch {transition: none;}
+}

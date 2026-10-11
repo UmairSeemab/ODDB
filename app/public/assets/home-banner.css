@@ -1,0 +1,43 @@
+/* ODDB homepage image banner v0.8.2. No animation or graph settings. */
+body .hero.oddb-image-banner {
+ position: relative;
+ background-color: #052b42;
+ background-image: linear-gradient(90deg, rgba(2,18,35,.82) 0%, rgba(2,24,42,.67) 36%, rgba(2,24,42,.16) 63%, rgba(2,24,42,.04) 100%), url("oddb-home-banner-v0.8.2.jpg");
+ background-size: cover;
+ background-position: center right;
+ background-repeat: no-repeat;
+ color: #fff;
+ /* Keep autocomplete results outside the banner visible. */
+ overflow: visible;
+}
+body .hero.oddb-image-banner h1 {color: #fff; font-size: clamp(2rem, 3.1vw, 3.4rem); line-height: 1.13; letter-spacing: -.035em;}
+body .hero.oddb-image-banner .eyebrow {color: #a8e4f1;}
+body .hero.oddb-image-banner .lead {color: #e0edf4 !important; line-height: 1.6; font-size: 1.08rem;}
+body .hero.oddb-image-banner .btn-primary {background: #fff; border-color: #fff; color: #074057; box-shadow: none;}
+body .hero.oddb-image-banner .btn-primary:hover {background: #d9f1f6; border-color: #d9f1f6; color: #052e42;}
+body .hero.oddb-image-banner .btn-outline-secondary {color: #fff; border-color: #a1c8dc; background: rgba(3,31,48,.42);}
+body .hero.oddb-image-banner .btn-outline-secondary:hover {color: #07384d; background: #fff; border-color: #fff;}
+body .hero.oddb-image-banner :where(a, button, input):focus-visible {outline: 3px solid #8ee7ff; outline-offset: 4px;}
+body .hero.oddb-image-banner .landing-search-wrap {color: #172033;}
+body .hero.oddb-image-banner .landing-search-results {z-index: 1080;}
+body .oddb-banner-summary {background: #f1f7fa; border-bottom: 1px solid #dce8ee;}
+body .oddb-banner-summary .hero-panel {display: grid; grid-template-columns: minmax(0,1fr) 340px; column-gap: 3rem; align-items: center; background: #fff; border-color: #d4e3eb; box-shadow: 0 8px 24px rgba(23,54,77,.05);}
+body .oddb-banner-summary .hero-panel > .small:first-child {align-self: end; color: #194b64 !important; margin-bottom: 0 !important; font-size: .95rem;}
+body .oddb-banner-summary .hero-panel > p {align-self: start; max-width: 600px; font-size: 1rem; line-height: 1.65;}
+body .oddb-banner-summary .mini-network {grid-column: 2; grid-row: 1 / span 2; height: 240px;}
+@media (max-width: 991.98px) {
+ body .hero.oddb-image-banner {background-image: linear-gradient(90deg, rgba(2,18,35,.93), rgba(2,24,42,.78)), url("oddb-home-banner-v0.8.2.jpg"); background-position: 70% center;}
+ body .hero.oddb-image-banner .oddb-banner-content {max-width: 680px;}
+ body .hero.oddb-image-banner h1 {font-size: clamp(2rem, 5vw, 3rem);}
+ body .oddb-banner-summary .hero-panel {column-gap: 1.5rem; grid-template-columns: minmax(0,1fr) 300px;}
+}
+@media (max-width: 575.98px) {
+ body .oddb-banner-summary .hero-panel {display: block;}
+ body .oddb-banner-summary .mini-network {margin-top: 1rem; height: 240px;}
+ body .hero.oddb-image-banner .btn {font-size: 1rem;}
+}
+@media print {
+ body .hero.oddb-image-banner {background: #fff !important; color: #172033;}
+ body .hero.oddb-image-banner :is(h1,.eyebrow,.lead) {color: #172033 !important;}
+ body .hero.oddb-image-banner .btn {color: #172033; border-color: #64748b; background: #fff;}
+}

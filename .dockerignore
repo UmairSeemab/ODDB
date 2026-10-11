@@ -1,0 +1,9 @@
+**
+!app/
+!app/public/
+!app/public/**
+!app/config/
+!app/config/release_catalog.json
+!deploy/
+!deploy/docker/
+!deploy/docker/**

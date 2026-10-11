@@ -1,0 +1,16 @@
+retnet_disease	association_type	suggested_oddb_id	suggested_oddb_disease	oddb_category	match_status	match_score	name_similarity	token_similarity	gene_overlap_fraction	candidate_2	candidate_3	manual_decision	curator_notes
+Age-related macular degeneration (AMD)	Complex	ODDB-6	AGE-RELATED MACULAR DEGENERATION	Uveal Diseases	exact	1.0	1.0	1.0	1.0	ODDB-5 | ADVANCED AGE-RELATED MACULAR DEGENERATION | 0.7868	ODDB-69 | EXUDATIVE AGE-RELATED MACULAR DEGENERATION | 0.7353		
+Bardet-Biedl syndrome	Mendelian	ODDB-16	BARDET-BIEDL SYNDROME	Retinal Diseases	exact	0.8846	1.0	1.0	0.4231	ODDB-15 | ARTS SYNDROME | 0.3176	ODDB-113 | MECKEL SYNDROME | 0.3154		
+Chorioretinal atrophy or degeneration	Mendelian	ODDB-34	CHORIORETINAL ATROPHY	Uveal Diseases	synonym_rule	0.6592	0.7241	0.6667	0.3333	ODDB-187 | RETINAL DEGENERATION | 0.3991	ODDB-6 | AGE-RELATED MACULAR DEGENERATION | 0.3025		
+Cone or cone-rod dystrophy	Mendelian	ODDB-47	CONE-ROD DYSTROPHY	Retinal Diseases	synonym_rule	0.8026	0.8182	1.0	0.4222	ODDB-46 | CONE DYSTROPHY | 0.5039	ODDB-37 | CHOROIDAL DYSTROPHY | 0.3669		
+Congenital stationary night blindness	Mendelian	ODDB-131	NIGHT BLINDNESS	Retinal Diseases	synonym_rule	0.5846	0.5769	0.5	0.5	ODDB-43 | COLOR-BLINDNESS | 0.3096	ODDB-49 | CONGENITAL DISORDER OF GLYCOSYLATION | 0.2513		
+Deafness alone or syndromic	Mendelian				unmatched	0.3528	0.4878	0.0	0.6667	ODDB-55 | DE SANCTIS-CACCHIONE SYNDROME | 0.2893	ODDB-95 | KEARNS-SAYRE SYNDROME | 0.2812		
+Leber congenital amaurosis	Mendelian	ODDB-103	LEBER CONGENITAL AMAUROSIS	Retinal Diseases	exact	0.9379	1.0	1.0	0.6897	ODDB-49 | CONGENITAL DISORDER OF GLYCOSYLATION | 0.2677	ODDB-104 | LEBER HEREDITARY OPTIC NEUROPATHY | 0.2552		
+Macular degeneration	Mendelian	ODDB-107	MACULAR DYSTROPHY	Retinal Diseases	synonym_rule	0.3884	0.5946	0.3333	0.1875	ODDB-5 | ADVANCED AGE-RELATED MACULAR DEGENERATION | 0.5076	ODDB-69 | EXUDATIVE AGE-RELATED MACULAR DEGENERATION | 0.4966		
+Ocular-retinal developmental disease	Mendelian				unmatched	0.2643	0.1429	0.0	1.0	ODDB-146 | OREGON EYE DISEASE | 0.2500	ODDB-31 | CHARCOT-MARIE-TOOTH DISEASE | 0.2429		
+Optic atrophy	Mendelian	ODDB-141	OPTIC ATROPHY	Retinal Diseases	exact	0.9167	1.0	1.0	0.5833	ODDB-34 | CHORIORETINAL ATROPHY | 0.3745	ODDB-143 | OPTIC DISC ANOMALIES | 0.2807		
+Other retinopathy	Mendelian				unmatched	0.3441	0.7647	0	0.0	ODDB-262 | VITREORETINOPATHY | 0.3355	ODDB-164 | PIGMENTARY RETINOPATHY | 0.3266		
+Retinitis pigmentosa	Mendelian	ODDB-193	RETINITIS PIGMENTOSA	Retinal Diseases	exact	0.9271	1.0	1.0	0.6357	ODDB-196 | RETINOSCHISIS | 0.2455	ODDB-188 | RETINAL DETACHMENT | 0.2384		
+Retinopathy of prematurity (ROP)	Complex	ODDB-195	RETINOPATHY OF PREMATURITY	Retinal Diseases	exact	0.8	1.0	1.0	0.0	ODDB-262 | VITREORETINOPATHY | 0.4302	ODDB-134 | NORRIE DISEASE | 0.3125		
+Syndromic/systemic diseases with retinopathy	Mendelian				unmatched	0.2538	0.5641	0	0.0	ODDB-215 | SIDEROBLASTIC ANEMIA WITH B-CELL IMMUNODEFICIENCY | 0.2149	ODDB-58 | DIABETIC RETINOPATHY | 0.2109		
+Usher syndrome	Mendelian	ODDB-253	USHER SYNDROME	Others	exact	0.95	1.0	1.0	0.75	ODDB-83 | HARP SYNDROME | 0.3667	ODDB-94 | JOUBERT SYNDROME | 0.3600		

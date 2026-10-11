@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+<title id="title">Stylized eye</title>
+<desc id="desc">Minimal ODDB eye illustration used for the website introduction.</desc>
+<defs>
+  <radialGradient id="iris" cx="50%" cy="45%" r="60%">
+    <stop offset="0%" stop-color="#312e81"/>
+    <stop offset="35%" stop-color="#4f46e5"/>
+    <stop offset="70%" stop-color="#60a5fa"/>
+    <stop offset="100%" stop-color="#dbeafe"/>
+  </radialGradient>
+  <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+    <stop offset="0%" stop-color="#dbeafe" stop-opacity=".9"/>
+    <stop offset="100%" stop-color="#eef2ff" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="14"/>
+  </filter>
+</defs>
+
+<ellipse cx="400" cy="255" rx="245" ry="165" fill="url(#glow)" filter="url(#soft)"/>
+<path d="M88 258 C190 125 315 90 400 90 C490 90 618 126 714 258 C613 391 495 421 400 421 C300 421 184 388 88 258Z"
+      fill="none" stroke="#8fb3ff" stroke-width="5" opacity=".9"/>
+<path d="M108 258 C202 164 304 130 400 130 C497 130 599 163 694 258 C598 350 500 385 400 385 C301 385 200 349 108 258Z"
+      fill="#ffffff" fill-opacity=".86" stroke="#c7d7ff" stroke-width="3"/>
+
+<circle cx="400" cy="258" r="103" fill="url(#iris)" opacity=".98"/>
+<circle cx="400" cy="258" r="46" fill="#111827"/>
+<circle cx="369" cy="223" r="18" fill="#ffffff" opacity=".86"/>
+<circle cx="400" cy="258" r="125" fill="none" stroke="#93c5fd" stroke-width="2" opacity=".45"/>
+<circle cx="400" cy="258" r="154" fill="none" stroke="#c4b5fd" stroke-width="2" opacity=".35"/>
+
+<g stroke="#e0e7ff" stroke-width="2" opacity=".74">
+  <path d="M400 155 L400 213"/>
+  <path d="M400 303 L400 361"/>
+  <path d="M297 258 L355 258"/>
+  <path d="M445 258 L503 258"/>
+  <path d="M327 185 L366 226"/>
+  <path d="M434 290 L475 331"/>
+  <path d="M473 186 L435 226"/>
+  <path d="M365 290 L324 331"/>
+  <path d="M341 166 L374 219"/>
+  <path d="M459 166 L426 219"/>
+  <path d="M341 350 L374 298"/>
+  <path d="M459 350 L426 298"/>
+</g>
+
+<g fill="#2563eb">
+  <circle cx="172" cy="120" r="5"/>
+  <circle cx="642" cy="125" r="5"/>
+  <circle cx="718" cy="318" r="5"/>
+  <circle cx="95" cy="348" r="5"/>
+  <circle cx="610" cy="410" r="5"/>
+  <circle cx="196" cy="402" r="5"/>
+</g>
+
+<g fill="none" stroke="#bfdbfe" stroke-width="2" opacity=".55">
+  <path d="M115 125 C210 45 298 34 400 34 C517 34 606 52 686 128"/>
+  <path d="M84 362 C182 459 293 486 400 486 C520 486 620 456 716 363"/>
+</g>
+</svg>

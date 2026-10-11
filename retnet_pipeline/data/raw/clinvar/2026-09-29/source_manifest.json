@@ -1,0 +1,18 @@
+{
+  "Source": "NCBI ClinVar variant_summary",
+  "Source_URL": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz",
+  "Retrieved_UTC": "2026-09-29T12:50:30.532567+00:00",
+  "Raw_File": "data/raw/clinvar/2026-09-29/variant_summary.txt.gz",
+  "Raw_SHA256": "5dc8016a1cfe9345d38f478757debaf3f07597435682c3d9a9f54b906e0b027a",
+  "Assembly_Filter": "GRCh38",
+  "ODDB_Genes_Input": 1249,
+  "ClinVar_Rows_Total_All_Assemblies": 9224097,
+  "ClinVar_Rows_Selected_Assembly": 4578410,
+  "Matched_ClinVar_Rows": 707318,
+  "Unique_ClinVar_VariationIDs": 707315,
+  "ODDB_Genes_With_ClinVar_Variants": 1203,
+  "ODDB_Genes_Without_ClinVar_Variants": 46,
+  "Rows_Matched_By_HGNC_ID": 703418,
+  "Rows_Matched_By_GeneSymbol_Fallback": 3900,
+  "Staging_Output": "data/processed/clinvar_variant_summary_oddb_genes_2026-09-29.tsv"
+}

@@ -1,0 +1,131 @@
+{
+  "name": "oddb-production",
+  "services": {
+    "db": {
+      "image": "mariadb:11.4",
+      "restart": "unless-stopped",
+      "environment": {
+        "MARIADB_ROOT_PASSWORD": "${ODDB_ROOT_PASSWORD:?Run ops/manage.py init}",
+        "MARIADB_ROOT_HOST": "localhost",
+        "MARIADB_DATABASE": "oddb_v1"
+      },
+      "command": [
+        "--event-scheduler=OFF"
+      ],
+      "volumes": [
+        "db-data:/var/lib/mysql",
+        {
+          "type": "bind",
+          "source": "./secrets/01-web-user.sql",
+          "target": "/docker-entrypoint-initdb.d/01-web-user.sql",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        }
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "healthcheck.sh",
+          "--connect",
+          "--innodb_initialized"
+        ],
+        "interval": "5s",
+        "timeout": "5s",
+        "retries": 48,
+        "start_period": "20s"
+      },
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      }
+    },
+    "web": {
+      "build": {
+        "context": ".",
+        "dockerfile": "deploy/docker/Dockerfile"
+      },
+      "restart": "unless-stopped",
+      "environment": {
+        "ODDB_DB_HOST": "db",
+        "ODDB_DB_PORT": "3306",
+        "ODDB_DB_NAME": "oddb_v1",
+        "ODDB_DB_USER": "oddb_web",
+        "ODDB_DB_PASSWORD": "${ODDB_WEB_PASSWORD:?Run ops/manage.py init}"
+      },
+      "ports": [
+        "127.0.0.1:${ODDB_LOCAL_PORT:-8082}:80"
+      ],
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "./retnet_pipeline/releases",
+          "target": "/srv/oddb/retnet_pipeline/releases",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        }
+      ],
+      "depends_on": {
+        "db": {
+          "condition": "service_healthy"
+        }
+      },
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      }
+    },
+    "proxy": {
+      "image": "caddy:2",
+      "profiles": [
+        "public"
+      ],
+      "restart": "unless-stopped",
+      "ports": [
+        "80:80",
+        "443:443"
+      ],
+      "environment": {
+        "ODDB_DOMAIN": "${ODDB_DOMAIN:-oculardiseases.fi}",
+        "ODDB_WWW_DOMAIN": "${ODDB_WWW_DOMAIN:-www.oculardiseases.fi}"
+      },
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "./deploy/Caddyfile",
+          "target": "/etc/caddy/Caddyfile",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        },
+        "caddy-data:/data",
+        "caddy-config:/config"
+      ],
+      "depends_on": [
+        "web"
+      ],
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      }
+    }
+  },
+  "volumes": {
+    "db-data": {},
+    "caddy-data": {},
+    "caddy-config": {}
+  }
+}

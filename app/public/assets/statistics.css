@@ -1,0 +1,369 @@
+:root{
+ --bg:#f6f8fc;--surface:#fff;--border:#e4e9f1;--text:#172033;--muted:#64748b;
+ --blue:#0d6efd;--purple:#7c3aed;--teal:#059669;--slate:#475569;--amber:#d97706;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+.navbar{min-height:68px}
+.page-hero{background:
+ radial-gradient(circle at 86% 15%,rgba(13,110,253,.10),transparent 28%),
+ linear-gradient(180deg,#fff,#f7f9fd);border-bottom:1px solid var(--border)}
+.eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--blue)}
+.section-block{margin-top:4rem}
+.section-heading{max-width:850px}
+.overview-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.overview-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1rem;min-width:0;box-shadow:0 7px 22px rgba(15,23,42,.035)}
+.overview-value{font-size:1.55rem;font-weight:800;letter-spacing:-.035em;line-height:1.1;overflow-wrap:anywhere}
+.overview-label{font-size:.77rem;color:var(--muted);margin-top:.35rem}
+.viz-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:1rem 1rem 1.15rem;min-width:0;box-shadow:0 8px 28px rgba(15,23,42,.035)}
+.viz-head{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;margin-bottom:.5rem}
+.chart{width:100%;min-width:0}
+.chart-compact{height:180px}
+.chart-md{height:330px}
+.chart-lg{height:410px}
+.chart-xl{height:470px}
+.chart-ring{height:560px}
+.coverage-row{display:grid;grid-template-columns:minmax(160px,42%) 1fr;gap:.5rem;align-items:center;border-top:1px solid var(--border);padding-top:.75rem}
+.coverage-copy{padding:.5rem}
+.coverage-number{font-size:1.65rem;font-weight:800;letter-spacing:-.03em}
+.coverage-label{font-size:.78rem;color:var(--muted)}
+.ring-legend{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;border-top:1px solid var(--border);padding-top:.8rem;font-size:.78rem}
+.legend-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.35rem}
+.legend-dot.anatomy{background:var(--purple)}
+.legend-dot.gene{background:var(--blue)}
+.analytics-placeholder{border:1px dashed #b7c4d7;border-radius:14px;padding:1rem;background:#f8fafc}
+.site-footer{margin-top:4rem;background:#fff;border-top:1px solid var(--border)}
+.skeleton{height:78px;background:linear-gradient(90deg,#eef2f7,#f8fafc,#eef2f7);background-size:220% 100%;animation:shimmer 1.15s linear infinite}
+@keyframes shimmer{to{background-position:-220% 0}}
+
+@media(max-width:1199.98px){
+ .overview-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .chart-ring{height:510px}
+}
+@media(max-width:991.98px){
+ .section-block{margin-top:3rem}
+ .overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .chart-lg{height:380px}
+ .chart-xl{height:520px}
+ .chart-ring{height:480px}
+}
+@media(max-width:767.98px){
+ .page-hero .lead{font-size:1rem}
+ .viz-card{border-radius:16px;padding:.85rem}
+ .viz-head{align-items:flex-start}
+ .chart-md{height:300px}
+ .chart-lg{height:350px}
+ .chart-xl{height:560px}
+ .chart-ring{height:420px}
+ .coverage-row{grid-template-columns:150px 1fr}
+}
+@media(max-width:575.98px){
+ .overview-grid{gap:8px}
+ .overview-card{padding:.8rem}
+ .overview-value{font-size:1.25rem}
+ .section-block{margin-top:2.4rem}
+ .chart-md{height:290px}
+ .chart-lg{height:330px}
+ .chart-xl{height:600px}
+ .chart-ring{height:390px}
+ .coverage-row{grid-template-columns:125px 1fr}
+ .chart-compact{height:145px}
+ .ring-legend{gap:.55rem}
+}
+@media(max-width:379.98px){
+ .overview-grid{grid-template-columns:1fr}
+ .coverage-row{grid-template-columns:1fr}
+ .chart-compact{height:165px}
+ .chart-ring{height:360px}
+}
+@media(max-height:520px) and (orientation:landscape){
+ .page-hero .container{padding-top:1.1rem!important;padding-bottom:1.1rem!important}
+ .section-block{margin-top:2rem}
+ .navbar{min-height:58px}
+ .chart-lg{height:320px}
+ .chart-ring{height:340px}
+}
+
+
+/* ODDB relationship maps v0.4.3 */
+.relationship-card{overflow:hidden}
+.relationship-toolbar{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.5rem}
+.relationship-title-wrap{min-width:0;flex:1}
+.relationship-actions{display:flex;gap:.5rem;align-items:center;flex:0 0 auto}
+.map-select{width:min(280px,34vw)}
+.map-counter{display:inline-flex;align-items:center;border-radius:999px;background:#eef4ff;color:#1d4ed8;padding:.22rem .55rem;font-size:.69rem;font-weight:800}
+.relationship-viewport{position:relative;display:grid;grid-template-columns:52px minmax(0,1fr) 52px;align-items:center;min-width:0;touch-action:pan-y}
+.relationship-canvas-wrap{min-width:0;overflow:hidden;border-radius:16px}
+.relationship-arrow{width:42px;height:42px;border-radius:50%;border:1px solid #dbe3ef;background:#fff;color:#475569;font-size:1.75rem;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 18px rgba(15,23,42,.06);z-index:2}
+.relationship-arrow:hover{border-color:#9db9e9;color:#0d6efd}
+.relationship-prev{justify-self:start}
+.relationship-next{justify-self:end}
+.relationship-footer{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-top:1px solid var(--border);padding-top:.75rem}
+.relationship-dots{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
+.relationship-dot{width:9px;height:9px;border-radius:50%;border:0;background:#cbd5e1;padding:0;transition:.15s ease}
+.relationship-dot.active{width:24px;border-radius:999px;background:#0d6efd}
+.relationship-help{display:flex;justify-content:space-between;gap:.75rem;flex-wrap:wrap;color:#64748b;font-size:.75rem;margin-top:.65rem}
+.ring-legend{border-top:0;padding-top:0}
+.legend-dot.left-side{background:#7c3aed}
+.legend-dot.right-side{background:#78c45d}
+.relationship-canvas-wrap.slide-left{animation:oddbSlideLeft .22s ease}
+.relationship-canvas-wrap.slide-right{animation:oddbSlideRight .22s ease}
+@keyframes oddbSlideLeft{0%{opacity:.5;transform:translateX(18px)}100%{opacity:1;transform:translateX(0)}}
+@keyframes oddbSlideRight{0%{opacity:.5;transform:translateX(-18px)}100%{opacity:1;transform:translateX(0)}}
+
+@media(max-width:991.98px){
+ .relationship-toolbar{flex-direction:column}
+ .relationship-actions{width:100%}
+ .map-select{width:auto;flex:1}
+ .relationship-viewport{grid-template-columns:44px minmax(0,1fr) 44px}
+ .relationship-arrow{width:36px;height:36px}
+}
+@media(max-width:575.98px){
+ .relationship-actions{display:grid;grid-template-columns:1fr auto;width:100%}
+ .map-select{width:100%}
+ .relationship-viewport{grid-template-columns:34px minmax(0,1fr) 34px}
+ .relationship-arrow{width:30px;height:30px;font-size:1.35rem;background:rgba(255,255,255,.88)}
+ .relationship-footer{align-items:flex-start;flex-direction:column}
+ .relationship-dots{order:2}
+ .relationship-help{font-size:.7rem}
+}
+
+/* ODDB clinical evidence relationship profiles v0.4.3b */
+.clinical-profile-card{overflow:hidden}
+.clinical-orbit{height:390px}
+.clinical-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem;margin-top:.3rem}
+.clinical-metric{border:1px solid var(--border);border-radius:13px;padding:.75rem;background:#f8fafc;min-width:0}
+.clinical-metric strong{display:block;font-size:1.15rem;line-height:1.15}
+.clinical-metric span{display:block;font-size:.72rem;color:#64748b;margin-top:.2rem}
+.clinical-note{border:1px solid #dbe3ef;background:#f8fafc;border-radius:14px;padding:.9rem 1rem;color:#475569;font-size:.82rem}
+@media(max-width:767.98px){
+ .clinical-orbit{height:340px}
+ .clinical-metrics{grid-template-columns:1fr 1fr}
+}
+@media(max-width:419.98px){
+ .clinical-orbit{height:310px}
+ .clinical-metrics{grid-template-columns:1fr}
+}
+
+/* ODDB Knowledge Flow Maps v0.4.4 */
+.knowledge-flow-card{overflow:hidden}
+.knowledge-flow-toolbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.knowledge-flow-tabs{display:flex;gap:.45rem;flex-wrap:wrap}
+.flow-tab{border:1px solid #dbe3ef;background:#fff;color:#475569;border-radius:999px;padding:.45rem .75rem;font-size:.78rem;font-weight:700;transition:.15s ease}
+.flow-tab:hover{border-color:#a9c2ed;color:#0d6efd}
+.flow-tab.active{background:#0d6efd;border-color:#0d6efd;color:#fff}
+.knowledge-flow-controls{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.knowledge-flow-controls .form-select{width:auto;min-width:112px}
+.knowledge-flow-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.4rem}
+.knowledge-flow-arrows{display:flex;gap:.35rem;flex:0 0 auto}
+.flow-note{border:1px solid #dbe3ef;background:#f8fafc;color:#475569;border-radius:12px;padding:.7rem .85rem;font-size:.78rem;margin:.65rem 0}
+.knowledge-flow-scroll{width:100%;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
+.knowledge-flow-chart-inner{width:100%;min-width:0;height:650px}
+.knowledge-flow-summary{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.55rem;border-top:1px solid var(--border);padding-top:.8rem;margin-top:.25rem}
+.flow-summary-chip{background:#f8fafc;border:1px solid var(--border);border-radius:12px;padding:.65rem;min-width:0}
+.flow-summary-chip strong{display:block;font-size:1rem;line-height:1.15;overflow-wrap:anywhere}
+.flow-summary-chip span{display:block;font-size:.68rem;color:#64748b;margin-top:.2rem}
+.knowledge-flow-help{display:flex;gap:.8rem;justify-content:space-between;flex-wrap:wrap;color:#64748b;font-size:.72rem;margin-top:.7rem}
+.flow-loading{padding:1rem;color:#64748b}
+.flow-tooltip{max-width:320px;white-space:normal}
+.flow-tooltip-arrow{color:#94a3b8;margin:.15rem 0}
+
+@media(max-width:1199.98px){
+ .knowledge-flow-summary{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:767.98px){
+ .knowledge-flow-toolbar{align-items:stretch}
+ .knowledge-flow-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:.2rem;width:100%}
+ .flow-tab{white-space:nowrap;flex:0 0 auto}
+ .knowledge-flow-controls{width:100%}
+ .knowledge-flow-controls .form-select{flex:1;min-width:130px}
+ .knowledge-flow-head{margin-top:.4rem}
+ .knowledge-flow-scroll{margin-inline:-.85rem;width:calc(100% + 1.7rem)}
+ .knowledge-flow-chart-inner{min-width:920px}
+ .knowledge-flow-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:419.98px){
+ .knowledge-flow-summary{grid-template-columns:1fr 1fr}
+ .knowledge-flow-help{display:block}
+ .knowledge-flow-help span{display:block;margin-top:.25rem}
+}
+
+
+/* ODDB filtered Sankey selection note v0.4.4b */
+.flow-selection-note{margin-top:.35rem;color:#64748b;font-size:.75rem;line-height:1.4}
+.flow-selection-note strong{color:#334155}
+
+/* ODDB export alignment + optimized figures v0.4.5c */
+
+/* Header receives only one export menu when the card has one chart. */
+.viz-head.oddb-export-header,
+.knowledge-flow-head.oddb-export-header{
+ display:grid !important;
+ grid-template-columns:minmax(0,1fr) auto;
+ align-items:start !important;
+ column-gap:1rem;
+ row-gap:.55rem;
+}
+
+.viz-head.oddb-export-header > .oddb-export-menu,
+.knowledge-flow-head.oddb-export-header > .oddb-export-menu{
+ grid-column:2;
+ grid-row:1 / span 2;
+ align-self:start;
+ justify-self:end;
+ margin:0 !important;
+}
+
+/*
+ * Multi-chart cards receive one local row above each chart.
+ * This fixes the two misaligned Export controls seen in Inheritance evidence.
+ */
+.oddb-subchart-export-row{
+ width:100%;
+ min-height:42px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:.8rem;
+ padding:.3rem .15rem .35rem;
+ margin-top:.2rem;
+}
+
+.oddb-subchart-export-label{
+ min-width:0;
+ color:#475569;
+ font-size:.76rem;
+ font-weight:700;
+ line-height:1.25;
+}
+
+/* Unified control. */
+.oddb-export-menu{
+ position:relative;
+ flex:0 0 auto;
+ z-index:40;
+}
+
+.oddb-export-toggle{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ gap:.35rem;
+ min-height:34px;
+ border:1px solid #d7e0ec;
+ background:#fff;
+ color:#475569;
+ border-radius:10px;
+ padding:.38rem .62rem;
+ font-size:.72rem;
+ font-weight:800;
+ line-height:1;
+ cursor:pointer;
+ white-space:nowrap;
+ box-shadow:0 2px 8px rgba(15,23,42,.04);
+}
+
+.oddb-export-toggle:hover{
+ border-color:#9db9e9;
+ color:#0d6efd;
+ background:#f8fbff;
+}
+
+.oddb-export-toggle:focus-visible{
+ outline:3px solid rgba(13,110,253,.18);
+ outline-offset:2px;
+}
+
+.oddb-export-chevron{
+ font-size:.62rem;
+ transition:transform .15s ease;
+}
+
+.oddb-export-menu.open .oddb-export-chevron{
+ transform:rotate(180deg);
+}
+
+.oddb-export-dropdown{
+ display:none;
+ position:absolute;
+ top:calc(100% + .4rem);
+ right:0;
+ min-width:205px;
+ padding:.35rem;
+ border:1px solid #dbe3ef;
+ background:#fff;
+ border-radius:12px;
+ box-shadow:0 14px 36px rgba(15,23,42,.14);
+ z-index:1000;
+}
+
+.oddb-export-menu.open .oddb-export-dropdown{
+ display:block;
+}
+
+.oddb-export-dropdown button{
+ width:100%;
+ display:grid;
+ grid-template-columns:44px 1fr;
+ align-items:center;
+ gap:.5rem;
+ border:0;
+ background:transparent;
+ color:#334155;
+ text-align:left;
+ padding:.57rem .62rem;
+ border-radius:8px;
+ cursor:pointer;
+ font-size:.76rem;
+}
+
+.oddb-export-dropdown button:hover,
+.oddb-export-dropdown button:focus-visible{
+ background:#f3f7fc;
+ outline:none;
+}
+
+.oddb-export-ext{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ min-height:24px;
+ border:1px solid #dbe3ef;
+ border-radius:6px;
+ background:#f8fafc;
+ color:#475569;
+ font-size:.62rem;
+ font-weight:900;
+}
+
+/* Old floating CSV control is never shown. */
+.oddb-csv-export-btn{
+ display:none !important;
+}
+
+/* Mobile: controls have their own non-overlapping row. */
+@media(max-width:575.98px){
+ .viz-head.oddb-export-header,
+ .knowledge-flow-head.oddb-export-header{
+  display:flex !important;
+  flex-direction:column;
+  align-items:stretch !important;
+ }
+
+ .viz-head.oddb-export-header > .oddb-export-menu,
+ .knowledge-flow-head.oddb-export-header > .oddb-export-menu{
+  align-self:flex-start;
+ }
+
+ .oddb-subchart-export-row{
+  align-items:flex-start;
+  flex-wrap:wrap;
+ }
+
+ .oddb-export-dropdown{
+  left:0;
+  right:auto;
+  min-width:210px;
+  max-width:min(92vw,280px);
+ }
+}

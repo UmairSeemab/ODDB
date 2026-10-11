@@ -1,0 +1,2025 @@
+{
+  "packager_version": "0.8.8",
+  "database": "oddb_v1",
+  "backup_sha256": "884b68147288247d4b5e66caff5a3ef2e6033be7adbb87a197d7005f41266733",
+  "schema_sha256": "b187c3ab91e58bd5495d74c747e3356d25356047020ade7da668737bd723a323",
+  "expected_schema": {
+    "tables": {
+      "clinical_report": {
+        "columns": [
+          "clinical_report_id",
+          "opentargets_clinical_report_id",
+          "report_type",
+          "clinical_stage",
+          "origin",
+          "source",
+          "provider",
+          "title",
+          "trial_official_title",
+          "nct_ids",
+          "trial_phase",
+          "trial_overall_status",
+          "url",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "clinical_report_id",
+              null
+            ]
+          ],
+          "idx_cr_otid": [
+            [
+              "opentargets_clinical_report_id",
+              191
+            ]
+          ],
+          "idx_cr_source": [
+            [
+              "source",
+              null
+            ]
+          ],
+          "idx_cr_origin": [
+            [
+              "origin",
+              null
+            ]
+          ]
+        }
+      },
+      "clinical_trial": {
+        "columns": [
+          "clinical_trial_id",
+          "nct_id",
+          "clinical_report_id",
+          "title",
+          "official_title",
+          "phase",
+          "overall_status",
+          "study_type",
+          "start_date",
+          "completion_date",
+          "source",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "clinical_trial_id",
+              null
+            ]
+          ],
+          "uq_trial_nct": [
+            [
+              "nct_id",
+              null
+            ]
+          ],
+          "idx_trial_report": [
+            [
+              "clinical_report_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease": {
+        "columns": [
+          "disease_id",
+          "disease_name",
+          "localization",
+          "mondo_id",
+          "omim_id",
+          "orphanet_id",
+          "cui",
+          "inheritance",
+          "curation_status",
+          "source",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "disease_id",
+              null
+            ]
+          ],
+          "idx_disease_name": [
+            [
+              "disease_name",
+              191
+            ]
+          ],
+          "idx_disease_mondo": [
+            [
+              "mondo_id",
+              null
+            ]
+          ],
+          "idx_disease_omim": [
+            [
+              "omim_id",
+              null
+            ]
+          ],
+          "idx_disease_orpha": [
+            [
+              "orphanet_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_alias": {
+        "columns": [
+          "disease_alias_id",
+          "disease_id",
+          "alias",
+          "alias_type",
+          "source",
+          "source_id",
+          "curation_status",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "disease_alias_id",
+              null
+            ]
+          ],
+          "idx_da_disease": [
+            [
+              "disease_id",
+              null
+            ]
+          ],
+          "idx_da_alias": [
+            [
+              "alias",
+              191
+            ]
+          ]
+        }
+      },
+      "disease_category": {
+        "columns": [
+          "category_id",
+          "category_system",
+          "category_name",
+          "display_order"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "category_id",
+              null
+            ]
+          ],
+          "uq_disease_category": [
+            [
+              "category_system",
+              null
+            ],
+            [
+              "category_name",
+              null
+            ]
+          ],
+          "idx_dc_system_order": [
+            [
+              "category_system",
+              null
+            ],
+            [
+              "display_order",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_category_membership": {
+        "columns": [
+          "disease_id",
+          "category_id",
+          "membership_basis",
+          "source",
+          "curation_status"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "category_id",
+              null
+            ]
+          ],
+          "idx_dcm_category": [
+            [
+              "category_id",
+              null
+            ],
+            [
+              "disease_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_clinical_report_association": {
+        "columns": [
+          "association_id",
+          "disease_id",
+          "clinical_report_id",
+          "source_disease_id",
+          "source_disease_name",
+          "match_method",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "association_id",
+              null
+            ]
+          ],
+          "uq_dcr_natural": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "clinical_report_id",
+              null
+            ]
+          ],
+          "idx_dcr_report": [
+            [
+              "clinical_report_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_clinical_trial_association": {
+        "columns": [
+          "association_id",
+          "disease_id",
+          "clinical_trial_id",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "association_id",
+              null
+            ]
+          ],
+          "uq_dct_natural": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "clinical_trial_id",
+              null
+            ]
+          ],
+          "idx_dct_trial": [
+            [
+              "clinical_trial_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_drug_aggregate_context": {
+        "columns": [
+          "aggregate_context_id",
+          "disease_id",
+          "drug_id",
+          "aggregate_context_class",
+          "source",
+          "source_id",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "aggregate_context_id",
+              null
+            ]
+          ],
+          "idx_ddac_pair": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "drug_id",
+              null
+            ]
+          ],
+          "fk_ddac_drug": [
+            [
+              "drug_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_drug_aggregate_context_demoted": {
+        "columns": [
+          "aggregate_context_id",
+          "disease_id",
+          "drug_id",
+          "aggregate_context_class",
+          "source",
+          "source_id",
+          "demotion_reason",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "aggregate_context_id",
+              null
+            ]
+          ],
+          "idx_ddacd_pair": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "drug_id",
+              null
+            ]
+          ],
+          "fk_ddacd_drug": [
+            [
+              "drug_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_drug_association": {
+        "columns": [
+          "disease_drug_association_id",
+          "disease_id",
+          "drug_id",
+          "disease_name",
+          "drug_name",
+          "association_class",
+          "evidence_strength_class",
+          "has_clinical_trial_evidence",
+          "has_drug_label_evidence",
+          "has_regulatory_evidence",
+          "has_curated_indication_evidence",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "disease_drug_association_id",
+              null
+            ]
+          ],
+          "uq_dda_natural": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "drug_id",
+              null
+            ]
+          ],
+          "idx_dda_drug": [
+            [
+              "drug_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_drug_direct_without_target_overlap": {
+        "columns": [
+          "record_id",
+          "disease_id",
+          "drug_id",
+          "disease_drug_association_id",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "record_id",
+              null
+            ]
+          ],
+          "uq_dddwto_pair": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "drug_id",
+              null
+            ]
+          ],
+          "fk_dddwto_drug": [
+            [
+              "drug_id",
+              null
+            ]
+          ],
+          "fk_dddwto_dda": [
+            [
+              "disease_drug_association_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_drug_evidence": {
+        "columns": [
+          "disease_drug_evidence_id",
+          "disease_drug_association_id",
+          "disease_id",
+          "drug_id",
+          "evidence_subtype",
+          "evidence_strength_class",
+          "clinical_report_id",
+          "clinical_trial_id",
+          "source",
+          "source_id",
+          "clinical_stage",
+          "evidence_text",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "disease_drug_evidence_id",
+              null
+            ]
+          ],
+          "idx_dde_dda": [
+            [
+              "disease_drug_association_id",
+              null
+            ]
+          ],
+          "idx_dde_pair": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "drug_id",
+              null
+            ]
+          ],
+          "idx_dde_report": [
+            [
+              "clinical_report_id",
+              null
+            ]
+          ],
+          "idx_dde_trial": [
+            [
+              "clinical_trial_id",
+              null
+            ]
+          ],
+          "fk_dde_drug": [
+            [
+              "drug_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_drug_target_overlap": {
+        "columns": [
+          "disease_drug_target_overlap_id",
+          "disease_id",
+          "drug_id",
+          "hgnc_id",
+          "gene_symbol",
+          "direct_disease_drug_evidence",
+          "action_type",
+          "mechanism_of_action",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "disease_drug_target_overlap_id",
+              null
+            ]
+          ],
+          "idx_ddto_pair": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "drug_id",
+              null
+            ]
+          ],
+          "idx_ddto_gene": [
+            [
+              "hgnc_id",
+              null
+            ]
+          ],
+          "fk_ddto_drug": [
+            [
+              "drug_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_drug_target_overlap_summary": {
+        "columns": [
+          "summary_id",
+          "disease_id",
+          "drug_id",
+          "direct_disease_drug_evidence",
+          "target_gene_count",
+          "target_genes",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "summary_id",
+              null
+            ]
+          ],
+          "uq_ddtos_pair": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "drug_id",
+              null
+            ]
+          ],
+          "idx_ddtos_drug": [
+            [
+              "drug_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_gene_association": {
+        "columns": [
+          "association_id",
+          "disease_id",
+          "hgnc_id",
+          "gene_symbol",
+          "inheritance",
+          "evidence_class",
+          "evidence_status",
+          "source",
+          "source_id",
+          "pmid",
+          "doi",
+          "curation_status",
+          "curator_notes",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "association_id",
+              null
+            ]
+          ],
+          "uq_dga_natural": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "hgnc_id",
+              null
+            ],
+            [
+              "inheritance",
+              128
+            ]
+          ],
+          "idx_dga_gene": [
+            [
+              "hgnc_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_gene_association_reclassified": {
+        "columns": [
+          "reclassified_id",
+          "disease_id",
+          "original_hgnc_id",
+          "original_gene_symbol",
+          "reclassification_type",
+          "rationale",
+          "source",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "reclassified_id",
+              null
+            ]
+          ],
+          "idx_dgar_disease": [
+            [
+              "disease_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_locus_association": {
+        "columns": [
+          "association_id",
+          "disease_id",
+          "locus_id",
+          "evidence_class",
+          "evidence_status",
+          "source",
+          "source_id",
+          "pmid",
+          "doi",
+          "curation_status",
+          "curator_notes",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "association_id",
+              null
+            ]
+          ],
+          "uq_dla_natural": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "locus_id",
+              null
+            ]
+          ],
+          "idx_dla_locus": [
+            [
+              "locus_id",
+              null
+            ]
+          ]
+        }
+      },
+      "disease_variant_association": {
+        "columns": [
+          "association_id",
+          "disease_id",
+          "variant_id",
+          "mapping_method",
+          "evidence_class",
+          "source",
+          "source_id",
+          "curation_status",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "association_id",
+              null
+            ]
+          ],
+          "uq_dva_natural": [
+            [
+              "disease_id",
+              null
+            ],
+            [
+              "variant_id",
+              null
+            ]
+          ],
+          "idx_dva_variant": [
+            [
+              "variant_id",
+              null
+            ]
+          ]
+        }
+      },
+      "drug": {
+        "columns": [
+          "drug_id",
+          "preferred_name",
+          "normalized_name",
+          "standard_inchikey",
+          "pubchem_cid",
+          "drugbank_id",
+          "chembl_id",
+          "chembl_id_alternative",
+          "unii",
+          "drugbank_salt_id",
+          "parent_drugbank_id",
+          "drug_entity_type",
+          "identity_basis",
+          "identifier_curation_status",
+          "opentargets_drug_ids",
+          "opentargets_name",
+          "opentargets_drug_type",
+          "opentargets_parent_id",
+          "maximum_clinical_stage",
+          "identity_refinement_status",
+          "identity_refinement_notes",
+          "source",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "drug_id",
+              null
+            ]
+          ],
+          "idx_drug_name": [
+            [
+              "preferred_name",
+              191
+            ]
+          ],
+          "idx_drug_chembl": [
+            [
+              "chembl_id",
+              null
+            ]
+          ],
+          "idx_drug_drugbank": [
+            [
+              "drugbank_id",
+              null
+            ]
+          ],
+          "idx_drug_pubchem": [
+            [
+              "pubchem_cid",
+              null
+            ]
+          ],
+          "idx_drug_inchikey": [
+            [
+              "standard_inchikey",
+              null
+            ]
+          ]
+        }
+      },
+      "drug_clinical_report_association": {
+        "columns": [
+          "association_id",
+          "drug_id",
+          "clinical_report_id",
+          "drug_name",
+          "source_drug_id",
+          "source_drug_name",
+          "match_method",
+          "identity_resolution_status",
+          "identity_resolution_notes",
+          "original_drug_id",
+          "original_drug_name",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "association_id",
+              null
+            ]
+          ],
+          "uq_drcr_natural": [
+            [
+              "drug_id",
+              null
+            ],
+            [
+              "clinical_report_id",
+              null
+            ]
+          ],
+          "idx_drcr_report": [
+            [
+              "clinical_report_id",
+              null
+            ]
+          ],
+          "idx_drcr_status": [
+            [
+              "identity_resolution_status",
+              null
+            ]
+          ]
+        }
+      },
+      "drug_clinical_trial_association": {
+        "columns": [
+          "association_id",
+          "drug_id",
+          "clinical_trial_id",
+          "drug_name",
+          "identity_resolution_status",
+          "identity_resolution_notes",
+          "original_drug_id",
+          "original_drug_name",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "association_id",
+              null
+            ]
+          ],
+          "uq_drct_natural": [
+            [
+              "drug_id",
+              null
+            ],
+            [
+              "clinical_trial_id",
+              null
+            ]
+          ],
+          "idx_drct_trial": [
+            [
+              "clinical_trial_id",
+              null
+            ]
+          ],
+          "idx_drct_status": [
+            [
+              "identity_resolution_status",
+              null
+            ]
+          ]
+        }
+      },
+      "drug_form_relationship": {
+        "columns": [
+          "drug_form_relationship_id",
+          "child_drug_id",
+          "parent_drug_id",
+          "relationship_type",
+          "child_chembl_id",
+          "parent_chembl_id",
+          "evidence_basis",
+          "source",
+          "source_id",
+          "curation_status",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "drug_form_relationship_id",
+              null
+            ]
+          ],
+          "uq_dfr_natural": [
+            [
+              "child_drug_id",
+              null
+            ],
+            [
+              "parent_drug_id",
+              null
+            ]
+          ],
+          "idx_dfr_parent": [
+            [
+              "parent_drug_id",
+              null
+            ]
+          ]
+        }
+      },
+      "drug_target_association": {
+        "columns": [
+          "drug_target_association_id",
+          "drug_id",
+          "hgnc_id",
+          "gene_symbol",
+          "ensembl_gene_id",
+          "mechanism_of_action",
+          "action_type",
+          "target_name",
+          "target_type",
+          "source",
+          "source_id",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "drug_target_association_id",
+              null
+            ]
+          ],
+          "idx_dta_drug": [
+            [
+              "drug_id",
+              null
+            ]
+          ],
+          "idx_dta_gene": [
+            [
+              "hgnc_id",
+              null
+            ]
+          ],
+          "idx_dta_action": [
+            [
+              "action_type",
+              null
+            ]
+          ]
+        }
+      },
+      "entity_external_link": {
+        "columns": [
+          "link_id",
+          "entity_type",
+          "entity_id",
+          "resource_name",
+          "external_id",
+          "url",
+          "display_label",
+          "display_order",
+          "source"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "link_id",
+              null
+            ]
+          ],
+          "uq_entity_resource_url": [
+            [
+              "entity_type",
+              null
+            ],
+            [
+              "entity_id",
+              null
+            ],
+            [
+              "resource_name",
+              null
+            ],
+            [
+              "url",
+              255
+            ]
+          ],
+          "idx_external_entity": [
+            [
+              "entity_type",
+              null
+            ],
+            [
+              "entity_id",
+              null
+            ]
+          ],
+          "idx_external_resource": [
+            [
+              "resource_name",
+              null
+            ]
+          ]
+        }
+      },
+      "gene": {
+        "columns": [
+          "hgnc_id",
+          "gene_symbol",
+          "gene_name",
+          "ensembl_gene_id",
+          "ncbi_gene_id",
+          "chromosome",
+          "chromosome_location",
+          "gene_entity_type",
+          "hgnc_status",
+          "source",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "hgnc_id",
+              null
+            ]
+          ],
+          "uq_gene_symbol": [
+            [
+              "gene_symbol",
+              null
+            ]
+          ],
+          "idx_gene_ensembl": [
+            [
+              "ensembl_gene_id",
+              null
+            ]
+          ],
+          "idx_gene_ncbi": [
+            [
+              "ncbi_gene_id",
+              null
+            ]
+          ]
+        }
+      },
+      "gene_category": {
+        "columns": [
+          "gene_category_id",
+          "category_name",
+          "entity_scope",
+          "display_order"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "gene_category_id",
+              null
+            ]
+          ],
+          "category_name": [
+            [
+              "category_name",
+              null
+            ]
+          ]
+        }
+      },
+      "gene_category_membership": {
+        "columns": [
+          "hgnc_id",
+          "gene_category_id",
+          "membership_basis",
+          "source"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "hgnc_id",
+              null
+            ],
+            [
+              "gene_category_id",
+              null
+            ]
+          ],
+          "idx_gcm_category": [
+            [
+              "gene_category_id",
+              null
+            ],
+            [
+              "hgnc_id",
+              null
+            ]
+          ]
+        }
+      },
+      "gene_variant_association": {
+        "columns": [
+          "association_id",
+          "hgnc_id",
+          "variant_id",
+          "gene_symbol",
+          "relationship_type",
+          "source",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "association_id",
+              null
+            ]
+          ],
+          "uq_gva_natural": [
+            [
+              "hgnc_id",
+              null
+            ],
+            [
+              "variant_id",
+              null
+            ]
+          ],
+          "idx_gva_variant": [
+            [
+              "variant_id",
+              null
+            ]
+          ]
+        }
+      },
+      "locus": {
+        "columns": [
+          "locus_id",
+          "locus_label",
+          "chromosome_location",
+          "related_genes",
+          "locus_type",
+          "source",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "locus_id",
+              null
+            ]
+          ],
+          "idx_locus_label": [
+            [
+              "locus_label",
+              191
+            ]
+          ]
+        }
+      },
+      "oddb_import_log": {
+        "columns": [
+          "import_log_id",
+          "release_key",
+          "table_name",
+          "source_file",
+          "source_rows",
+          "inserted_rows",
+          "file_sha256",
+          "started_at",
+          "finished_at",
+          "status",
+          "message"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "import_log_id",
+              null
+            ]
+          ],
+          "idx_import_release": [
+            [
+              "release_key",
+              null
+            ]
+          ]
+        }
+      },
+      "oddb_release": {
+        "columns": [
+          "release_key",
+          "release_type",
+          "release_path",
+          "manifest_filename",
+          "manifest_sha256",
+          "status",
+          "loaded_at",
+          "notes"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "release_key",
+              null
+            ]
+          ]
+        }
+      },
+      "oddb_validation_result": {
+        "columns": [
+          "validation_id",
+          "check_name",
+          "severity",
+          "problem_count",
+          "details",
+          "validated_at"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "validation_id",
+              null
+            ]
+          ],
+          "idx_validation_problem": [
+            [
+              "problem_count",
+              null
+            ]
+          ]
+        }
+      },
+      "variant": {
+        "columns": [
+          "variant_id",
+          "clinvar_variation_id",
+          "variant_name",
+          "variant_type",
+          "clinical_significance",
+          "review_status",
+          "chromosome",
+          "position_start",
+          "position_stop",
+          "reference_allele",
+          "alternate_allele",
+          "hgvs",
+          "rs_id",
+          "assembly",
+          "source",
+          "source_release",
+          "source_file",
+          "source_record_json"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "variant_id",
+              null
+            ]
+          ],
+          "uq_variant_clinvar": [
+            [
+              "clinvar_variation_id",
+              null
+            ]
+          ],
+          "idx_variant_rs": [
+            [
+              "rs_id",
+              null
+            ]
+          ],
+          "idx_variant_chr_pos": [
+            [
+              "chromosome",
+              null
+            ],
+            [
+              "position_start",
+              null
+            ]
+          ]
+        }
+      },
+      "variant_consequence": {
+        "columns": [
+          "variant_consequence_id",
+          "variant_id",
+          "consequence_id",
+          "hgnc_id",
+          "transcript_id",
+          "source",
+          "source_value"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "variant_consequence_id",
+              null
+            ]
+          ],
+          "uq_variant_consequence_gene": [
+            [
+              "variant_id",
+              null
+            ],
+            [
+              "consequence_id",
+              null
+            ],
+            [
+              "hgnc_id",
+              null
+            ]
+          ],
+          "idx_vc_consequence": [
+            [
+              "consequence_id",
+              null
+            ],
+            [
+              "variant_id",
+              null
+            ]
+          ],
+          "idx_vc_gene": [
+            [
+              "hgnc_id",
+              null
+            ]
+          ]
+        }
+      },
+      "variant_consequence_category": {
+        "columns": [
+          "consequence_id",
+          "consequence_term",
+          "display_order"
+        ],
+        "indexes": {
+          "PRIMARY": [
+            [
+              "consequence_id",
+              null
+            ]
+          ],
+          "consequence_term": [
+            [
+              "consequence_term",
+              null
+            ]
+          ]
+        }
+      }
+    },
+    "foreign_keys": [
+      {
+        "name": "fk_trial_report",
+        "child": "clinical_trial",
+        "local": [
+          "clinical_report_id"
+        ],
+        "parent": "clinical_report",
+        "remote": [
+          "clinical_report_id"
+        ]
+      },
+      {
+        "name": "fk_da_disease",
+        "child": "disease_alias",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_dcm_category",
+        "child": "disease_category_membership",
+        "local": [
+          "category_id"
+        ],
+        "parent": "disease_category",
+        "remote": [
+          "category_id"
+        ]
+      },
+      {
+        "name": "fk_dcm_disease",
+        "child": "disease_category_membership",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_dcr_disease",
+        "child": "disease_clinical_report_association",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_dcr_report",
+        "child": "disease_clinical_report_association",
+        "local": [
+          "clinical_report_id"
+        ],
+        "parent": "clinical_report",
+        "remote": [
+          "clinical_report_id"
+        ]
+      },
+      {
+        "name": "fk_dct_disease",
+        "child": "disease_clinical_trial_association",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_dct_trial",
+        "child": "disease_clinical_trial_association",
+        "local": [
+          "clinical_trial_id"
+        ],
+        "parent": "clinical_trial",
+        "remote": [
+          "clinical_trial_id"
+        ]
+      },
+      {
+        "name": "fk_ddac_disease",
+        "child": "disease_drug_aggregate_context",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_ddac_drug",
+        "child": "disease_drug_aggregate_context",
+        "local": [
+          "drug_id"
+        ],
+        "parent": "drug",
+        "remote": [
+          "drug_id"
+        ]
+      },
+      {
+        "name": "fk_ddacd_disease",
+        "child": "disease_drug_aggregate_context_demoted",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_ddacd_drug",
+        "child": "disease_drug_aggregate_context_demoted",
+        "local": [
+          "drug_id"
+        ],
+        "parent": "drug",
+        "remote": [
+          "drug_id"
+        ]
+      },
+      {
+        "name": "fk_dda_disease",
+        "child": "disease_drug_association",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_dda_drug",
+        "child": "disease_drug_association",
+        "local": [
+          "drug_id"
+        ],
+        "parent": "drug",
+        "remote": [
+          "drug_id"
+        ]
+      },
+      {
+        "name": "fk_dddwto_dda",
+        "child": "disease_drug_direct_without_target_overlap",
+        "local": [
+          "disease_drug_association_id"
+        ],
+        "parent": "disease_drug_association",
+        "remote": [
+          "disease_drug_association_id"
+        ]
+      },
+      {
+        "name": "fk_dddwto_disease",
+        "child": "disease_drug_direct_without_target_overlap",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_dddwto_drug",
+        "child": "disease_drug_direct_without_target_overlap",
+        "local": [
+          "drug_id"
+        ],
+        "parent": "drug",
+        "remote": [
+          "drug_id"
+        ]
+      },
+      {
+        "name": "fk_dde_dda",
+        "child": "disease_drug_evidence",
+        "local": [
+          "disease_drug_association_id"
+        ],
+        "parent": "disease_drug_association",
+        "remote": [
+          "disease_drug_association_id"
+        ]
+      },
+      {
+        "name": "fk_dde_disease",
+        "child": "disease_drug_evidence",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_dde_drug",
+        "child": "disease_drug_evidence",
+        "local": [
+          "drug_id"
+        ],
+        "parent": "drug",
+        "remote": [
+          "drug_id"
+        ]
+      },
+      {
+        "name": "fk_dde_report",
+        "child": "disease_drug_evidence",
+        "local": [
+          "clinical_report_id"
+        ],
+        "parent": "clinical_report",
+        "remote": [
+          "clinical_report_id"
+        ]
+      },
+      {
+        "name": "fk_dde_trial",
+        "child": "disease_drug_evidence",
+        "local": [
+          "clinical_trial_id"
+        ],
+        "parent": "clinical_trial",
+        "remote": [
+          "clinical_trial_id"
+        ]
+      },
+      {
+        "name": "fk_ddto_disease",
+        "child": "disease_drug_target_overlap",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_ddto_drug",
+        "child": "disease_drug_target_overlap",
+        "local": [
+          "drug_id"
+        ],
+        "parent": "drug",
+        "remote": [
+          "drug_id"
+        ]
+      },
+      {
+        "name": "fk_ddto_gene",
+        "child": "disease_drug_target_overlap",
+        "local": [
+          "hgnc_id"
+        ],
+        "parent": "gene",
+        "remote": [
+          "hgnc_id"
+        ]
+      },
+      {
+        "name": "fk_ddtos_disease",
+        "child": "disease_drug_target_overlap_summary",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_ddtos_drug",
+        "child": "disease_drug_target_overlap_summary",
+        "local": [
+          "drug_id"
+        ],
+        "parent": "drug",
+        "remote": [
+          "drug_id"
+        ]
+      },
+      {
+        "name": "fk_dga_disease",
+        "child": "disease_gene_association",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_dga_gene",
+        "child": "disease_gene_association",
+        "local": [
+          "hgnc_id"
+        ],
+        "parent": "gene",
+        "remote": [
+          "hgnc_id"
+        ]
+      },
+      {
+        "name": "fk_dgar_disease",
+        "child": "disease_gene_association_reclassified",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_dla_disease",
+        "child": "disease_locus_association",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_dla_locus",
+        "child": "disease_locus_association",
+        "local": [
+          "locus_id"
+        ],
+        "parent": "locus",
+        "remote": [
+          "locus_id"
+        ]
+      },
+      {
+        "name": "fk_dva_disease",
+        "child": "disease_variant_association",
+        "local": [
+          "disease_id"
+        ],
+        "parent": "disease",
+        "remote": [
+          "disease_id"
+        ]
+      },
+      {
+        "name": "fk_dva_variant",
+        "child": "disease_variant_association",
+        "local": [
+          "variant_id"
+        ],
+        "parent": "variant",
+        "remote": [
+          "variant_id"
+        ]
+      },
+      {
+        "name": "fk_drcr_drug",
+        "child": "drug_clinical_report_association",
+        "local": [
+          "drug_id"
+        ],
+        "parent": "drug",
+        "remote": [
+          "drug_id"
+        ]
+      },
+      {
+        "name": "fk_drcr_report",
+        "child": "drug_clinical_report_association",
+        "local": [
+          "clinical_report_id"
+        ],
+        "parent": "clinical_report",
+        "remote": [
+          "clinical_report_id"
+        ]
+      },
+      {
+        "name": "fk_drct_drug",
+        "child": "drug_clinical_trial_association",
+        "local": [
+          "drug_id"
+        ],
+        "parent": "drug",
+        "remote": [
+          "drug_id"
+        ]
+      },
+      {
+        "name": "fk_drct_trial",
+        "child": "drug_clinical_trial_association",
+        "local": [
+          "clinical_trial_id"
+        ],
+        "parent": "clinical_trial",
+        "remote": [
+          "clinical_trial_id"
+        ]
+      },
+      {
+        "name": "fk_dfr_child",
+        "child": "drug_form_relationship",
+        "local": [
+          "child_drug_id"
+        ],
+        "parent": "drug",
+        "remote": [
+          "drug_id"
+        ]
+      },
+      {
+        "name": "fk_dfr_parent",
+        "child": "drug_form_relationship",
+        "local": [
+          "parent_drug_id"
+        ],
+        "parent": "drug",
+        "remote": [
+          "drug_id"
+        ]
+      },
+      {
+        "name": "fk_dta_drug",
+        "child": "drug_target_association",
+        "local": [
+          "drug_id"
+        ],
+        "parent": "drug",
+        "remote": [
+          "drug_id"
+        ]
+      },
+      {
+        "name": "fk_dta_gene",
+        "child": "drug_target_association",
+        "local": [
+          "hgnc_id"
+        ],
+        "parent": "gene",
+        "remote": [
+          "hgnc_id"
+        ]
+      },
+      {
+        "name": "fk_gcm_category",
+        "child": "gene_category_membership",
+        "local": [
+          "gene_category_id"
+        ],
+        "parent": "gene_category",
+        "remote": [
+          "gene_category_id"
+        ]
+      },
+      {
+        "name": "fk_gcm_gene",
+        "child": "gene_category_membership",
+        "local": [
+          "hgnc_id"
+        ],
+        "parent": "gene",
+        "remote": [
+          "hgnc_id"
+        ]
+      },
+      {
+        "name": "fk_gva_gene",
+        "child": "gene_variant_association",
+        "local": [
+          "hgnc_id"
+        ],
+        "parent": "gene",
+        "remote": [
+          "hgnc_id"
+        ]
+      },
+      {
+        "name": "fk_gva_variant",
+        "child": "gene_variant_association",
+        "local": [
+          "variant_id"
+        ],
+        "parent": "variant",
+        "remote": [
+          "variant_id"
+        ]
+      },
+      {
+        "name": "fk_import_release",
+        "child": "oddb_import_log",
+        "local": [
+          "release_key"
+        ],
+        "parent": "oddb_release",
+        "remote": [
+          "release_key"
+        ]
+      },
+      {
+        "name": "fk_vc_category",
+        "child": "variant_consequence",
+        "local": [
+          "consequence_id"
+        ],
+        "parent": "variant_consequence_category",
+        "remote": [
+          "consequence_id"
+        ]
+      },
+      {
+        "name": "fk_vc_gene",
+        "child": "variant_consequence",
+        "local": [
+          "hgnc_id"
+        ],
+        "parent": "gene",
+        "remote": [
+          "hgnc_id"
+        ]
+      },
+      {
+        "name": "fk_vc_variant",
+        "child": "variant_consequence",
+        "local": [
+          "variant_id"
+        ],
+        "parent": "variant",
+        "remote": [
+          "variant_id"
+        ]
+      }
+    ],
+    "views": [
+      "vw_clinical_trial_disease_drug",
+      "vw_direct_therapeutic_evidence",
+      "vw_drug_forms",
+      "vw_target_overlap_discovery"
+    ]
+  },
+  "expected_counts": {
+    "clinical_report": 1291,
+    "clinical_trial": 1164,
+    "disease": 162,
+    "disease_alias": 3,
+    "disease_category": 18,
+    "disease_category_membership": 277,
+    "disease_clinical_report_association": 1370,
+    "disease_clinical_trial_association": 1235,
+    "disease_drug_aggregate_context": 157,
+    "disease_drug_aggregate_context_demoted": 22,
+    "disease_drug_association": 344,
+    "disease_drug_direct_without_target_overlap": 317,
+    "disease_drug_evidence": 1142,
+    "disease_drug_target_overlap": 1322,
+    "disease_drug_target_overlap_summary": 1203,
+    "disease_gene_association": 1631,
+    "disease_gene_association_reclassified": 1,
+    "disease_locus_association": 2,
+    "disease_variant_association": 106838,
+    "drug": 805,
+    "drug_clinical_report_association": 1575,
+    "drug_clinical_trial_association": 1448,
+    "drug_form_relationship": 99,
+    "drug_target_association": 1009,
+    "entity_external_link": 11823,
+    "gene": 1249,
+    "gene_category": 8,
+    "gene_category_membership": 1249,
+    "gene_variant_association": 707315,
+    "locus": 2,
+    "oddb_import_log": 25,
+    "oddb_release": 2,
+    "oddb_validation_result": 52,
+    "variant": 707315,
+    "variant_consequence": 1400,
+    "variant_consequence_category": 21
+  },
+  "release_files": 33,
+  "snapshot_exported_at": null
+}

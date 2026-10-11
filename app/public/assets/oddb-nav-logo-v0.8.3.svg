@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="216" height="64" viewBox="0 0 216 64" role="img" aria-labelledby="oddbLogoTitle oddbLogoDescription">
+ <title id="oddbLogoTitle">ODDB</title>
+ <desc id="oddbLogoDescription">Ocular Disease Database. An eye with connected nodes representing ocular research data.</desc>
+ <path d="M4 32C12 19 22 13 33 13S54 19 62 32C54 45 44 51 33 51S12 45 4 32Z" fill="#eaf7fa" stroke="#10374c" stroke-width="3.5" stroke-linejoin="round"/>
+ <path d="M5 32C13 20 23 14 33 14S53 20 61 32" fill="none" stroke="#087c91" stroke-width="3.5" stroke-linecap="round"/>
+ <circle cx="33" cy="32" r="13" fill="#087c91"/>
+ <circle cx="33" cy="32" r="8.5" fill="#10374c"/>
+ <path d="M27 27L38 28L32 38Z" fill="none" stroke="#b8f1f4" stroke-width="1.6" stroke-linejoin="round"/>
+ <g fill="#ffffff"><circle cx="27" cy="27" r="2.5"/><circle cx="38" cy="28" r="2.5"/><circle cx="32" cy="38" r="2.5"/></g>
+ <text x="76" y="45" fill="#10374c" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="40" letter-spacing="-1.5">ODDB</text>
+</svg>

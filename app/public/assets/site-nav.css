@@ -1,0 +1,192 @@
+:root{
+ --oddb-nav-bg:#ffffff;
+ --oddb-nav-text:#334155;
+ --oddb-nav-strong:#111827;
+ --oddb-nav-blue:#0d6efd;
+ --oddb-nav-border:#e5eaf1;
+ --oddb-nav-hover:#f4f7fb;
+ --oddb-nav-height:72px;
+}
+.oddb-site-nav{
+ position:sticky;
+ top:0;
+ z-index:1200;
+ width:100%;
+ background:rgba(255,255,255,.97);
+ border-bottom:1px solid var(--oddb-nav-border);
+ backdrop-filter:saturate(150%) blur(10px);
+ -webkit-backdrop-filter:saturate(150%) blur(10px);
+}
+.oddb-nav-inner{
+ width:min(1170px,calc(100% - 40px));
+ min-height:var(--oddb-nav-height);
+ margin:0 auto;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:1.25rem;
+}
+.oddb-nav-brand{
+ flex:0 0 auto;
+ color:var(--oddb-nav-strong);
+ text-decoration:none;
+ font-size:1.02rem;
+ font-weight:800;
+ letter-spacing:.01em;
+ white-space:nowrap;
+}
+.oddb-nav-brand strong{
+ color:var(--oddb-nav-blue);
+ font-weight:800;
+}
+.oddb-nav-menu{
+ display:flex;
+ align-items:center;
+ justify-content:flex-end;
+ gap:.15rem;
+ min-width:0;
+}
+.oddb-nav-link{
+ position:relative;
+ display:inline-flex;
+ align-items:center;
+ min-height:40px;
+ padding:.45rem .66rem;
+ border-radius:9px;
+ color:var(--oddb-nav-text);
+ text-decoration:none;
+ font-size:.82rem;
+ font-weight:500;
+ white-space:nowrap;
+ transition:background .15s ease,color .15s ease;
+}
+.oddb-nav-link:hover{
+ color:var(--oddb-nav-strong);
+ background:var(--oddb-nav-hover);
+}
+.oddb-nav-link.active{
+ color:var(--oddb-nav-strong);
+ font-weight:700;
+}
+.oddb-nav-link.active::after{
+ content:"";
+ position:absolute;
+ left:.68rem;
+ right:.68rem;
+ bottom:2px;
+ height:2px;
+ border-radius:999px;
+ background:var(--oddb-nav-blue);
+}
+.oddb-nav-toggle{
+ display:none;
+ width:42px;
+ height:42px;
+ align-items:center;
+ justify-content:center;
+ flex-direction:column;
+ gap:4px;
+ border:1px solid #dbe3ef;
+ background:#fff;
+ border-radius:10px;
+ cursor:pointer;
+}
+.oddb-nav-toggle span{
+ display:block;
+ width:18px;
+ height:2px;
+ border-radius:3px;
+ background:#334155;
+ transition:transform .18s ease,opacity .18s ease;
+}
+.oddb-nav-toggle[aria-expanded="true"] span:nth-child(1){
+ transform:translateY(6px) rotate(45deg);
+}
+.oddb-nav-toggle[aria-expanded="true"] span:nth-child(2){
+ opacity:0;
+}
+.oddb-nav-toggle[aria-expanded="true"] span:nth-child(3){
+ transform:translateY(-6px) rotate(-45deg);
+}
+
+/* Explore keeps its application-wide search, but on a dedicated row rather
+   than replacing the global site navigation. */
+.oddb-explore-search-strip{
+ background:#fff;
+ border-bottom:1px solid var(--oddb-nav-border);
+}
+.oddb-explore-search-inner{
+ width:min(1170px,calc(100% - 40px));
+ margin:0 auto;
+ padding:.65rem 0;
+ display:flex;
+ justify-content:flex-end;
+}
+.oddb-explore-search-inner input{
+ width:min(100%,520px)!important;
+ min-height:38px;
+ border:1px solid #dbe3ef;
+ border-radius:9px;
+ padding:.52rem .75rem;
+ background:#fff;
+ color:#172033;
+ font:inherit;
+ font-size:.8rem;
+ outline:none;
+}
+.oddb-explore-search-inner input:focus{
+ border-color:#8bb5ff;
+ box-shadow:0 0 0 .18rem rgba(13,110,253,.09);
+}
+
+@media(max-width:1120px){
+ .oddb-nav-inner{width:min(100% - 30px,1170px)}
+ .oddb-nav-link{padding:.45rem .5rem;font-size:.78rem}
+}
+@media(max-width:940px){
+ .oddb-nav-inner{
+  min-height:64px;
+  position:relative;
+ }
+ .oddb-nav-toggle{display:flex}
+ .oddb-nav-menu{
+  position:absolute;
+  left:0;
+  right:0;
+  top:calc(100% + 1px);
+  display:none;
+  flex-direction:column;
+  align-items:stretch;
+  gap:.15rem;
+  padding:.6rem;
+  background:#fff;
+  border:1px solid var(--oddb-nav-border);
+  border-top:0;
+  border-radius:0 0 14px 14px;
+  box-shadow:0 16px 28px rgba(15,23,42,.10);
+ }
+ .oddb-nav-menu.open{display:flex}
+ .oddb-nav-link{
+  width:100%;
+  min-height:42px;
+  justify-content:flex-start;
+  padding:.58rem .7rem;
+ }
+ .oddb-nav-link.active::after{
+  top:8px;
+  bottom:8px;
+  left:2px;
+  right:auto;
+  width:3px;
+  height:auto;
+ }
+ .oddb-explore-search-inner{
+  width:calc(100% - 30px);
+  justify-content:stretch;
+ }
+ .oddb-explore-search-inner input{width:100%!important;max-width:none}
+}
+@media(max-width:575.98px){
+ .oddb-nav-inner{width:calc(100% - 24px)}
+ .oddb-explore-search-inner{width:calc(100% - 24px)}
+}

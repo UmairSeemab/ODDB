@@ -1,0 +1,25 @@
+/* ODDB drug comparison v0.7.9 */
+.dc-panel{background:linear-gradient(180deg,#f8fbff 0,#fff 150px)}
+.dc-intro,.dc-semantics{font-size:.8rem;line-height:1.55;color:#53647b;margin:0 0 12px}
+.dc-layout{display:grid;grid-template-columns:205px minmax(0,1fr);gap:18px}
+.dc-picker{display:flex;flex-direction:column;gap:9px;border-right:1px solid #e2e8f0;padding-right:16px}
+.dc-picker>label{font-size:.76rem;font-weight:650;color:#34465f}
+.dc-options{max-height:250px;overflow:auto;display:grid;gap:4px}
+.dc-option{display:flex;align-items:flex-start;gap:8px;padding:7px;border-radius:7px;font-size:.79rem;cursor:pointer;background:#fff;border:1px solid #e5edf5;overflow-wrap:anywhere}
+.dc-option:has(input:checked){border-color:#2563eb;background:#eff6ff}
+.dc-option input{margin-top:3px;accent-color:#2563eb}.dc-option small{display:block;color:#64748b;font-size:.68rem}
+.dc-content{min-width:0}.dc-actions,.dc-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.dc-chip{border:1px solid #bbd4ee;background:#edf5ff;color:#254b78;border-radius:20px;padding:5px 10px;font-size:.76rem;overflow-wrap:anywhere}
+.dc-status{font-size:.8rem;color:#334155;margin:8px 0}.dc-status.has-error{color:#b91c1c}
+.dc-small{font-size:.72rem;color:#64748b;line-height:1.55;margin-bottom:8px;overflow-wrap:anywhere}
+.dc-table-wrap{overflow:auto;border:1px solid #dce6f0;border-radius:9px;margin:10px 0 12px}
+.dc-table{border-collapse:collapse;width:100%;font-size:.77rem;min-width:540px}
+.dc-table th,.dc-table td{border-bottom:1px solid #e2e8f0;border-right:1px solid #edf2f7;padding:10px;text-align:left;vertical-align:top;min-width:145px;overflow-wrap:anywhere}
+.dc-table thead th{background:#eaf2fb;color:#233e61;font-weight:650}.dc-table thead small{display:block;font-weight:400;color:#53647b;margin-top:4px}
+.dc-table tbody th{background:#f8fafc;font-weight:550;min-width:160px}.dc-table tr:last-child>*{border-bottom:0}
+.dc-table .dc-section th{background:#f0f5fa;font-size:.71rem;text-transform:uppercase;letter-spacing:.04em;color:#53647b;padding:7px 10px}
+.dc-table td p{margin:3px 0;color:#53647b;line-height:1.5}.dc-table td strong{color:#263f60;font-size:.86rem}
+.dc-details details{border:1px solid #e2e8f0;border-radius:8px;margin:8px 0;padding:9px 11px;font-size:.77rem}
+.dc-details summary{font-weight:600;cursor:pointer;color:#334b68}.dc-evidence-list{padding-left:20px;max-height:340px;overflow:auto}.dc-evidence-list li{margin:9px 0;overflow-wrap:anywhere;line-height:1.5}.dc-details a{color:#1d4ed8}.dc-empty{padding:14px;color:#64748b;font-size:.8rem}
+.dc-chip:focus-visible,.dc-table-wrap:focus-visible,.dc-option:focus-within{outline:2px solid #2563eb;outline-offset:2px}
+@media(max-width:900px){.dc-layout{grid-template-columns:1fr}.dc-picker{border-right:0;border-bottom:1px solid #e2e8f0;padding:0 0 12px}.dc-options{max-height:160px;grid-template-columns:repeat(auto-fit,minmax(165px,1fr))}}

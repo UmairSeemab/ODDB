@@ -1,0 +1,220 @@
+/* ODDB visual refresh v0.8.0. Presentation only.
+ * All selectors are scoped to the opt-in page body. Scientific palettes,
+ * chart internals, Cytoscape canvases and export renderers stay untouched.
+ * No webfonts, backdrop blur, rendering engine or external assets.
+ */
+body.oddb-visual {
+ --oddb-ink: #172b40;
+ --oddb-muted: #526579;
+ --oddb-accent: #086d79;
+ --oddb-accent-deep: #075964;
+ --oddb-surface: #ffffff;
+ --oddb-border: #dce6ec;
+ --oddb-soft: #f1f7f9;
+ --oddb-shadow: 0 8px 28px rgba(23, 54, 77, .045);
+ --oddb-radius: 18px;
+ --oddb-ease: cubic-bezier(.2, .7, .3, 1);
+ margin: 0;
+ background: #f5f8fa;
+ color: var(--oddb-ink);
+ font-family: "Inter", "Avenir Next", system-ui, -apple-system, "Segoe UI", sans-serif;
+ -webkit-font-smoothing: antialiased;
+}
+
+/* Shared navigation. Its markup, breakpoints and toggle behavior are retained. */
+body.oddb-visual .oddb-site-nav {
+ background: #fff;
+ border-bottom-color: var(--oddb-border);
+ box-shadow: 0 2px 14px rgba(23, 54, 77, .025);
+ backdrop-filter: none;
+ -webkit-backdrop-filter: none;
+}
+body.oddb-visual .oddb-nav-brand {color: var(--oddb-ink); letter-spacing: -.03em; font-size: 1.1rem;}
+body.oddb-visual .oddb-nav-brand strong {color: var(--oddb-accent);}
+body.oddb-visual .oddb-nav-link {color: #475c6c; font-weight: 550; border-radius: 8px;}
+body.oddb-visual .oddb-nav-link:hover {background: var(--oddb-soft); color: var(--oddb-accent-deep);}
+body.oddb-visual .oddb-nav-link.active {color: var(--oddb-accent-deep);}
+body.oddb-visual .oddb-nav-link.active::after {background: var(--oddb-accent);}
+body.oddb-visual .oddb-nav-toggle {border-color: var(--oddb-border);}
+
+/* Only UI controls, never the rendered scientific content. */
+body.oddb-visual :where(.btn, .form-control, .form-select, .oddb-nav-link,
+ .wb-tool-button, .wb-panel-close, .filter-chip, .model-chip, .category-card,
+ .entity-search-filter, .taxonomy-link) {
+ transition: border-color 160ms var(--oddb-ease), background-color 160ms var(--oddb-ease),
+  color 160ms var(--oddb-ease), box-shadow 160ms var(--oddb-ease);
+}
+body.oddb-visual .btn {border-radius: 9px; font-weight: 600;}
+body.oddb-visual .btn-primary {
+ --bs-btn-bg: var(--oddb-accent);
+ --bs-btn-border-color: var(--oddb-accent);
+ --bs-btn-hover-bg: var(--oddb-accent-deep);
+ --bs-btn-hover-border-color: var(--oddb-accent-deep);
+ --bs-btn-active-bg: #064b55;
+ --bs-btn-active-border-color: #064b55;
+ --bs-btn-disabled-bg: var(--oddb-accent);
+ --bs-btn-disabled-border-color: var(--oddb-accent);
+ --bs-btn-color: #fff;
+ --bs-btn-hover-color: #fff;
+ --bs-btn-active-color: #fff;
+}
+body.oddb-visual .btn-outline-secondary {
+ --bs-btn-color: #425b6b;
+ --bs-btn-border-color: #b8cbd5;
+ --bs-btn-hover-bg: #edf4f6;
+ --bs-btn-hover-border-color: #91b5c1;
+ --bs-btn-hover-color: #163e50;
+ --bs-btn-active-bg: #e2eef2;
+ --bs-btn-active-color: #163e50;
+}
+body.oddb-visual .form-control,
+body.oddb-visual .form-select {border-color: #c8d7e0; border-radius: 9px; color: var(--oddb-ink);}
+body.oddb-visual .form-control::placeholder {color: #687d8e; opacity: 1;}
+body.oddb-visual .form-control:focus,
+body.oddb-visual .form-select:focus {border-color: #368a97; box-shadow: 0 0 0 3px rgba(8, 109, 121, .12);}
+body.oddb-visual :where(a, button, input, select, textarea, summary):focus-visible {
+ outline: 2px solid #086d79;
+ outline-offset: 3px;
+}
+body.oddb-visual .intro-skip:focus-visible {outline: 2px solid #086d79; outline-offset: 3px;}
+
+/* Page shells retain their existing dimensions and Bootstrap grids. */
+body.oddb-visual :where(.page-hero, .contact-hero, .release-hero, .docs-hero) {
+ background: radial-gradient(ellipse at 90% 10%, #dfeef2 0%, transparent 45%),
+  linear-gradient(120deg, #ffffff, #f2f8fa);
+ border-bottom: 1px solid var(--oddb-border);
+}
+body.oddb-visual :where(.page-hero, .contact-hero, .release-hero, .docs-hero) h1 {
+ color: var(--oddb-ink); letter-spacing: -.035em; line-height: 1.12;
+}
+body.oddb-visual .eyebrow {color: var(--oddb-accent); letter-spacing: .14em;}
+body.oddb-visual :where(.section-heading, .section-heading-row, .contact-side) h2 {letter-spacing: -.025em;}
+body.oddb-visual :where(.overview-value, .metric-value, .stat-number, .coverage-number, .entity-count) {
+ font-variant-numeric: tabular-nums;
+}
+body.oddb-visual :where(.overview-card, .metric-card, .viz-card, .doc-section,
+ .contact-card, .info-card, .dataset-card, .toc-card, .release-status-card, .hero-callout) {
+ border-color: var(--oddb-border);
+ box-shadow: var(--oddb-shadow);
+}
+body.oddb-visual :where(.contact-card, .info-card, .viz-card, .doc-section) {border-radius: var(--oddb-radius);}
+body.oddb-visual :where(.overview-card, .metric-card) {background: linear-gradient(145deg, #fff, #f9fcfd);}
+body.oddb-visual .overview-value,
+body.oddb-visual .metric-value {color: var(--oddb-ink);}
+body.oddb-visual .dataset-card {border-top: 2px solid #c1dde3;}
+body.oddb-visual .toc-card {background: #fcfefe;}
+body.oddb-visual .toc-card a:hover,
+body.oddb-visual .toc-card a.active {background: #eaf4f6; color: var(--oddb-accent-deep);}
+body.oddb-visual .contact-card {border-top: 2px solid #a9d2d9;}
+body.oddb-visual .contact-form .form-label {color: var(--oddb-ink);}
+body.oddb-visual .captcha-box {border-color: var(--oddb-border); background: #f2f7f9;}
+body.oddb-visual .site-footer {background: #fff; border-top-color: var(--oddb-border);}
+body.oddb-visual .site-footer strong {color: var(--oddb-ink);}
+
+/* Explore: static shell polish only. Do not transform chart ancestors or
+ * change #cy dimensions, backgrounds, canvas styles or graph settings. */
+body.oddb-visual .browse-header {border-color: var(--oddb-border) !important; box-shadow: var(--oddb-shadow) !important;}
+body.oddb-visual .entity-search-heading {color: var(--oddb-ink); letter-spacing: -.035em;}
+body.oddb-visual .app-card {border-color: var(--oddb-border) !important; box-shadow: var(--oddb-shadow) !important;}
+body.oddb-visual .app-card > .card-header {border-bottom-color: var(--oddb-border);}
+body.oddb-visual .wb-tools {background: #f2f7f9; border-bottom-color: var(--oddb-border);}
+body.oddb-visual .wb-tool-button {border-color: #ccdae2; background: #fff;}
+body.oddb-visual .wb-tool-button:hover {border-color: #86b6c2; background: #f7fcfd;}
+body.oddb-visual .wb-panel {background: #f7fafc; border-bottom-color: var(--oddb-border);}
+body.oddb-visual .search-results,
+body.oddb-visual .landing-search-results {border-color: #c5d9e2; box-shadow: 0 16px 40px rgba(23, 54, 77, .12);}
+body.oddb-visual .category-card:not(.active):hover {background: #f2f8fa; border-color: #a8cbd5;}
+body.oddb-visual .disease-item:not(.active):hover {background: #f4f8fa;}
+
+/* Landing hero. Background is contained in a dedicated, pointer-free layer.
+ * overflow is clipped on that layer, not the search/dropdown parent. */
+body.oddb-home .hero {
+ position: relative;
+ background: radial-gradient(ellipse at 85% 30%, #e7f3f5, transparent 60%),
+  linear-gradient(135deg, #ffffff 12%, #f2f8fa 65%, #edf2fa);
+}
+body.oddb-home .hero > .container {position: relative; z-index: 1;}
+.oddb-retinal-scene {position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;}
+.oddb-retinal-position {
+ position: absolute; width: min(1040px, 85vw); right: -130px;
+ top: 50%; transform: translateY(-50%);
+}
+.oddb-retinal-parallax {transform: translate(var(--retinal-x, 0px), var(--retinal-y, 0px));}
+.oddb-retinal-art {display: block; width: 100%; height: auto;}
+.oddb-retinal-glow {position: absolute; inset: 0; opacity: .24; background: radial-gradient(ellipse at 75% 42%, #b7dfdf, transparent 55%);}
+.oddb-retinal-scene::after {content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #fff 2%, rgba(255,255,255,.94) 23%, rgba(255,255,255,.25) 58%, transparent 80%);}
+body.oddb-home .hero h1 {color: #153044; letter-spacing: -.045em; line-height: 1.08;}
+body.oddb-home .hero .lead {line-height: 1.65; color: #526579 !important;}
+body.oddb-home .hero-panel {
+ background: rgba(255, 255, 255, .84);
+ border-color: #c7dce4;
+ box-shadow: 0 22px 60px rgba(36, 82, 108, .08), 0 1px 0 #fff inset;
+}
+body.oddb-home .mini-network {border-color: #dce8ee; background: linear-gradient(145deg, rgba(246,251,252,.90), rgba(241,245,252,.85));}
+body.oddb-home .hero .input-group {border-radius: 12px; box-shadow: 0 8px 24px rgba(23, 54, 77, .05) !important;}
+body.oddb-home .hero .input-group-text {border-radius: 12px 0 0 12px; border-color: #c8d7e0; color: var(--oddb-accent);}
+body.oddb-home .hero .form-control {border-radius: 0 12px 12px 0;}
+body.oddb-home .stat-number {color: var(--oddb-ink); font-size: 1.85rem;}
+body.oddb-home .stats-band {background: #fff; border-color: var(--oddb-border) !important;}
+body.oddb-home .stat-card {border-left: 1px solid #e7eef2;}
+body.oddb-home .explore-card {border-color: var(--oddb-border); box-shadow: 0 3px 12px rgba(23, 54, 77, .025);}
+body.oddb-home .explore-card:hover {border-color: #97becb; box-shadow: 0 10px 28px rgba(23, 54, 77, .07); transform: translateY(-2px);}
+body.oddb-home .explore-card .arrow {color: #5c8b99;}
+body.oddb-home .taxonomy-link {border-color: #d5e3e9;}
+body.oddb-home .taxonomy-link:hover {background: #eef7f9; border-color: #97becb;}
+body.oddb-home .release-card {background: linear-gradient(125deg, #153548, #154d5e 72%, #25556b); box-shadow: 0 12px 32px rgba(21, 53, 72, .1);}
+body.oddb-home .release-card .eyebrow {color: #a6e0e6;}
+body.oddb-home .usage-placeholder {background: #f4f9fa; border-color: #b5cfd9;}
+
+.oddb-motion-toggle {
+ position: absolute; right: 20px; bottom: 15px; z-index: 1;
+ border: 1px solid #c6dbe3; border-radius: 999px; padding: 6px 11px;
+ background: rgba(255,255,255,.94); color: #496575;
+ font: 500 11px/1.4 system-ui, sans-serif; cursor: pointer;
+}
+.oddb-motion-toggle[hidden] {display: none !important;}
+.oddb-motion-toggle:hover {background: #fff; border-color: #8fbac8; color: #075964;}
+
+/* Static by default. JS opts in only when visible, motion is permitted and
+ * the intro has finished. Only a few decorative groups are animated. */
+.oddb-motion-running .oddb-retinal-glow {animation: oddbRetinalLight 14s ease-in-out infinite alternate;}
+.oddb-motion-running .oddb-retinal-signal {animation: oddbRetinalSignal 9s ease-in-out infinite alternate;}
+.oddb-motion-running .oddb-retinal-particles {animation: oddbRetinalDrift 18s ease-in-out infinite alternate;}
+.oddb-motion-paused .oddb-retinal-glow,
+.oddb-motion-paused .oddb-retinal-signal,
+.oddb-motion-paused .oddb-retinal-particles {animation-play-state: paused;}
+.oddb-motion-running .oddb-retinal-parallax {will-change: transform;}
+@keyframes oddbRetinalLight {from {opacity: .14;} to {opacity: .34;}}
+@keyframes oddbRetinalSignal {from {opacity: .2;} to {opacity: .48;}}
+@keyframes oddbRetinalDrift {from {transform: translateY(0);} to {transform: translateY(-6px);}}
+.oddb-reveal-once {animation: oddbSectionArrival 450ms var(--oddb-ease) both;}
+@keyframes oddbSectionArrival {from {opacity: .75; transform: translateY(5px);} to {opacity: 1; transform: translateY(0);}}
+
+@media (max-width: 991.98px) {
+ .oddb-retinal-position {width: 980px; right: -280px; top: 46%; opacity: .7;}
+ body.oddb-home .hero-panel {background: rgba(255,255,255,.94);}
+}
+@media (max-width: 575.98px) {
+ .oddb-retinal-position {width: 740px; right: -335px; opacity: .48;}
+ .oddb-retinal-particles {display: none;}
+ .oddb-motion-toggle {right: 12px; bottom: 9px; font-size: 10px;}
+ body.oddb-home .hero h1 {letter-spacing: -.035em;}
+ body.oddb-home .hero-panel {border-radius: 18px;}
+}
+@media (prefers-reduced-motion: reduce) {
+ html {scroll-behavior: auto;}
+ .oddb-retinal-glow, .oddb-retinal-signal, .oddb-retinal-particles,
+ .oddb-reveal-once {animation: none !important;}
+ .oddb-retinal-parallax {transform: none !important; will-change: auto !important;}
+ .oddb-motion-toggle {display: none !important;}
+ body.oddb-home .explore-card:hover {transform: none;}
+ body.oddb-visual :where(.btn, .form-control, .form-select, .oddb-nav-link,
+  .wb-tool-button, .wb-panel-close, .filter-chip, .model-chip, .category-card,
+  .entity-search-filter, .taxonomy-link, .explore-card) {transition: none;}
+ body.oddb-visual .skeleton {animation: none;}
+}
+@media print {
+ .oddb-retinal-scene, .oddb-motion-toggle {display: none !important;}
+ .oddb-reveal-once {animation: none !important; transform: none !important; opacity: 1 !important;}
+ body.oddb-visual {background: #fff;}
+}

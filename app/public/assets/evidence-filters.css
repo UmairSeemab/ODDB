@@ -1,0 +1,17 @@
+/* ODDB graph evidence filters v0.7.8 */
+.ef-help,.ef-status {font-size:12px;line-height:1.6;color:#64748b;margin:8px 0;overflow-wrap:anywhere;}
+.ef-actions {display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:12px 0 4px;}
+.ef-check {display:flex;align-items:center;gap:7px;font-size:12px;cursor:pointer;}
+.ef-counts {border:1px solid #dce6f4;border-radius:8px;background:#f6f9ff;color:#334155;padding:10px 12px;font-size:12px;line-height:1.7;}
+.ef-status.has-error {color:#b91c1c;}
+.ef-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:12px;}
+.ef-grid fieldset {min-width:0;border:1px solid #e4e9f1;border-radius:8px;padding:12px;}
+.ef-grid legend {float:none;width:auto;font-size:12px;font-weight:600;padding:0 4px;margin:0;}
+.ef-options {max-height:200px;overflow:auto;padding:7px 0;margin-top:7px;}
+.ef-option {display:flex;align-items:flex-start;gap:7px;padding:5px 2px;font-size:12px;line-height:1.5;cursor:pointer;}
+.ef-option input {margin-top:3px;flex-shrink:0;}
+.ef-option span {overflow-wrap:anywhere;}
+.ef-option small {margin-left:auto;padding-left:5px;color:#64748b;white-space:nowrap;}
+.ef-grid fieldset>small {font-size:10px;color:#64748b;}
+.ef-empty {font-size:12px;color:#64748b;padding:10px 0;}
+@media(max-width:767.98px){.ef-grid{grid-template-columns:1fr;}.ef-options{max-height:150px;}}
