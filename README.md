@@ -34,6 +34,17 @@ The `app` and `retnet_pipeline` folders remain siblings. This preserves the
 download.php path rules and requires no page or API functionality change.
 Docker serves only `/srv/oddb/app/public`.
 
+## Production deployment
+
+ODDB v1 is deployed at https://oculardiseases.fi using CSC cPouta,
+Nginx, Let's Encrypt, Docker, PHP and MariaDB.
+
+See [production deployment documentation](docs/PRODUCTION_NGINX.md)
+and the [Nginx configuration example](deploy/nginx/oddb.conf.example).
+
+Caddy remains an optional deployment alternative and is not used
+on the current production server.
+
 ## Requirements and running
 
 Python 3.9+ is needed for the helpers. Running the app with this deployment uses

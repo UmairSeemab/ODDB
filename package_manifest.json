@@ -31,8 +31,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 4367,
-      "sha256": "65e3a192f1c4fe861cbf5bda0b45dbee27f1da2c1611554633251ff575790b76"
+      "size_bytes": 4748,
+      "sha256": "33751dbe2c388450da75a3aedc3250e9ade64942a14306e5164995191678dd02"
     },
     {
       "path": "app/config/release_catalog.json",
@@ -545,9 +545,19 @@
       "sha256": "4b0dbdba5880456d73e29ee011ce8697c3a050dacfb8d5868c18a10736858cec"
     },
     {
+      "path": "deploy/nginx/oddb.conf.example",
+      "size_bytes": 484,
+      "sha256": "104e638e646032b609c86eb7e5a58af11569560bdf6e7fbdd3036b4fe86a1810"
+    },
+    {
       "path": "docs/CPOUTA.md",
       "size_bytes": 3843,
       "sha256": "1bde9d8553f603a227eeacb51a5c75383706f44fd08e10f2639afc17aafcbb5e"
+    },
+    {
+      "path": "docs/PRODUCTION_NGINX.md",
+      "size_bytes": 3137,
+      "sha256": "af0269690b4b2f3708ec8527e03cdbd969612baaeae716c184f04afeb41ec896"
     },
     {
       "path": "docs/PUBLICATION.md",
