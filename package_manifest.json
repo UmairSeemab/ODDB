@@ -30,9 +30,24 @@
       "sha256": "ff5e20857580e77cea45bede536b1f132c855ba5515345788639a2b40847424d"
     },
     {
+      "path": "NLP/PROVENANCE.md",
+      "size_bytes": 911,
+      "sha256": "e9649cad110a2c866edcb5c6e3ce999aa0702487cf5eeedbbfe88cd0255e50e4"
+    },
+    {
+      "path": "NLP/README.md",
+      "size_bytes": 1590,
+      "sha256": "ea7d8cac90a668b5a3cdb95799ee73d84dd1b5cb365cd427ca5440ff3042f7e6"
+    },
+    {
+      "path": "NLP/biobert_pubmed_extractor.py",
+      "size_bytes": 10718,
+      "sha256": "247571009f07d857df829016ef05d1f6951b66e53e473196d33b40f8ab29b5d5"
+    },
+    {
       "path": "README.md",
-      "size_bytes": 4748,
-      "sha256": "33751dbe2c388450da75a3aedc3250e9ade64942a14306e5164995191678dd02"
+      "size_bytes": 5434,
+      "sha256": "60f8d988df677fa88f94b2ecc3b9beff5c281eed303401b81649c26b6e329e15"
     },
     {
       "path": "app/config/release_catalog.json",

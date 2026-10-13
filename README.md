@@ -67,6 +67,24 @@ ODDB_DB_USER=YOUR_READ_ONLY_USER ODDB_DB_PASSWORD='YOUR_LOCAL_PASSWORD' \
 Set actual local credentials privately. The PHP built-in server is for local
 testing. GitHub Pages cannot execute this PHP application.
 
+## Biomedical literature mining
+
+The repository preserves a historical PubMed/BioBERT-based
+biomedical named-entity recognition utility:
+
+- [BioBERT PubMed extractor](NLP/biobert_pubmed_extractor.py)
+- [Installation and usage](NLP/README.md)
+- [Scientific provenance](NLP/PROVENANCE.md)
+
+The tool retrieves PubMed records, extracts candidate disease,
+gene and drug entities, identifies study-related terminology,
+and generates JSONL and CSV outputs.
+
+This utility is provided for methodological transparency.
+Its inclusion does not establish that its outputs contributed
+to the validated ODDB v1 database. Database integration and
+scientific performance require separate verification.
+
 ## Dataset provenance
 
 The export contains 36 base tables. There are 33 catalogued
