@@ -27,7 +27,7 @@
     </p>
    </div>
    <div class="col-lg-4 text-lg-end">
-    <div class="small text-secondary">Live counts from the current ODDB MySQL database.</div>
+    <div class="small text-secondary">Statistics from the validated ODDB v1 data release (2026-09-30).</div>
    </div>
   </div>
  </div>

@@ -1,7 +1,7 @@
 {
   "target": "github",
   "packager_version": "0.8.8",
-  "created_at_utc": "2026-10-13T13:29:06.584861+00:00",
+  "created_at_utc": "2026-10-13T14:49:24.240776+00:00",
   "repository": "https://github.com/UmairSeemab/ODDB",
   "files": [
     {
@@ -58,6 +58,16 @@
       "path": "app/config/release_catalog.json",
       "size_bytes": 22081,
       "sha256": "417d29d57932d1b1c79be17a4cd045b6cbae77c495d220b9b53f12604be198f0"
+    },
+    {
+      "path": "app/config/stats_api_2026-09-30.json",
+      "size_bytes": 28037,
+      "sha256": "80886bd3543937ef139197d6c4af937105cb1063db9db3a6c5e8c2f3ed7f376a"
+    },
+    {
+      "path": "app/config/stats_api_2026-09-30.manifest.json",
+      "size_bytes": 658,
+      "sha256": "ad5c0f794274ff1fe6ac2f31ca42ec98b039b69a4b3c6ded5d033b3f0bf24f67"
     },
     {
       "path": "app/public/.htaccess",
@@ -141,8 +151,8 @@
     },
     {
       "path": "app/public/api/stats.php",
-      "size_bytes": 12957,
-      "sha256": "ce3fe8878b66c8809b5e7819e2b19a7d06bec1bfb4b6ce851419c4b2674c5701"
+      "size_bytes": 15426,
+      "sha256": "923981f18b33d6cbf269454afb99283e56cff109bb47a699681295bd0672d8b8"
     },
     {
       "path": "app/public/api/stats_network_extra.php",
@@ -436,8 +446,8 @@
     },
     {
       "path": "app/public/statistics.php",
-      "size_bytes": 15152,
-      "sha256": "c26924f06a359197c65f70a38c1768b6f5d30bc8f9cc328a7832c2be650777a1"
+      "size_bytes": 15167,
+      "sha256": "8f7b6002eae37c6896cf9bc9998927663f0b86d2b0ea86dd44420606b4cce914"
     },
     {
       "path": "app/scripts/audit_clingen_limited_inheritance_v0.4.3.py",
@@ -1108,6 +1118,11 @@
       "path": "scripts/verify_statistics_json.py",
       "size_bytes": 5189,
       "sha256": "014c08331bf0b3c404b0de0e325c13ba5fb5cb09e69e241507cde156da0d492c"
+    },
+    {
+      "path": "scripts/verify_stats_api_snapshot.py",
+      "size_bytes": 2112,
+      "sha256": "654a76cce99081b249dfc356eb7edb3611ac1e95f21215668552b5fc642404a2"
     },
     {
       "path": "tools/export_oddb_deployment_review_v0.8.6.py",
