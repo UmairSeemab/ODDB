@@ -1,0 +1,63 @@
+{
+    "source_table_counts": {
+        "disease": 162,
+        "gene": 1249,
+        "variant": 707315,
+        "drug": 805,
+        "disease_gene_association": 1631,
+        "drug_target_association": 1009,
+        "disease_drug_association": 344,
+        "clinical_trial": 1164,
+        "clinical_report": 1291
+    },
+    "release_records": [
+        {
+            "release_key": "ODDB_v1_drug_clinical_refined_2026-09-30",
+            "manifest_sha256": "1afc72ccf63fdb5fe0715c1b2a126913c31a7196dd62d140549fc5bf22a093a5",
+            "status": "loaded"
+        },
+        {
+            "release_key": "ODDB_v1_genetics_core_2026-09-29",
+            "manifest_sha256": "733b1b86b242b54be9c0d9e47b6703900c5d6d6457b8c75c8fbf004415623b77",
+            "status": "loaded"
+        }
+    ],
+    "gene_chromosome_annotation": {
+        "source": "HGNC complete approved set (external annotation overlay)",
+        "file_basename": "hgnc_complete_set.txt",
+        "source_sha256": "64fcdfcdf9bc0853ec502e0e4c7d6eb12647b2ca8b0e635ea04bdb584856baf7",
+        "canonical_annotated": 0,
+        "overlay_matched": 1249,
+        "annotated": 1249,
+        "unmapped": 0,
+        "total_genes": 1249,
+        "method": "Approved HGNC ID exact match; chromosome inferred from cytogenetic location; ambiguous locations unmapped"
+    },
+    "trial_shared_disease_drug_pairs": 341,
+    "database_release": "ODDB v1 refined clinical/drug release 2026-09-30",
+    "generated_utc": "2026-10-13T10:50:35+00:00",
+    "generator": "api/build_statistics_cli.php",
+    "methodology": {
+        "rankings": "Distinct canonical entities. Each shared-trial disease-drug pair assigned to its highest reported trial phase; phase stacks sum to globally distinct pairs.",
+        "anatomy": "Category memberships overlap; category or chromosome stacks are not globally additive. Gene chromosomes are exact HGNC ID matches from a dated annotation overlay.",
+        "trial": "A disease and drug sharing a clinical trial is co-occurrence evidence, not proof of treatment.",
+        "target_overlap": "Target-only connections are discovery hypotheses, not direct therapeutic evidence."
+    },
+    "files": [
+        {
+            "file": "rankings.json",
+            "bytes": 318489,
+            "sha256": "73291e221acb43cc1c377fb14e6fe402ac99ed8bd1d39d9898b2b330c203615c"
+        },
+        {
+            "file": "chromosomes.json",
+            "bytes": 27093,
+            "sha256": "0ec872bc9a215c1cd67a4f0ec344847e632c76afc4574280d2717deb9e991cbc"
+        },
+        {
+            "file": "clinical.json",
+            "bytes": 18102,
+            "sha256": "7b2ba15c0c7b630c4ecee13ab17c43037735f1502c8be696001f785f177414d7"
+        }
+    ]
+}

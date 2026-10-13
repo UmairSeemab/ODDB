@@ -1,0 +1,762 @@
+{
+    "trial_phases": [
+        {
+            "phase": "PHASE3",
+            "trials": 256
+        },
+        {
+            "phase": "nan",
+            "trials": 234
+        },
+        {
+            "phase": "PHASE2",
+            "trials": 227
+        },
+        {
+            "phase": "PHASE4",
+            "trials": 219
+        },
+        {
+            "phase": "PHASE1",
+            "trials": 100
+        },
+        {
+            "phase": "PHASE1/PHASE2",
+            "trials": 61
+        },
+        {
+            "phase": "PHASE2/PHASE3",
+            "trials": 52
+        },
+        {
+            "phase": "EARLY_PHASE1",
+            "trials": 15
+        }
+    ],
+    "disease_categories": [
+        {
+            "id": "ANAT-01",
+            "name": "Refractive Errors",
+            "count": 6
+        },
+        {
+            "id": "ANAT-02",
+            "name": "Retinal Diseases",
+            "count": 56
+        },
+        {
+            "id": "ANAT-03",
+            "name": "Others",
+            "count": 72
+        },
+        {
+            "id": "ANAT-04",
+            "name": "Lens Diseases",
+            "count": 4
+        },
+        {
+            "id": "ANAT-05",
+            "name": "Ocular Hypertension",
+            "count": 3
+        },
+        {
+            "id": "ANAT-06",
+            "name": "Ocular Motility Disorders",
+            "count": 3
+        },
+        {
+            "id": "ANAT-07",
+            "name": "Uveal Diseases",
+            "count": 10
+        },
+        {
+            "id": "ANAT-08",
+            "name": "Corneal Diseases",
+            "count": 3
+        },
+        {
+            "id": "ANAT-09",
+            "name": "Conjunctival Diseases",
+            "count": 2
+        },
+        {
+            "id": "ANAT-10",
+            "name": "Orbital Diseases",
+            "count": 1
+        },
+        {
+            "id": "ANAT-11",
+            "name": "Eye Neoplasms",
+            "count": 1
+        },
+        {
+            "id": "ANAT-12",
+            "name": "Lacrimal Apparatus Diseases",
+            "count": 1
+        }
+    ],
+    "evidence_classes": [
+        {
+            "name": "Direct only",
+            "count": 317
+        },
+        {
+            "name": "Direct + target overlap",
+            "count": 27
+        },
+        {
+            "name": "Target overlap only",
+            "count": 1176
+        }
+    ],
+    "diseases_for_network": [
+        {
+            "id": "ODDB-1",
+            "name": "3-METHYLGLUTACONIC ACIDURIA"
+        },
+        {
+            "id": "ODDB-2",
+            "name": "ABETALIPOPROTEINEMIA"
+        },
+        {
+            "id": "ODDB-3",
+            "name": "ACHROMATOPSIA"
+        },
+        {
+            "id": "ODDB-4",
+            "name": "ACUTE ANTERIOR UVEITIS"
+        },
+        {
+            "id": "ODDB-5",
+            "name": "ADVANCED AGE-RELATED MACULAR DEGENERATION"
+        },
+        {
+            "id": "ODDB-6",
+            "name": "AGE-RELATED MACULAR DEGENERATION"
+        },
+        {
+            "id": "ODDB-7",
+            "name": "AGE-RELATED NUCLEAR CATARACTS"
+        },
+        {
+            "id": "ODDB-8",
+            "name": "AICARDI-GOUTIERES SYNDROME"
+        },
+        {
+            "id": "ODDB-9",
+            "name": "ALAGILLE SYNDROME"
+        },
+        {
+            "id": "ODDB-101",
+            "name": "ÅLAND ISLANDS EYE DISEASE"
+        },
+        {
+            "id": "ODDB-11",
+            "name": "ALSTROM SYNDROME"
+        },
+        {
+            "id": "ODDB-14",
+            "name": "APLASIA OF LACRIMAL AND SALIVARY GLANDS"
+        },
+        {
+            "id": "ODDB-15",
+            "name": "ARTS SYNDROME"
+        },
+        {
+            "id": "ODDB-16",
+            "name": "BARDET-BIEDL SYNDROME"
+        },
+        {
+            "id": "ODDB-17",
+            "name": "BEHCET'S DISEASE"
+        },
+        {
+            "id": "ODDB-18",
+            "name": "BENIGN RETINOMA"
+        },
+        {
+            "id": "ODDB-22",
+            "name": "BLUE CONE MONOCHROMACY"
+        },
+        {
+            "id": "ODDB-23",
+            "name": "BONE MINERAL DENSITY VARIABILITY"
+        },
+        {
+            "id": "ODDB-24",
+            "name": "BOUCHER-NEUHAUSER SYNDROME"
+        },
+        {
+            "id": "ODDB-25",
+            "name": "CATARACTS"
+        },
+        {
+            "id": "ODDB-26",
+            "name": "CATARACTS IN TYPE 2 DIABETES"
+        },
+        {
+            "id": "ODDB-28",
+            "name": "CEREBROOCULOFACIOSKELETAL SYNDROME"
+        },
+        {
+            "id": "ODDB-29",
+            "name": "CEREBRORETINAL MICROANGIOPATHY"
+        },
+        {
+            "id": "ODDB-30",
+            "name": "CEROID LIPOFUSCINOSIS, NEURONAL"
+        },
+        {
+            "id": "ODDB-31",
+            "name": "CHARCOT-MARIE-TOOTH DISEASE"
+        },
+        {
+            "id": "ODDB-32",
+            "name": "CHILBLAIN LUPUS"
+        },
+        {
+            "id": "ODDB-33",
+            "name": "CHLAMYDIA TRACHOMATIS SEROPOSITIVITY"
+        },
+        {
+            "id": "ODDB-34",
+            "name": "CHORIORETINAL ATROPHY"
+        },
+        {
+            "id": "ODDB-36",
+            "name": "CHORIORETINOPATHY"
+        },
+        {
+            "id": "ODDB-37",
+            "name": "CHOROIDAL DYSTROPHY"
+        },
+        {
+            "id": "ODDB-38",
+            "name": "CHOROIDAL NEOVASCULARIZATION"
+        },
+        {
+            "id": "ODDB-39",
+            "name": "CHOROIDEREMIA"
+        },
+        {
+            "id": "ODDB-41",
+            "name": "COACH SYNDROME"
+        },
+        {
+            "id": "ODDB-42",
+            "name": "COCKAYNE SYNDROME"
+        },
+        {
+            "id": "ODDB-43",
+            "name": "COLOR-BLINDNESS"
+        },
+        {
+            "id": "ODDB-44",
+            "name": "COMBINED OXIDATIVE PHOSPHORYLATION DEFICIENCY"
+        },
+        {
+            "id": "ODDB-45",
+            "name": "COMPLEMENT FACTOR H DEFICIENCY"
+        },
+        {
+            "id": "ODDB-46",
+            "name": "CONE DYSTROPHY"
+        },
+        {
+            "id": "ODDB-47",
+            "name": "CONE-ROD DYSTROPHY"
+        },
+        {
+            "id": "ODDB-48",
+            "name": "CONE-ROD SYNAPTIC DISORDER"
+        },
+        {
+            "id": "ODDB-49",
+            "name": "CONGENITAL DISORDER OF GLYCOSYLATION"
+        },
+        {
+            "id": "ODDB-51",
+            "name": "CORNEAL ASTIGMATISM"
+        },
+        {
+            "id": "ODDB-53",
+            "name": "CRANIOECTODERMAL DYSPLASIA"
+        },
+        {
+            "id": "ODDB-54",
+            "name": "DE GROUCHY SYNDROME"
+        },
+        {
+            "id": "ODDB-55",
+            "name": "DE SANCTIS-CACCHIONE SYNDROME"
+        },
+        {
+            "id": "ODDB-56",
+            "name": "DELAYED CONE ADAPTATION"
+        },
+        {
+            "id": "ODDB-57",
+            "name": "DIABETIC MACULAR EDEMA IN TYPE 2 DIABETES"
+        },
+        {
+            "id": "ODDB-58",
+            "name": "DIABETIC RETINOPATHY"
+        },
+        {
+            "id": "ODDB-59",
+            "name": "DIABETIC RETINOPATHY IN TYPE 2 DIABETES"
+        },
+        {
+            "id": "ODDB-62",
+            "name": "DOYNE HONEYCOMB DEGENERATION OF RETINA"
+        },
+        {
+            "id": "ODDB-64",
+            "name": "ENHANCED S-CONE SYNDROME"
+        },
+        {
+            "id": "ODDB-66",
+            "name": "EXFOLIATION GLAUCOMA"
+        },
+        {
+            "id": "ODDB-68",
+            "name": "EXFOLIATION SYNDROME"
+        },
+        {
+            "id": "ODDB-69",
+            "name": "EXUDATIVE AGE-RELATED MACULAR DEGENERATION"
+        },
+        {
+            "id": "ODDB-143",
+            "name": "FAMILIAL CAVITARY OPTIC DISK ANOMALY"
+        },
+        {
+            "id": "ODDB-71",
+            "name": "FEBRILE SEIZURES"
+        },
+        {
+            "id": "ODDB-72",
+            "name": "FLECK RETINA"
+        },
+        {
+            "id": "ODDB-73",
+            "name": "FOVEAL HYPOPLASIA"
+        },
+        {
+            "id": "ODDB-74",
+            "name": "FUCHS' ENDOTHELIAL CORNEAL DYSTROPHY"
+        },
+        {
+            "id": "ODDB-75",
+            "name": "FUNDUS ALBIPUNCTATUS"
+        },
+        {
+            "id": "ODDB-78",
+            "name": "GLAUCOMA"
+        },
+        {
+            "id": "ODDB-79",
+            "name": "GOUT"
+        },
+        {
+            "id": "ODDB-80",
+            "name": "GRAVES DISEASE"
+        },
+        {
+            "id": "ODDB-81",
+            "name": "GYRATE ATROPHY OF CHOROID AND RETINA"
+        },
+        {
+            "id": "ODDB-83",
+            "name": "HARP SYNDROME"
+        },
+        {
+            "id": "ODDB-84",
+            "name": "HEMOLYTIC ANEMIA"
+        },
+        {
+            "id": "ODDB-86",
+            "name": "HYPER-IGD SYNDROME"
+        },
+        {
+            "id": "ODDB-87",
+            "name": "HYPEROPIA"
+        },
+        {
+            "id": "ODDB-89",
+            "name": "IMMUNODEFICIENCY"
+        },
+        {
+            "id": "ODDB-90",
+            "name": "INFANTILE LIVER FAILURE SYNDROME"
+        },
+        {
+            "id": "ODDB-93",
+            "name": "JALILI SYNDROME"
+        },
+        {
+            "id": "ODDB-94",
+            "name": "JOUBERT SYNDROME"
+        },
+        {
+            "id": "ODDB-95",
+            "name": "KEARNS-SAYRE SYNDROME"
+        },
+        {
+            "id": "ODDB-96",
+            "name": "KERATITIS"
+        },
+        {
+            "id": "ODDB-98",
+            "name": "KERATOCONUS"
+        },
+        {
+            "id": "ODDB-99",
+            "name": "KNOBLOCH SYNDROME"
+        },
+        {
+            "id": "ODDB-102",
+            "name": "LATERALITY IN NEOVASCULAR AGE-RELATED MACULAR DEGENERATION"
+        },
+        {
+            "id": "ODDB-103",
+            "name": "LEBER CONGENITAL AMAUROSIS"
+        },
+        {
+            "id": "ODDB-104",
+            "name": "LEBER HEREDITARY OPTIC NEUROPATHY"
+        },
+        {
+            "id": "ODDB-105",
+            "name": "LEIGH SYNDROME"
+        },
+        {
+            "id": "ODDB-106",
+            "name": "LENS DISLOCATION"
+        },
+        {
+            "id": "ODDB-107",
+            "name": "MACULAR DYSTROPHY"
+        },
+        {
+            "id": "ODDB-110",
+            "name": "MARSHALL SYNDROME"
+        },
+        {
+            "id": "ODDB-111",
+            "name": "MATURITY-ONSET DIABETES"
+        },
+        {
+            "id": "ODDB-112",
+            "name": "MCKUSICK-KAUFMAN SYNDROME"
+        },
+        {
+            "id": "ODDB-113",
+            "name": "MECKEL SYNDROME"
+        },
+        {
+            "id": "ODDB-114",
+            "name": "MEVALONIC ACIDURIA"
+        },
+        {
+            "id": "ODDB-115",
+            "name": "MICROPHTHALMIA"
+        },
+        {
+            "id": "ODDB-116",
+            "name": "MOHR-TRANEBJAERG SYNDROME"
+        },
+        {
+            "id": "ODDB-117",
+            "name": "MORBID OBESITY"
+        },
+        {
+            "id": "ODDB-119",
+            "name": "MUCOLIPIDOSIS III GAMMA"
+        },
+        {
+            "id": "ODDB-120",
+            "name": "MUCOPOLYSACCHARIDOSI"
+        },
+        {
+            "id": "ODDB-121",
+            "name": "MUSCULAR DYSTROPHY"
+        },
+        {
+            "id": "ODDB-123",
+            "name": "MYOPIA"
+        },
+        {
+            "id": "ODDB-124",
+            "name": "MYOPIA (PATHOLOGICAL)"
+        },
+        {
+            "id": "ODDB-125",
+            "name": "MYOPIC MACULOPATHY"
+        },
+        {
+            "id": "ODDB-126",
+            "name": "NEOVASCULAR AGE-RELATED MACULAR DEGENERATION"
+        },
+        {
+            "id": "ODDB-127",
+            "name": "NEPHRONOPHTHISIS"
+        },
+        {
+            "id": "ODDB-128",
+            "name": "NEURODEGENERATION"
+        },
+        {
+            "id": "ODDB-130",
+            "name": "NEUROPATHY"
+        },
+        {
+            "id": "ODDB-131",
+            "name": "NIGHT BLINDNESS"
+        },
+        {
+            "id": "ODDB-132",
+            "name": "NON-ACCOMMODATIVE ESOTROPIA"
+        },
+        {
+            "id": "ODDB-134",
+            "name": "NORRIE DISEASE"
+        },
+        {
+            "id": "ODDB-136",
+            "name": "OCULOAURICULAR SYNDROME"
+        },
+        {
+            "id": "ODDB-137",
+            "name": "OGUCHI DISEASE"
+        },
+        {
+            "id": "ODDB-138",
+            "name": "OLIVER-MCFARLANE SYNDROME"
+        },
+        {
+            "id": "ODDB-139",
+            "name": "OPEN-ANGLE GLAUCOMA AND OPTIC CUP AREA"
+        },
+        {
+            "id": "ODDB-140",
+            "name": "OPEN-ANGLE GLAUCOMA AND VERTICAL CUP-DISC RATIO"
+        },
+        {
+            "id": "ODDB-141",
+            "name": "OPTIC ATROPHY"
+        },
+        {
+            "id": "ODDB-146",
+            "name": "OREGON EYE DISEASE"
+        },
+        {
+            "id": "ODDB-147",
+            "name": "OROFACIODIGITAL SYNDROME"
+        },
+        {
+            "id": "ODDB-148",
+            "name": "OSTEOARTHRITIS WITH MILD CHONDRODYSPLASIA"
+        },
+        {
+            "id": "ODDB-150",
+            "name": "OSTEOPOROSIS-PSEUDOGLIOMA SYNDROME"
+        },
+        {
+            "id": "ODDB-153",
+            "name": "PEROXISOME BIOGENESIS DISORDER"
+        },
+        {
+            "id": "ODDB-154",
+            "name": "PERSISTENT HYPERPLASTIC PRIMARY VITREOUS"
+        },
+        {
+            "id": "ODDB-160",
+            "name": "PHOSPHOGLYCERATE KINASE 1 DEFICIENCY"
+        },
+        {
+            "id": "ODDB-161",
+            "name": "PHOSPHORIBOSYLPYROPHOSPHATE SYNTHETASE SUPERACTIVITY"
+        },
+        {
+            "id": "ODDB-164",
+            "name": "PIGMENTARY RETINOPATHY"
+        },
+        {
+            "id": "ODDB-165",
+            "name": "PITUITARY HORMONE DEFICIENCY"
+        },
+        {
+            "id": "ODDB-167",
+            "name": "PORETTI-BOLTSHAUSER SYNDROME"
+        },
+        {
+            "id": "ODDB-168",
+            "name": "POROKERATOSIS"
+        },
+        {
+            "id": "ODDB-172",
+            "name": "PROGRESSIVE SUPRANUCLEAR PALSY"
+        },
+        {
+            "id": "ODDB-173",
+            "name": "PROLIFERATIVE DIABETIC RETINOPATHY"
+        },
+        {
+            "id": "ODDB-174",
+            "name": "PROLIFERATIVE DIABETIC RETINOPATHY IN TYPE 2 DIABETES"
+        },
+        {
+            "id": "ODDB-175",
+            "name": "PROLIFERATIVE VITREORETINOPATHY"
+        },
+        {
+            "id": "ODDB-177",
+            "name": "PSEUDOEXFOLIATION SYNDROME"
+        },
+        {
+            "id": "ODDB-178",
+            "name": "PSEUDOXANTHOMA ELASTICUM"
+        },
+        {
+            "id": "ODDB-179",
+            "name": "PTERYGIUM"
+        },
+        {
+            "id": "ODDB-180",
+            "name": "REFRACTIVE ASTIGMATISM"
+        },
+        {
+            "id": "ODDB-181",
+            "name": "REFRACTIVE ERROR"
+        },
+        {
+            "id": "ODDB-183",
+            "name": "REFSUM DISEASE"
+        },
+        {
+            "id": "ODDB-187",
+            "name": "RETINAL DEGENERATION"
+        },
+        {
+            "id": "ODDB-188",
+            "name": "RETINAL DETACHMENT"
+        },
+        {
+            "id": "ODDB-190",
+            "name": "RETINAL DYSPLASIA"
+        },
+        {
+            "id": "ODDB-191",
+            "name": "RETINAL DYSTROPHY"
+        },
+        {
+            "id": "ODDB-193",
+            "name": "RETINITIS PIGMENTOSA"
+        },
+        {
+            "id": "ODDB-194",
+            "name": "RETINOBLASTOMA"
+        },
+        {
+            "id": "ODDB-195",
+            "name": "RETINOPATHY OF PREMATURITY"
+        },
+        {
+            "id": "ODDB-196",
+            "name": "RETINOSCHISIS"
+        },
+        {
+            "id": "ODDB-198",
+            "name": "RHEGMATOGENOUS RETINAL DETACHMENT"
+        },
+        {
+            "id": "ODDB-199",
+            "name": "RHIZOMELIC CHONDRODYSPLASIA PUNCTATA"
+        },
+        {
+            "id": "ODDB-208",
+            "name": "SENIOR-LOKEN SYNDROME"
+        },
+        {
+            "id": "ODDB-211",
+            "name": "SEVERE DIABETIC RETINOPATHY IN TYPE 2 DIABETES"
+        },
+        {
+            "id": "ODDB-213",
+            "name": "SHORT-RIB THORACIC DYSPLASIA"
+        },
+        {
+            "id": "ODDB-215",
+            "name": "SIDEROBLASTIC ANEMIA WITH B-CELL IMMUNODEFICIENCY"
+        },
+        {
+            "id": "ODDB-216",
+            "name": "SIGHT-THREATENING DIABETIC RETINOPATHY IN TYPE 2 DIABETES"
+        },
+        {
+            "id": "ODDB-217",
+            "name": "SIMPSON-GOLABI-BEHMEL SYNDROM"
+        },
+        {
+            "id": "ODDB-220",
+            "name": "SORSBY FUNDUS DYSTROPHY"
+        },
+        {
+            "id": "ODDB-221",
+            "name": "SPASTIC ATAXIA"
+        },
+        {
+            "id": "ODDB-222",
+            "name": "SPASTIC PARAPLEGIA"
+        },
+        {
+            "id": "ODDB-223",
+            "name": "SPINOCEREBELLAR ATAXIA"
+        },
+        {
+            "id": "ODDB-225",
+            "name": "STARGARDT DISEASE"
+        },
+        {
+            "id": "ODDB-228",
+            "name": "STICKLER SYNDROME"
+        },
+        {
+            "id": "ODDB-229",
+            "name": "STRABISMUS"
+        },
+        {
+            "id": "ODDB-253",
+            "name": "USHER SYNDROME"
+        },
+        {
+            "id": "ODDB-254",
+            "name": "UVEAL MELANOMA"
+        },
+        {
+            "id": "ODDB-258",
+            "name": "VASCULOPATHY, RETINAL"
+        },
+        {
+            "id": "ODDB-259",
+            "name": "VISUAL IMPAIRMENT"
+        },
+        {
+            "id": "ODDB-261",
+            "name": "VITREORETINAL DYSTROPHY"
+        },
+        {
+            "id": "ODDB-262",
+            "name": "VITREORETINOPATHY"
+        },
+        {
+            "id": "ODDB-263",
+            "name": "VOGT-KOYANAGI-HARADA SYNDROME"
+        },
+        {
+            "id": "ODDB-273",
+            "name": "WOLFRAM SYNDROME"
+        }
+    ]
+}

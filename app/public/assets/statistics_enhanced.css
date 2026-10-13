@@ -1,0 +1,30 @@
+/* ODDB v1 enhanced scientific visualizations. Scoped; does not change existing charts. */
+.oddb-enhanced-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+.oddb-enhanced-grid .viz-card{overflow:hidden}
+.oddb-enhanced-toolbar{display:flex;flex-wrap:wrap;gap:.55rem;align-items:end;margin:.65rem 0 .35rem}
+.oddb-enhanced-toolbar label{font-size:.75rem;color:#526275;min-width:0}
+.oddb-enhanced-toolbar select,.oddb-enhanced-toolbar input{display:block;min-width:0;font-size:.83rem}
+.oddb-enhanced-toolbar .oddb-custom-limit{width:90px}
+.oddb-enhanced-toolbar .oddb-chart-search{width:145px}
+.oddb-enhanced-plot{height:440px;width:100%;min-width:0}
+.oddb-enhanced-description{font-size:.77rem;line-height:1.48;color:#64748b;margin-top:.3rem}
+.oddb-enhanced-summary{font-size:.76rem;color:#4b5b70;margin:.35rem 0;min-height:1.1rem}
+.oddb-enhanced-actions,.oddb-network-footer{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.45rem}
+.oddb-enhanced-actions button{font-size:.76rem}
+.oddb-network-controls{display:flex;flex-wrap:wrap;align-items:end;gap:.85rem}
+.oddb-network-controls select{max-width:100%;min-width:110px}
+.oddb-network-controls label:first-child{flex:1 1 290px}
+.oddb-network-checkbox{display:flex;align-items:center;gap:.35rem;padding-bottom:.4rem}
+.oddb-enhanced-network{height:620px;width:100%;min-width:0}
+.oddb-network-legend{display:flex;flex-wrap:wrap;gap:1rem;color:#64748b}
+.oddb-dot{display:inline-block;height:.65rem;width:.65rem;border-radius:50%;vertical-align:middle;margin-right:.2rem}
+.oddb-dot-disease{background:#2979bc}.oddb-dot-gene{background:#22a287}.oddb-dot-drug{background:#e39f37}
+.oddb-enhanced-failure{background:#fff3e8;padding:1rem;border:1px solid #e7cdae;border-radius:12px}
+@media(max-width:1199px){.oddb-enhanced-grid{grid-template-columns:1fr}}
+@media(max-width:576px){.oddb-enhanced-toolbar{align-items:stretch}.oddb-enhanced-toolbar label{flex:1 1 120px}.oddb-enhanced-toolbar .oddb-chart-search{width:100%}.oddb-enhanced-network{height:480px}}
+@media(prefers-reduced-motion:reduce){.oddb-enhanced-grid *{animation:none!important;transition:none!important}}
+
+/* Network labels: extra room at higher node limits; ECharts controls height dynamically. */
+.oddb-network-card{overflow:hidden}
+.oddb-network-controls .oddb-network-checkbox{white-space:normal}
+.oddb-enhanced-network{transition:height .15s ease;overflow:hidden}

@@ -116,3 +116,7 @@ has not been supplied and is not invented here.
 
 The package preparation tests are separate from production deployment and
 browser acceptance. Follow docs/TESTING.md before moving the public domain.
+
+## Interactive scientific statistics
+
+The Statistics page includes precomputed release-based chromosome, gene, variant, disease and trial visualizations, adjustable Top-N rankings (20, 30, 40, custom and all), and a focused disease–gene–drug network. See [the statistics implementation and validation guide](docs/STATISTICS_ENHANCED.md). The JSON datasets are generated from the validated ODDB v1 database and must be included in each release.

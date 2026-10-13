@@ -1,0 +1,3 @@
+
+# False positive: verified public ODDB v1 scientific release identifier in statistics_data/index.json
+app/public/assets/statistics_data/index.json:generic-api-key:15
