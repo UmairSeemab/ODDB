@@ -1,7 +1,7 @@
 {
   "target": "github",
   "packager_version": "0.8.8",
-  "created_at_utc": "2026-10-11T11:47:05.808243+00:00",
+  "created_at_utc": "2026-10-13T13:29:06.584861+00:00",
   "repository": "https://github.com/UmairSeemab/ODDB",
   "files": [
     {
@@ -18,6 +18,11 @@
       "path": ".gitignore",
       "size_bytes": 485,
       "sha256": "35b51c01c08ae7c575b47762fc6613462fd4b77ec6a6ed31ed42e3fe5775e0e3"
+    },
+    {
+      "path": ".gitleaksignore",
+      "size_bytes": 167,
+      "sha256": "f0022e92cc44f45433d71654f297115e9ac73934bd261d4fa6e1ecb8d9f08920"
     },
     {
       "path": "CITATION.cff",
@@ -46,8 +51,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 5434,
-      "sha256": "60f8d988df677fa88f94b2ecc3b9beff5c281eed303401b81649c26b6e329e15"
+      "size_bytes": 5883,
+      "sha256": "e7478ef58d09184af4dd08e44d73b3646ae3006f7be2280f123f7e780e2c5730"
     },
     {
       "path": "app/config/release_catalog.json",
@@ -63,6 +68,11 @@
       "path": "app/public/api/browse.php",
       "size_bytes": 2849,
       "sha256": "f16da716e389d71368a822044f2416364feb00203b958bcb184d9471f47c8421"
+    },
+    {
+      "path": "app/public/api/build_statistics_cli.php",
+      "size_bytes": 16230,
+      "sha256": "fe62194c2b9942bf9f019aa5b991969b8eb2fe01e09b169d6432933e9857535b"
     },
     {
       "path": "app/public/api/compare.php",
@@ -133,6 +143,11 @@
       "path": "app/public/api/stats.php",
       "size_bytes": 12957,
       "sha256": "ce3fe8878b66c8809b5e7819e2b19a7d06bec1bfb4b6ce851419c4b2674c5701"
+    },
+    {
+      "path": "app/public/api/stats_network_extra.php",
+      "size_bytes": 3810,
+      "sha256": "a4bcd9c61f7847c4c69d2c9be0a702b22025a5466cf6a5795017d23b2d9af62c"
     },
     {
       "path": "app/public/api/taxonomy.php",
@@ -305,6 +320,36 @@
       "sha256": "db7082cd5fefa8c0e9a060d4675f0f13bb49352cfe489a9bc47e3babf0f8abf4"
     },
     {
+      "path": "app/public/assets/statistics_data/chromosomes.json",
+      "size_bytes": 27093,
+      "sha256": "0ec872bc9a215c1cd67a4f0ec344847e632c76afc4574280d2717deb9e991cbc"
+    },
+    {
+      "path": "app/public/assets/statistics_data/clinical.json",
+      "size_bytes": 18102,
+      "sha256": "7b2ba15c0c7b630c4ecee13ab17c43037735f1502c8be696001f785f177414d7"
+    },
+    {
+      "path": "app/public/assets/statistics_data/index.json",
+      "size_bytes": 2711,
+      "sha256": "815f0f8523bc4b56237a72acaac383eba3312c44d761e2095e1a7bc30662f2ab"
+    },
+    {
+      "path": "app/public/assets/statistics_data/rankings.json",
+      "size_bytes": 318489,
+      "sha256": "73291e221acb43cc1c377fb14e6fe402ac99ed8bd1d39d9898b2b330c203615c"
+    },
+    {
+      "path": "app/public/assets/statistics_enhanced.css",
+      "size_bytes": 2400,
+      "sha256": "bb324ad8c0317fdb3e994eb738a5c4ed11d12396cf9806f7dfe61313aeabe377"
+    },
+    {
+      "path": "app/public/assets/statistics_enhanced.js",
+      "size_bytes": 27184,
+      "sha256": "ae28d2170dfd11fe31b61a2a3d988ea7d8496871e6414ada262bc108e410b94c"
+    },
+    {
       "path": "app/public/assets/statistics_export.js",
       "size_bytes": 24997,
       "sha256": "b07d577ad3101fd7ffb5112892930641346c1180e2b00ddfe17354fba60502aa"
@@ -313,6 +358,16 @@
       "path": "app/public/assets/statistics_flows.js",
       "size_bytes": 9067,
       "sha256": "b48003f47922f16be13c3051a03e7bab4370f846e3e65db3390db307d97f05ca"
+    },
+    {
+      "path": "app/public/assets/statistics_publication_export.css",
+      "size_bytes": 1921,
+      "sha256": "11f276d7ddf715b9e8e5e3cef191c6de198128e8c192b391e44f4903e20c74bd"
+    },
+    {
+      "path": "app/public/assets/statistics_publication_export.js",
+      "size_bytes": 29223,
+      "sha256": "3d0705516a95ac7a65a8abb16822d791f1487282ed43d17b76a70a51cc5f5bde"
     },
     {
       "path": "app/public/assets/style.css",
@@ -375,9 +430,14 @@
       "sha256": "79ae73d48b477bcf3dfff7f0390936d1e372dd48e2c598166e422bfe0e8705d9"
     },
     {
+      "path": "app/public/partials/statistics_extended.php",
+      "size_bytes": 5178,
+      "sha256": "73a88c6490c21a31f6983c2df01ff8d3209c7284bf52dd3483171262ff270185"
+    },
+    {
       "path": "app/public/statistics.php",
-      "size_bytes": 14819,
-      "sha256": "71173d378e9ad8c57d9532e47f6f9613f24854c8b901cc03adf08351ea0cd0c0"
+      "size_bytes": 15152,
+      "sha256": "c26924f06a359197c65f70a38c1768b6f5d30bc8f9cc328a7832c2be650777a1"
     },
     {
       "path": "app/scripts/audit_clingen_limited_inheritance_v0.4.3.py",
@@ -578,6 +638,11 @@
       "path": "docs/PUBLICATION.md",
       "size_bytes": 2693,
       "sha256": "55b464b762d33dd9c9ee0a3726918573254b19b6cc266b3d1aa8dacc17ed6f99"
+    },
+    {
+      "path": "docs/STATISTICS_ENHANCED.md",
+      "size_bytes": 6308,
+      "sha256": "1dcc9e4e11c71908a4a2b3f85b5c15cd8e3d52aab8f7e1990bad6fdccb209cc5"
     },
     {
       "path": "docs/TESTING.md",
@@ -1033,6 +1098,16 @@
       "path": "schema/table_counts.tsv",
       "size_bytes": 1000,
       "sha256": "a8214d525df80e8c5fc0aa7f79043dafd5d2777af69798306ac69b3465f5a375"
+    },
+    {
+      "path": "scripts/rebuild_oddb_publication_inventory.py",
+      "size_bytes": 1282,
+      "sha256": "a0176de6e1188224fd6f7204a30b059c4829f301dc7c4d44dc4857d539a9b253"
+    },
+    {
+      "path": "scripts/verify_statistics_json.py",
+      "size_bytes": 5189,
+      "sha256": "014c08331bf0b3c404b0de0e325c13ba5fb5cb09e69e241507cde156da0d492c"
     },
     {
       "path": "tools/export_oddb_deployment_review_v0.8.6.py",

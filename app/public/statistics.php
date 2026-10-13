@@ -8,6 +8,8 @@
 <title>Statistics — ODDB v1</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="assets/statistics.css" rel="stylesheet">
+<link href="assets/statistics_enhanced.css?v=3" rel="stylesheet">
+<link href="assets/statistics_publication_export.css?v=1" rel="stylesheet">
 <link href="assets/site-nav.css" rel="stylesheet">
 <link href="assets/visual-refresh.css?v=0.8.0" rel="stylesheet">
 </head>
@@ -196,6 +198,8 @@
   </div>
  </section>
 
+<?php require __DIR__ . '/partials/statistics_extended.php'; ?>
+
 <section class="container section-block" id="knowledge-flows">
   <div class="section-heading">
    <div class="eyebrow">Knowledge flow maps</div>
@@ -344,6 +348,8 @@
 <script src="assets/statistics.js"></script>
 <script src="assets/statistics_flows.js"></script>
 <script src="assets/statistics_export.js"></script>
+<script src="assets/statistics_enhanced.js?v=3"></script>
+<script src="assets/statistics_publication_export.js?v=1"></script>
 <script src="assets/site-nav.js"></script>
 </body>
 </html>
