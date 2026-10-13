@@ -1,5 +1,47 @@
 <?php
 declare(strict_types=1);
+/* ODDB_STATS_API_SNAPSHOT_FASTPATH_V1 */
+/* Immutable, verified release aggregate; never a substitute for interactive SQL APIs.
+ * The unmodified SQL code below is the fallback if files are absent/corrupt.
+ * Updating ODDB release data requires a newly validated snapshot. */
+$oddbStatsRelease = '2026-09-30';
+$oddbStatsRoot = dirname(__DIR__, 2) . '/config';
+$oddbStatsFile = $oddbStatsRoot . '/stats_api_' . $oddbStatsRelease . '.json';
+$oddbStatsManifestFile = $oddbStatsRoot . '/stats_api_' . $oddbStatsRelease . '.manifest.json';
+try {
+    if (is_readable($oddbStatsFile) && is_readable($oddbStatsManifestFile)) {
+        $oddbStatsRaw = file_get_contents($oddbStatsFile);
+        $oddbStatsManifestRaw = file_get_contents($oddbStatsManifestFile);
+        if ($oddbStatsRaw !== false && $oddbStatsManifestRaw !== false) {
+            $oddbStatsManifest = json_decode($oddbStatsManifestRaw, true);
+            $oddbStatsDecoded = json_decode($oddbStatsRaw, true);
+            $oddbStatsHash = is_array($oddbStatsManifest)
+                ? ($oddbStatsManifest['sha256'] ?? null) : null;
+            if (is_string($oddbStatsHash)
+                && preg_match('/^[a-f0-9]{64}$/D', $oddbStatsHash) === 1
+                && hash_equals($oddbStatsHash, hash('sha256', $oddbStatsRaw))
+                && strlen($oddbStatsRaw) === ($oddbStatsManifest['size_bytes'] ?? null)
+                && ($oddbStatsManifest['data_release'] ?? null) === $oddbStatsRelease
+                && is_array($oddbStatsDecoded)
+                && ($oddbStatsDecoded['ok'] ?? false) === true
+                && ($oddbStatsDecoded['release']['data_release'] ?? null) === $oddbStatsRelease
+                && isset($oddbStatsDecoded['overview'], $oddbStatsDecoded['relationship_maps'])
+                && is_array($oddbStatsDecoded['relationship_maps'])
+                && count($oddbStatsDecoded['relationship_maps']) === 6
+            ) {
+                header('Content-Type: application/json; charset=utf-8');
+                header('Cache-Control: no-store');
+                header('X-ODDB-Stats-Source: verified-release-json');
+                echo $oddbStatsRaw;
+                exit;
+            }
+        }
+    }
+    error_log('ODDB statistics release JSON unavailable or invalid; running original SQL fallback');
+} catch (Throwable $oddbStatsError) {
+    error_log('ODDB statistics JSON read error; running original SQL fallback');
+}
+header('X-ODDB-Stats-Source: mariadb-fallback');
 require_once __DIR__.'/db.php';
 $pdo=oddb_db();
 

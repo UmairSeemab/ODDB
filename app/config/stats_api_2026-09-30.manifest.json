@@ -1,0 +1,18 @@
+{
+  "schema": "oddb-stats-api-snapshot-v1",
+  "data_release": "2026-09-30",
+  "source_endpoint": "/api/stats.php",
+  "generated_utc": "2026-10-13T14:29:05.151581+00:00",
+  "source": "Exact bytes from read-only production Stats API; frozen immutable ODDB v1 refined release",
+  "size_bytes": 28037,
+  "sha256": "80886bd3543937ef139197d6c4af937105cb1063db9db3a6c5e8c2f3ed7f376a",
+  "relationship_map_ids": [
+    "anatomy_drug_stage",
+    "anatomy_gene",
+    "anatomy_variant",
+    "inheritance_drug_stage",
+    "inheritance_gene",
+    "inheritance_variant"
+  ],
+  "validation": "6 relationship maps; baseline ODDB v1 counts; original API contract unchanged"
+}
