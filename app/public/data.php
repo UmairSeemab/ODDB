@@ -21,7 +21,7 @@
     <div class="eyebrow">ODDB v1</div>
     <h1 class="display-5 fw-bold mb-2">Data &amp; release</h1>
     <p class="lead text-secondary mb-0">
-     Frozen ODDB v1 datasets, validated release counts, downloadable files and guidance for interpreting the evidence layers.
+     Current enrichment-release counts, historical frozen datasets and guidance for interpreting the evidence layers.
     </p>
    </div>
    <div class="col-lg-4">
@@ -29,7 +29,7 @@
      <span class="status-dot" aria-hidden="true"></span>
      <div>
       <strong>Current ODDB v1 release</strong>
-      <div class="small text-secondary">Drug &amp; clinical refined · 30 September 2026</div>
+      <div class="small text-secondary">Enrichment release · 15 October 2026</div>
      </div>
     </div>
    </div>
@@ -52,18 +52,36 @@
  <section class="container section-block">
   <div class="section-heading">
    <div class="eyebrow">Release structure</div>
-   <h2 class="h3 fw-bold mb-1">Immutable data releases, derived web curation</h2>
+   <h2 class="h3 fw-bold mb-1">Current enrichment release and historical snapshots</h2>
    <p class="text-secondary mb-0">
-    Frozen ODDB releases remain unchanged after validation. Later interface or taxonomy curation is applied as a derived web layer rather than rewriting historical release files.
+    The current web database includes the October enrichment. Earlier frozen releases and their downloads remain historical snapshots with their original counts.
    </p>
   </div>
 
-  <div class="release-timeline mt-4">
+
+  <article class="release-card mt-4" id="currentEnrichment24">
+   <div class="release-card-top"><div><span class="release-tag">Current web database</span><h3 class="h5 mt-2 mb-1">ODDB v1 enrichment release</h3><div class="text-secondary small">Release date: 15 October 2026</div></div><span class="immutable-badge">Current</span></div>
+   <div class="release-facts">
+    <span><strong>185</strong> Diseases</span>
+    <span><strong>1,249</strong> Genes</span>
+    <span><strong>707,315</strong> Variants</span>
+    <span><strong>893</strong> Drugs</span>
+    <span><strong>1,255</strong> Clinical trials</span>
+    <span><strong>1,382</strong> Clinical reports</span>
+    <span><strong>1,662</strong> Disease–gene associations</span>
+    <span><strong>424</strong> Disease–drug evidence associations</span>
+    <span><strong>1,009</strong> Drug–target associations</span>
+    <span><strong>1,233</strong> Target-overlap disease–drug pairs</span>
+   </div>
+   <p class="small text-secondary mt-3 mb-0">Disease-specific evidence includes registered clinical investigation. Target-overlap paths remain a separate discovery layer and do not establish treatment efficacy.</p>
+  </article>
+  <details class="mt-4" id="historicalReleases24"><summary class="fw-semibold">Historical frozen releases: September 2026</summary>
+  <div class="release-timeline mt-3">
    <article class="release-card">
     <div class="release-card-top">
      <div>
       <span class="release-tag">Genetics core</span>
-      <h3 class="h5 mt-2 mb-1">ODDB v1 genetics core</h3>
+      <h3 class="h5 mt-2 mb-1">Historical ODDB v1 genetics core</h3>
       <div class="text-secondary small">Release date: 29 September 2026</div>
      </div>
      <span class="immutable-badge">Frozen</span>
@@ -82,7 +100,7 @@
     <div class="release-card-top">
      <div>
       <span class="release-tag">Drug &amp; clinical refined</span>
-      <h3 class="h5 mt-2 mb-1">ODDB v1 drug &amp; clinical refined</h3>
+      <h3 class="h5 mt-2 mb-1">Historical ODDB v1 drug &amp; clinical refined</h3>
       <div class="text-secondary small">Release date: 30 September 2026</div>
      </div>
      <span class="immutable-badge">Frozen</span>
@@ -101,7 +119,7 @@
     <div class="release-card-top">
      <div>
       <span class="release-tag">Derived web layer</span>
-      <h3 class="h5 mt-2 mb-1">Current web taxonomy &amp; curation</h3>
+      <h3 class="h5 mt-2 mb-1">Web taxonomy &amp; curation</h3>
       <div class="text-secondary small">Maintained separately from frozen release files</div>
      </div>
      <span class="derived-badge">Derived</span>
@@ -111,15 +129,16 @@
     </p>
    </article>
   </div>
+  </details>
  </section>
 
  <section class="container section-block" id="downloads">
   <div class="section-heading d-flex flex-column flex-lg-row justify-content-between gap-3 align-items-lg-end">
    <div>
     <div class="eyebrow">Downloads</div>
-    <h2 class="h3 fw-bold mb-1">Available release files</h2>
+    <h2 class="h3 fw-bold mb-1">Download current and historical data</h2>
     <p class="text-secondary mb-0">
-     Download only files explicitly included in an ODDB v1 frozen release.
+     Current enrichment exports include the October data shown above. They are compressed TSV files with a manifest, checksums and decoding guide. September files remain available under the historical filters.
     </p>
    </div>
    <div class="catalog-status text-lg-end">
@@ -134,7 +153,8 @@
            placeholder="Search datasets, e.g. disease, variant, drug…" autocomplete="off">
    </label>
    <div class="download-filters" role="group" aria-label="Filter release files">
-    <button type="button" class="filter-chip active" data-release-filter="all">All</button>
+    <button type="button" class="filter-chip active" data-release-filter="current">Current enrichment</button>
+    <button type="button" class="filter-chip" data-release-filter="all">All files</button>
     <button type="button" class="filter-chip" data-release-filter="genetics">Genetics core</button>
     <button type="button" class="filter-chip" data-release-filter="clinical">Drug &amp; clinical</button>
    </div>
@@ -183,7 +203,8 @@
      <div class="eyebrow">Reproducibility</div>
      <h2 class="h4 fw-bold mt-1">Release-aware downloads</h2>
      <dl class="release-definition mt-3 mb-0">
-      <div><dt>Release name</dt><dd>ODDB v1</dd></div>
+      <div><dt>Current web release</dt><dd>ODDB v1 enrichment · 2026-10-15</dd></div>
+      <div><dt>Historical snapshots</dt><dd>September 2026, listed below</dd></div>
       <div><dt>Genetics core</dt><dd>2026-09-29</dd></div>
       <div><dt>Drug &amp; clinical</dt><dd>2026-09-30</dd></div>
       <div><dt>File access</dt><dd>Whitelisted frozen-release files only</dd></div>
@@ -198,7 +219,7 @@
  <section class="container section-block">
   <div class="info-card release-notes-card">
    <div class="eyebrow">Release notes</div>
-   <h2 class="h4 fw-bold mt-1">Drug &amp; clinical refinement highlights</h2>
+   <h2 class="h4 fw-bold mt-1">Historical drug &amp; clinical refinement highlights (September 2026)</h2>
    <div class="row g-3 mt-1">
     <div class="col-md-6">
      <ul class="release-note-list mb-0">
@@ -227,7 +248,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/data.js"></script>
+<script src="assets/data.js?v=25"></script>
 <script src="assets/site-nav.js"></script>
 </body>
 </html>

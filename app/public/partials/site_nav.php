@@ -44,3 +44,6 @@ function oddb_nav_active(string $page, string $currentPage): string {
   </div>
  </div>
 </nav>
+
+<!-- ODDB_VISITORS_23: page-name-only analytics -->
+<script src="assets/visitor-track23.js?v=23" defer></script>

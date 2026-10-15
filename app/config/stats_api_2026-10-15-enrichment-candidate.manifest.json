@@ -1,0 +1,25 @@
+{
+  "data_release": "2026-10-15-enrichment-candidate",
+  "database": "oddb_v1_release_20261015_8634b21e",
+  "generated_utc": "2026-10-15T08:53:49+00:00",
+  "generator": "build_staging_stats_api_10.php",
+  "packaging_tool": "ODDB_durable_deployment_20/deploy.py",
+  "scope": "Same validated snapshot values; database binding and candidate release label updated during packaging.",
+  "sha256": "045bcebf811f32589e15a1fc4dbeecd5bf81e935c3357bbf67c377c2dc6893ef",
+  "size_bytes": 44833,
+  "source_snapshot_sha256": "f202b6e284704d05a28f21739719c55bd76f8757828cd9f67a080dc290ff6a84",
+  "source_table_counts": {
+    "clinical_report": 1382,
+    "clinical_trial": 1255,
+    "disease": 185,
+    "disease_alias": 4,
+    "disease_clinical_trial_association": 1342,
+    "disease_drug_association": 424,
+    "disease_drug_evidence": 1299,
+    "disease_gene_association": 1662,
+    "drug": 893,
+    "drug_clinical_trial_association": 1566,
+    "gene": 1249,
+    "variant": 707315
+  }
+}

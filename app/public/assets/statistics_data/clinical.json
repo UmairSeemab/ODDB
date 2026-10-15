@@ -2,23 +2,23 @@
     "trial_phases": [
         {
             "phase": "PHASE3",
+            "trials": 282
+        },
+        {
+            "phase": "PHASE2",
             "trials": 256
+        },
+        {
+            "phase": "PHASE4",
+            "trials": 239
         },
         {
             "phase": "nan",
             "trials": 234
         },
         {
-            "phase": "PHASE2",
-            "trials": 227
-        },
-        {
-            "phase": "PHASE4",
-            "trials": 219
-        },
-        {
             "phase": "PHASE1",
-            "trials": 100
+            "trials": 103
         },
         {
             "phase": "PHASE1/PHASE2",
@@ -31,23 +31,35 @@
         {
             "phase": "EARLY_PHASE1",
             "trials": 15
+        },
+        {
+            "phase": "PHASE2 | PHASE3",
+            "trials": 7
+        },
+        {
+            "phase": "PHASE1 | PHASE2",
+            "trials": 5
+        },
+        {
+            "phase": "NA",
+            "trials": 1
         }
     ],
     "disease_categories": [
         {
             "id": "ANAT-01",
             "name": "Refractive Errors",
-            "count": 6
+            "count": 8
         },
         {
             "id": "ANAT-02",
             "name": "Retinal Diseases",
-            "count": 56
+            "count": 62
         },
         {
             "id": "ANAT-03",
             "name": "Others",
-            "count": 72
+            "count": 75
         },
         {
             "id": "ANAT-04",
@@ -57,32 +69,32 @@
         {
             "id": "ANAT-05",
             "name": "Ocular Hypertension",
-            "count": 3
+            "count": 5
         },
         {
             "id": "ANAT-06",
             "name": "Ocular Motility Disorders",
-            "count": 3
+            "count": 4
         },
         {
             "id": "ANAT-07",
             "name": "Uveal Diseases",
-            "count": 10
+            "count": 16
         },
         {
             "id": "ANAT-08",
             "name": "Corneal Diseases",
-            "count": 3
+            "count": 4
         },
         {
             "id": "ANAT-09",
             "name": "Conjunctival Diseases",
-            "count": 2
+            "count": 4
         },
         {
             "id": "ANAT-10",
             "name": "Orbital Diseases",
-            "count": 1
+            "count": 2
         },
         {
             "id": "ANAT-11",
@@ -92,13 +104,13 @@
         {
             "id": "ANAT-12",
             "name": "Lacrimal Apparatus Diseases",
-            "count": 1
+            "count": 2
         }
     ],
     "evidence_classes": [
         {
             "name": "Direct only",
-            "count": 317
+            "count": 397
         },
         {
             "name": "Direct + target overlap",
@@ -106,7 +118,7 @@
         },
         {
             "name": "Target overlap only",
-            "count": 1176
+            "count": 1206
         }
     ],
     "diseases_for_network": [
@@ -155,6 +167,14 @@
             "name": "ALSTROM SYNDROME"
         },
         {
+            "id": "ODDB-DIS-MONDO-0001744",
+            "name": "ANGLE CLOSURE GLAUCOMA"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0001478",
+            "name": "ANISOMETROPIA"
+        },
+        {
             "id": "ODDB-14",
             "name": "APLASIA OF LACRIMAL AND SALIVARY GLANDS"
         },
@@ -175,6 +195,10 @@
             "name": "BENIGN RETINOMA"
         },
         {
+            "id": "ODDB-DIS-MONDO-0004785",
+            "name": "BLEPHARITIS"
+        },
+        {
             "id": "ODDB-22",
             "name": "BLUE CONE MONOCHROMACY"
         },
@@ -193,6 +217,10 @@
         {
             "id": "ODDB-26",
             "name": "CATARACTS IN TYPE 2 DIABETES"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0018616",
+            "name": "CENTRAL SEROUS CHORIORETINOPATHY"
         },
         {
             "id": "ODDB-28",
@@ -223,6 +251,10 @@
             "name": "CHORIORETINAL ATROPHY"
         },
         {
+            "id": "ODDB-DIS-MONDO-0004674",
+            "name": "CHORIORETINITIS"
+        },
+        {
             "id": "ODDB-36",
             "name": "CHORIORETINOPATHY"
         },
@@ -237,6 +269,10 @@
         {
             "id": "ODDB-39",
             "name": "CHOROIDEREMIA"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0001280",
+            "name": "CHOROIDITIS"
         },
         {
             "id": "ODDB-41",
@@ -275,6 +311,10 @@
             "name": "CONGENITAL DISORDER OF GLYCOSYLATION"
         },
         {
+            "id": "ODDB-DIS-MONDO-0003799",
+            "name": "CONJUNCTIVITIS"
+        },
+        {
             "id": "ODDB-51",
             "name": "CORNEAL ASTIGMATISM"
         },
@@ -309,6 +349,10 @@
         {
             "id": "ODDB-62",
             "name": "DOYNE HONEYCOMB DEGENERATION OF RETINA"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0006733",
+            "name": "DRY EYE SYNDROME"
         },
         {
             "id": "ODDB-64",
@@ -383,12 +427,24 @@
             "name": "HYPEROPIA"
         },
         {
+            "id": "ODDB-DIS-MONDO-0004893",
+            "name": "HYPERTROPIA"
+        },
+        {
             "id": "ODDB-89",
             "name": "IMMUNODEFICIENCY"
         },
         {
             "id": "ODDB-90",
             "name": "INFANTILE LIVER FAILURE SYNDROME"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0004773",
+            "name": "IRIDOCYCLITIS"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0006814",
+            "name": "IRITIS"
         },
         {
             "id": "ODDB-93",
@@ -405,6 +461,10 @@
         {
             "id": "ODDB-96",
             "name": "KERATITIS"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0004768",
+            "name": "KERATOCONJUNCTIVITIS"
         },
         {
             "id": "ODDB-98",
@@ -437,6 +497,14 @@
         {
             "id": "ODDB-107",
             "name": "MACULAR DYSTROPHY"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0006843",
+            "name": "MACULAR HOLES"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0003005",
+            "name": "MACULAR RETINAL EDEMA"
         },
         {
             "id": "ODDB-110",
@@ -507,6 +575,10 @@
             "name": "NEURODEGENERATION"
         },
         {
+            "id": "ODDB-DIS-MONDO-0019100",
+            "name": "NEUROMYELITIS OPTICA"
+        },
+        {
             "id": "ODDB-130",
             "name": "NEUROPATHY"
         },
@@ -521,6 +593,10 @@
         {
             "id": "ODDB-134",
             "name": "NORRIE DISEASE"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0006875",
+            "name": "OCULAR HYPERTENSION"
         },
         {
             "id": "ODDB-136",
@@ -547,6 +623,14 @@
             "name": "OPTIC ATROPHY"
         },
         {
+            "id": "ODDB-DIS-MONDO-0005885",
+            "name": "OPTIC NEURITIS"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0004769",
+            "name": "ORBITAL PSEUDOTUMOR"
+        },
+        {
             "id": "ODDB-146",
             "name": "OREGON EYE DISEASE"
         },
@@ -561,6 +645,10 @@
         {
             "id": "ODDB-150",
             "name": "OSTEOPOROSIS-PSEUDOGLIOMA SYNDROME"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0017255",
+            "name": "PANUVEITIS"
         },
         {
             "id": "ODDB-153",
@@ -593,6 +681,10 @@
         {
             "id": "ODDB-168",
             "name": "POROKERATOSIS"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0001330",
+            "name": "PRESBYOPIA"
         },
         {
             "id": "ODDB-172",
@@ -635,6 +727,10 @@
             "name": "REFSUM DISEASE"
         },
         {
+            "id": "ODDB-DIS-MONDO-0006948",
+            "name": "RETINAL ARTERY OCCLUSION"
+        },
+        {
             "id": "ODDB-187",
             "name": "RETINAL DEGENERATION"
         },
@@ -649,6 +745,10 @@
         {
             "id": "ODDB-191",
             "name": "RETINAL DYSTROPHY"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0002089",
+            "name": "RETINAL VASCULAR OCCLUSION"
         },
         {
             "id": "ODDB-193",
@@ -733,6 +833,10 @@
         {
             "id": "ODDB-254",
             "name": "UVEAL MELANOMA"
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0020283",
+            "name": "UVEITIS"
         },
         {
             "id": "ODDB-258",

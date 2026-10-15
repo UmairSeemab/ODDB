@@ -59,7 +59,7 @@ let taxonomy=null,
  pathEndpoints={from:null,to:null},
  pathFinderData=null,
  pathSearchTimers={from:null,to:null},
- globalSearchType='',
+ globalSearchType='disease',
  globalSearchResults=[],
  globalSearchTimer=null,
  categorySystem='anatomy',
@@ -287,6 +287,52 @@ function applyLayerVisibility(refresh=true){
  if(refresh)refreshNetworkSummary();
 }
 
+/* ODDB_SEARCH_HOVER_22: local node labels, no network requests. */
+function installEntityHover22(graph){
+ const canvas=graph.container();
+ const tip=document.createElement('div');
+ tip.id='oddbEntityHover22';tip.className='oddb-entity-hover22';
+ tip.setAttribute('role','tooltip');tip.hidden=true;
+ const name=document.createElement('div'),type=document.createElement('div');
+ name.className='oddb-entity-hover22-name';type.className='oddb-entity-hover22-type';
+ tip.append(name,type);document.body.appendChild(tip);
+ const types={disease:'Disease',gene:'Gene',locus:'Genetic locus',variant:'Variant',drug:'Drug',trial:'Clinical trial',report:'Clinical report',consequence:'Variant consequence'};
+ const hide=()=>{tip.hidden=true;};
+ function show(event){
+  const node=event.target;
+  if(!node?.length||node.removed()||!node.visible()){hide();return;}
+  const data=node.data();
+  name.textContent=String(data.label||data.preferred_name||data.gene_symbol||data.disease_name||data.nct_id||data.title||data.entity_id||data.id||'Unnamed entity');
+  type.textContent=types[data.type]||String(data.type||'Entity').replaceAll('_',' ');
+  const original=event.originalEvent||{};
+  const box=canvas.getBoundingClientRect();
+  const point=event.renderedPosition||node.renderedPosition();
+  const x=Number.isFinite(original.clientX)?original.clientX:box.left+point.x;
+  const y=Number.isFinite(original.clientY)?original.clientY:box.top+point.y;
+  tip.hidden=false;
+  const rect=tip.getBoundingClientRect();
+  const maxX=Math.max(8,window.innerWidth-rect.width-8);
+  const maxY=Math.max(8,window.innerHeight-rect.height-8);
+  let top=y+16;
+  if(top>maxY)top=y-rect.height-12;
+  tip.style.left=Math.max(8,Math.min(maxX,x+16))+'px';
+  tip.style.top=Math.max(8,Math.min(maxY,top))+'px';
+ }
+ const escape=event=>{if(event.key==='Escape')hide();};
+ graph.on('mouseover mousemove','node',show);
+ graph.on('mouseout','node',hide);
+ graph.on('pan zoom layoutstart remove drag tap',hide);
+ canvas.addEventListener('mouseleave',hide);
+ window.addEventListener('scroll',hide,true);
+ window.addEventListener('blur',hide);
+ document.addEventListener('keydown',escape);
+ graph.on('destroy',()=>{
+  hide();tip.remove();canvas.removeEventListener('mouseleave',hide);
+  window.removeEventListener('scroll',hide,true);window.removeEventListener('blur',hide);
+  document.removeEventListener('keydown',escape);
+ });
+}
+
 function initCy(){
  cy=cytoscape({
   container:$('cy'),elements:[],autounselectify:true,
@@ -338,6 +384,7 @@ function initCy(){
   layout:{name:'cose',animate:false,fit:true,padding:30}
  });
 
+ installEntityHover22(cy);
  cy.on('tap','node',e=>{
   const d=e.target.data(),oe=e.originalEvent||{},multi=!!(oe.ctrlKey||oe.metaKey||oe.shiftKey);
   if(multi)toggleGraphSelection(e.target);
@@ -657,7 +704,20 @@ function renderSubtypes(){
  document.querySelectorAll('[data-subtype]').forEach(el=>el.onclick=()=>{selectedSubtype=el.dataset.subtype;renderSubtypes();if(selectedCategory)loadDiseases()});
 }
 
-function phaseLabel(v){return /^\d+(\.\d+)?$/.test(String(v))?`Phase ${v}`:String(v)}
+function phaseLabel(v){
+ const s=String(v??'');
+ const labels={
+  APPROVAL:'Approval stage',
+  PHASE_1:'Phase 1',
+  PHASE_1_2:'Phase 1/2',
+  PHASE_2:'Phase 2',
+  PHASE_2_3:'Phase 2/3',
+  PHASE_3:'Phase 3',
+  UNKNOWN:'Unknown',
+  NO_STAGE_REPORTED:'Not reported'
+ };
+ return labels[s]??(/^\d+(\.\d+)?$/.test(s)?`Phase ${s}`:s.replaceAll('_',' '));
+}
 function renderPhases(){
  $('drugPhaseChips').innerHTML=`<button class="filter-chip ${selectedDrugPhase===''?'active':''}" data-phase="">All phases</button>`+
   taxonomy.drug_phases.map(x=>`<button class="filter-chip ${selectedDrugPhase===x.phase?'active':''}" data-phase="${esc(x.phase)}">${esc(phaseLabel(x.phase))} <span class="opacity-75">${Number(x.drug_count).toLocaleString()}</span></button>`).join('');
@@ -757,9 +817,52 @@ async function loadEntity(type,id,graphNode=null){
 }
 
 function renderEdge(d){
- const n={disease_gene:'Disease–gene association',disease_locus:'Disease–locus association',disease_variant:'Disease–variant association',gene_variant:'Gene–variant association',variant_consequence:'Variant consequence',direct_disease_drug:'Direct therapeutic evidence',drug_target:'Drug–target pharmacology',target_overlap_only:'Target-overlap discovery',disease_trial:'Disease–clinical trial association',drug_trial:'Drug–clinical trial association',disease_report:'Disease–clinical report association',drug_report:'Drug–clinical report association'},disc=d.type==='target_overlap_only',rows=Object.entries(d).filter(([k,v])=>!['id','source','target','type'].includes(k)&&nonempty(v)).map(([k,v])=>`<tr><td>${esc(k.replaceAll('_',' '))}</td><td>${esc(v)}</td></tr>`).join('');
- $('detailsPanel').innerHTML=`<div class="evidence-box ${disc?'discovery':''}"><div class="small text-uppercase fw-bold text-secondary">Relationship</div><h2 class="h5">${esc(n[d.type]||'Evidence')}</h2>${d.warning?`<div class="alert alert-warning small">${esc(d.warning)}</div>`:''}<table class="table table-sm property-table"><tbody>${rows}</tbody></table>${evidenceLinks(d)}</div>`;
+ const names={disease_gene:'Disease–gene association',disease_locus:'Disease–locus association',disease_variant:'Disease–variant association',gene_variant:'Gene–variant association',variant_consequence:'Variant consequence',direct_disease_drug:'Direct therapeutic evidence',drug_target:'Drug–target pharmacology',target_overlap_only:'Target-overlap discovery',disease_trial:'Disease–clinical trial association',drug_trial:'Drug–clinical trial association',disease_report:'Disease–clinical report association',drug_report:'Drug–clinical report association'};
+ const registryClass='registered_trial_condition_intervention';
+ const records=Array.isArray(d.evidence_rows)?d.evidence_rows:[];
+ const subtypes=String(d.evidence_subtypes||'').split('|').map(x=>x.trim()).filter(Boolean);
+ const registry=d.type==='direct_disease_drug'&&d.association_class===registryClass&&subtypes.every(x=>x===registryClass)&&records.every(r=>r&&r.evidence_subtype===registryClass);
+
+ function value(v){
+  if(v===null||v===undefined)return '';
+  if(Array.isArray(v))return v.length?'<ol>'+v.map(x=>'<li>'+value(x)+'</li>').join('')+'</ol>':'None recorded';
+  if(typeof v==='object')return '<table class="table table-sm property-table"><tbody>'+Object.entries(v).map(([k,x])=>'<tr><td>'+esc(k.replaceAll('_',' '))+'</td><td>'+value(x)+'</td></tr>').join('')+'</tbody></table>';
+  return esc(String(v));
+ }
+
+ const rows=Object.entries(d).filter(([k,v])=>!['id','source','target','type'].includes(k)&&nonempty(v)).map(([k,v])=>'<tr><td>'+esc(k.replaceAll('_',' '))+'</td><td>'+value(v)+'</td></tr>').join('');
+ const ids=new Set();
+
+ for(const raw of [d.evidence_source_ids,...records.map(r=>r?.source_id)]){
+  for(const part of String(raw||'').split('|')){
+   const match=part.trim().match(/^(NCT\d{8})(?::[A-Za-z0-9_-]+)?$/i);
+   if(match)ids.add(match[1].toUpperCase());
+  }
+ }
+
+ const links=evidenceLinks({...d,evidence_source_ids:''})+[...ids].map(id=>'<a class="external-link" target="_blank" rel="noopener noreferrer" href="https://clinicaltrials.gov/study/'+encodeURIComponent(id)+'">'+esc(id)+' ↗</a>').join('');
+ const title=registry?'Registered clinical trial association':(names[d.type]||'Evidence');
+ const explanation=registry?'<p class="small text-secondary">Registry condition–intervention association. This record does not establish approval or efficacy.</p>':'';
+
+ $('detailsPanel').innerHTML='<div class="evidence-box '+(d.type==='target_overlap_only'?'discovery':'')+'"><div class="small text-uppercase fw-bold text-secondary">Relationship</div><h2 class="h5">'+esc(title)+'</h2>'+explanation+(d.warning?'<div class="alert alert-warning small">'+esc(d.warning)+'</div>':'')+'<table class="table table-sm property-table"><tbody>'+rows+'</tbody></table>'+links+'</div>';
 }
+/* ODDB_VIEWPORT_BUTTONS_21: viewport changes only; graph data is unchanged. */
+document.addEventListener('click', function oddbViewportButton21(event) {
+ const button=event.target.closest?.('#oddbViewportControls21 button[data-viewport-action]');
+ if(!button || !cy || cy.destroyed())return;
+ const action=button.dataset.viewportAction;
+ const steps={left:{x:-80,y:0},right:{x:80,y:0},up:{x:0,y:-80},down:{x:0,y:80}};
+ if(action==='in'||action==='out'){
+  const factor=action==='in'?1.25:0.8;
+  const level=Math.max(cy.minZoom(),Math.min(cy.maxZoom(),cy.zoom()*factor));
+  cy.zoom({level,renderedPosition:{x:cy.width()/2,y:cy.height()/2}});
+ }else if(steps[action]){
+  cy.panBy(steps[action]);
+ }else if(action==='fit'){
+  document.getElementById('fitGraph')?.click();
+ }
+});
+
 
 function clearNetwork(){if(cy)cy.elements().remove();selectedGraphNodes.clear();renderGraphSelectionBar();refreshNetworkSummary()}
 function clearDiseaseBrowse(){selectedDiseases.clear();renderSelectedDiseaseSummary();$('diseaseList').innerHTML='<div class="p-4 text-center text-secondary small">Select a category above.</div>';$('diseaseCount').textContent='Choose a category.'}
@@ -793,13 +896,21 @@ function syncEntityStarter(){
  const empty=!cy||cy.nodes().length===0;
  panel.classList.toggle('d-none',!empty);
 }
-function syncGlobalSearchTypeFilters(){
- document.querySelectorAll('[data-global-search-type]').forEach(btn=>{
-  btn.classList.toggle('active',(btn.dataset.globalSearchType||'')===globalSearchType);
- });
+function scopedEntitySearchType22(type){
+ return ENTITY_SEARCH_TYPES.includes(type)?type:'disease';
 }
-function focusEntitySearch(type=''){
- globalSearchType=type||'';
+function syncGlobalSearchTypeFilters(){
+ globalSearchType=scopedEntitySearchType22(globalSearchType);
+ document.querySelectorAll('[data-global-search-type]').forEach(btn=>{
+  const active=btn.dataset.globalSearchType===globalSearchType;
+  btn.classList.toggle('active',active);
+  btn.setAttribute('aria-pressed',String(active));
+ });
+ const placeholders={disease:'Search diseases…',gene:'Search HGNC genes…',variant:'Search variants…',drug:'Search drugs…',trial:'Search clinical trials…',report:'Search clinical reports…'};
+ if($('globalSearch'))$('globalSearch').placeholder=placeholders[globalSearchType];
+}
+function focusEntitySearch(type='disease'){
+ globalSearchType=scopedEntitySearchType22(type);
  syncGlobalSearchTypeFilters();
  const input=$('globalSearch');
  if(input){
@@ -877,6 +988,8 @@ function renderGlobalSearchResults(data){
  });
 }
 async function runGlobalSearch(q){
+ globalSearchType=scopedEntitySearchType22(globalSearchType);
+ syncGlobalSearchTypeFilters();
  q=String(q||'').trim();
  if(q.length<2){
   $('searchResults').classList.add('d-none');
@@ -1021,7 +1134,7 @@ function bindGlobalEntitySearch(){
  };
  $('clearGlobalSearch').onclick=clearGlobalSearch;
  document.querySelectorAll('[data-global-search-type]').forEach(btn=>btn.onclick=()=>{
-  globalSearchType=btn.dataset.globalSearchType||'';
+  globalSearchType=scopedEntitySearchType22(btn.dataset.globalSearchType);
   syncGlobalSearchTypeFilters();
   const q=$('globalSearch').value.trim();
   if(q.length>=2)runGlobalSearch(q);

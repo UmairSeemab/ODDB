@@ -120,10 +120,10 @@
         {
             "id": "ODDB-193",
             "name": "RETINITIS PIGMENTOSA",
-            "total": 105,
+            "total": 112,
             "parts": {
-                "1": 14,
-                "2": 10,
+                "1": 16,
+                "2": 11,
                 "3": 7,
                 "4": 6,
                 "5": 2,
@@ -132,13 +132,13 @@
                 "8": 6,
                 "9": 4,
                 "10": 6,
-                "11": 4,
+                "11": 5,
                 "12": 1,
-                "14": 4,
+                "14": 5,
                 "15": 4,
                 "16": 6,
                 "17": 6,
-                "19": 3,
+                "19": 5,
                 "20": 4,
                 "22": 1,
                 "MT": 3,
@@ -323,23 +323,66 @@
         {
             "id": "ODDB-47",
             "name": "CONE-ROD DYSTROPHY",
-            "total": 26,
+            "total": 29,
             "parts": {
                 "1": 3,
                 "2": 1,
                 "3": 1,
                 "4": 2,
-                "6": 2,
+                "6": 3,
                 "8": 2,
                 "9": 1,
                 "10": 2,
-                "12": 1,
+                "12": 2,
                 "14": 2,
                 "17": 4,
-                "19": 1,
+                "19": 2,
                 "20": 1,
                 "21": 1,
                 "X": 2
+            }
+        },
+        {
+            "id": "ODDB-103",
+            "name": "LEBER CONGENITAL AMAUROSIS",
+            "total": 24,
+            "parts": {
+                "1": 4,
+                "2": 1,
+                "3": 1,
+                "4": 2,
+                "6": 3,
+                "7": 1,
+                "8": 1,
+                "11": 1,
+                "12": 2,
+                "14": 3,
+                "16": 2,
+                "17": 2,
+                "19": 1
+            }
+        },
+        {
+            "id": "ODDB-16",
+            "name": "BARDET-BIEDL SYNDROME",
+            "total": 23,
+            "parts": {
+                "1": 2,
+                "2": 4,
+                "3": 3,
+                "4": 2,
+                "7": 1,
+                "8": 1,
+                "9": 1,
+                "10": 1,
+                "11": 1,
+                "12": 1,
+                "14": 1,
+                "15": 1,
+                "16": 1,
+                "17": 1,
+                "20": 1,
+                "22": 1
             }
         },
         {
@@ -358,25 +401,6 @@
                 "16": 1,
                 "17": 2,
                 "X": 1
-            }
-        },
-        {
-            "id": "ODDB-103",
-            "name": "LEBER CONGENITAL AMAUROSIS",
-            "total": 22,
-            "parts": {
-                "1": 4,
-                "2": 1,
-                "3": 1,
-                "4": 2,
-                "6": 3,
-                "7": 1,
-                "8": 1,
-                "12": 2,
-                "14": 2,
-                "16": 2,
-                "17": 2,
-                "19": 1
             }
         },
         {
@@ -453,27 +477,9 @@
             }
         },
         {
-            "id": "ODDB-16",
-            "name": "BARDET-BIEDL SYNDROME",
-            "total": 15,
-            "parts": {
-                "1": 2,
-                "2": 3,
-                "3": 1,
-                "4": 2,
-                "10": 1,
-                "11": 1,
-                "12": 1,
-                "15": 1,
-                "16": 1,
-                "17": 1,
-                "22": 1
-            }
-        },
-        {
             "id": "ODDB-94",
             "name": "JOUBERT SYNDROME",
-            "total": 13,
+            "total": 14,
             "parts": {
                 "2": 3,
                 "4": 1,
@@ -481,7 +487,7 @@
                 "8": 2,
                 "9": 1,
                 "11": 1,
-                "12": 1,
+                "12": 2,
                 "16": 2,
                 "X": 1
             }
@@ -498,6 +504,21 @@
                 "15": 1,
                 "18": 1,
                 "20": 1
+            }
+        },
+        {
+            "id": "ODDB-107",
+            "name": "MACULAR DYSTROPHY",
+            "total": 12,
+            "parts": {
+                "1": 1,
+                "3": 1,
+                "4": 2,
+                "5": 1,
+                "6": 4,
+                "16": 1,
+                "17": 1,
+                "MT": 1
             }
         },
         {
@@ -554,15 +575,17 @@
             }
         },
         {
-            "id": "ODDB-107",
-            "name": "MACULAR DYSTROPHY",
+            "id": "ODDB-46",
+            "name": "CONE DYSTROPHY",
             "total": 8,
             "parts": {
-                "4": 2,
-                "5": 1,
-                "6": 3,
-                "16": 1,
-                "MT": 1
+                "3": 1,
+                "6": 1,
+                "9": 1,
+                "10": 1,
+                "12": 2,
+                "13": 1,
+                "16": 1
             }
         },
         {
@@ -605,19 +628,6 @@
                 "4": 1,
                 "9": 1,
                 "12": 1
-            }
-        },
-        {
-            "id": "ODDB-46",
-            "name": "CONE DYSTROPHY",
-            "total": 7,
-            "parts": {
-                "6": 1,
-                "9": 1,
-                "10": 1,
-                "12": 2,
-                "13": 1,
-                "16": 1
             }
         },
         {
@@ -756,6 +766,17 @@
             }
         },
         {
+            "id": "ODDB-225",
+            "name": "STARGARDT DISEASE",
+            "total": 4,
+            "parts": {
+                "1": 1,
+                "3": 1,
+                "4": 1,
+                "6": 1
+            }
+        },
+        {
             "id": "ODDB-254",
             "name": "UVEAL MELANOMA",
             "total": 4,
@@ -780,6 +801,16 @@
             "parts": {
                 "15": 2,
                 "19": 1
+            }
+        },
+        {
+            "id": "ODDB-115",
+            "name": "MICROPHTHALMIA",
+            "total": 3,
+            "parts": {
+                "8": 1,
+                "12": 1,
+                "14": 1
             }
         },
         {
@@ -847,16 +878,6 @@
                 "3": 1,
                 "6": 1,
                 "18": 1
-            }
-        },
-        {
-            "id": "ODDB-225",
-            "name": "STARGARDT DISEASE",
-            "total": 3,
-            "parts": {
-                "1": 1,
-                "4": 1,
-                "6": 1
             }
         },
         {
@@ -950,20 +971,20 @@
             }
         },
         {
+            "id": "ODDB-99",
+            "name": "KNOBLOCH SYNDROME",
+            "total": 2,
+            "parts": {
+                "16": 1,
+                "21": 1
+            }
+        },
+        {
             "id": "ODDB-104",
             "name": "LEBER HEREDITARY OPTIC NEUROPATHY",
             "total": 2,
             "parts": {
                 "MT": 2
-            }
-        },
-        {
-            "id": "ODDB-115",
-            "name": "MICROPHTHALMIA",
-            "total": 2,
-            "parts": {
-                "8": 1,
-                "12": 1
             }
         },
         {
@@ -982,6 +1003,15 @@
             "parts": {
                 "11": 1,
                 "21": 1
+            }
+        },
+        {
+            "id": "ODDB-137",
+            "name": "OGUCHI DISEASE",
+            "total": 2,
+            "parts": {
+                "2": 1,
+                "13": 1
             }
         },
         {
@@ -1237,6 +1267,14 @@
             }
         },
         {
+            "id": "ODDB-143",
+            "name": "FAMILIAL CAVITARY OPTIC DISK ANOMALY",
+            "total": 1,
+            "parts": {
+                "12": 1
+            }
+        },
+        {
             "id": "ODDB-71",
             "name": "FEBRILE SEIZURES",
             "total": 1,
@@ -1338,14 +1376,6 @@
             "total": 1,
             "parts": {
                 "11": 1
-            }
-        },
-        {
-            "id": "ODDB-99",
-            "name": "KNOBLOCH SYNDROME",
-            "total": 1,
-            "parts": {
-                "21": 1
             }
         },
         {
@@ -1458,14 +1488,6 @@
             "total": 1,
             "parts": {
                 "4": 1
-            }
-        },
-        {
-            "id": "ODDB-137",
-            "name": "OGUCHI DISEASE",
-            "total": 1,
-            "parts": {
-                "2": 1
             }
         },
         {
@@ -2779,8 +2801,24 @@
     ],
     "genes_diseases": [
         {
+            "id": "HGNC:34",
+            "name": "ABCA4",
+            "total": 6,
+            "parts": {
+                "Diseases": 6
+            }
+        },
+        {
             "id": "HGNC:4883",
             "name": "CFH",
+            "total": 6,
+            "parts": {
+                "Diseases": 6
+            }
+        },
+        {
+            "id": "HGNC:9942",
+            "name": "PRPH2",
             "total": 6,
             "parts": {
                 "Diseases": 6
@@ -2792,14 +2830,6 @@
             "total": 6,
             "parts": {
                 "Diseases": 6
-            }
-        },
-        {
-            "id": "HGNC:34",
-            "name": "ABCA4",
-            "total": 5,
-            "parts": {
-                "Diseases": 5
             }
         },
         {
@@ -2851,8 +2881,8 @@
             }
         },
         {
-            "id": "HGNC:9942",
-            "name": "PRPH2",
+            "id": "HGNC:11799",
+            "name": "THRB",
             "total": 5,
             "parts": {
                 "Diseases": 5
@@ -2875,8 +2905,24 @@
             }
         },
         {
+            "id": "HGNC:27232",
+            "name": "CFAP418",
+            "total": 4,
+            "parts": {
+                "Diseases": 4
+            }
+        },
+        {
             "id": "HGNC:2200",
             "name": "COL2A1",
+            "total": 4,
+            "parts": {
+                "Diseases": 4
+            }
+        },
+        {
+            "id": "HGNC:2383",
+            "name": "CRX",
             "total": 4,
             "parts": {
                 "Diseases": 4
@@ -2979,6 +3025,14 @@
             }
         },
         {
+            "id": "HGNC:20087",
+            "name": "TTC8",
+            "total": 4,
+            "parts": {
+                "Diseases": 4
+            }
+        },
+        {
             "id": "HGNC:18340",
             "name": "WDR19",
             "total": 4,
@@ -3037,14 +3091,6 @@
         {
             "id": "HGNC:1869",
             "name": "CETP",
-            "total": 3,
-            "parts": {
-                "Diseases": 3
-            }
-        },
-        {
-            "id": "HGNC:27232",
-            "name": "CFAP418",
             "total": 3,
             "parts": {
                 "Diseases": 3
@@ -3155,6 +3201,14 @@
             }
         },
         {
+            "id": "HGNC:30391",
+            "name": "IFT172",
+            "total": 3,
+            "parts": {
+                "Diseases": 3
+            }
+        },
+        {
             "id": "HGNC:19100",
             "name": "IL23R",
             "total": 3,
@@ -3227,6 +3281,14 @@
             }
         },
         {
+            "id": "HGNC:8522",
+            "name": "OTX2",
+            "total": 3,
+            "parts": {
+                "Diseases": 3
+            }
+        },
+        {
             "id": "HGNC:8620",
             "name": "PAX6",
             "total": 3,
@@ -3253,6 +3315,14 @@
         {
             "id": "HGNC:19139",
             "name": "POMGNT1",
+            "total": 3,
+            "parts": {
+                "Diseases": 3
+            }
+        },
+        {
+            "id": "HGNC:18286",
+            "name": "RAX2",
             "total": 3,
             "parts": {
                 "Diseases": 3
@@ -3317,14 +3387,6 @@
         {
             "id": "HGNC:7146",
             "name": "TRPM1",
-            "total": 3,
-            "parts": {
-                "Diseases": 3
-            }
-        },
-        {
-            "id": "HGNC:20087",
-            "name": "TTC8",
             "total": 3,
             "parts": {
                 "Diseases": 3
@@ -3427,6 +3489,14 @@
             }
         },
         {
+            "id": "HGNC:17110",
+            "name": "ADAMTS18",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
             "id": "HGNC:14632",
             "name": "ADAMTSL1",
             "total": 2,
@@ -3523,6 +3593,14 @@
             }
         },
         {
+            "id": "HGNC:13210",
+            "name": "ARL6",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
             "id": "HGNC:13907",
             "name": "ATOH7",
             "total": 2,
@@ -3547,8 +3625,24 @@
             }
         },
         {
+            "id": "HGNC:966",
+            "name": "BBS1",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
             "id": "HGNC:967",
             "name": "BBS2",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
+            "id": "HGNC:30000",
+            "name": "BBS9",
             "total": 2,
             "parts": {
                 "Diseases": 2
@@ -3611,6 +3705,14 @@
             }
         },
         {
+            "id": "HGNC:1386",
+            "name": "CABP4",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
             "id": "HGNC:26276",
             "name": "CAMKMT",
             "total": 2,
@@ -3653,6 +3755,14 @@
         {
             "id": "HGNC:34341",
             "name": "CDKN2B-AS1",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
+            "id": "HGNC:28209",
+            "name": "CEP19",
             "total": 2,
             "parts": {
                 "Diseases": 2
@@ -3763,14 +3873,6 @@
             }
         },
         {
-            "id": "HGNC:2383",
-            "name": "CRX",
-            "total": 2,
-            "parts": {
-                "Diseases": 2
-            }
-        },
-        {
             "id": "HGNC:2400",
             "name": "CRYBB3",
             "total": 2,
@@ -3843,6 +3945,22 @@
             }
         },
         {
+            "id": "HGNC:28957",
+            "name": "EMC1",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
+            "id": "HGNC:3360",
+            "name": "ENSA",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
             "id": "HGNC:18173",
             "name": "ERAP1",
             "total": 2,
@@ -3893,6 +4011,14 @@
         {
             "id": "HGNC:28572",
             "name": "FRMPD2",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
+            "id": "HGNC:3960",
+            "name": "FSCN2",
             "total": 2,
             "parts": {
                 "Diseases": 2
@@ -3995,6 +4121,22 @@
             }
         },
         {
+            "id": "HGNC:10013",
+            "name": "GRK1",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
+            "id": "HGNC:4679",
+            "name": "GUCA1B",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
             "id": "HGNC:4689",
             "name": "GUCY2D",
             "total": 2,
@@ -4043,8 +4185,8 @@
             }
         },
         {
-            "id": "HGNC:30391",
-            "name": "IFT172",
+            "id": "HGNC:14313",
+            "name": "IFT81",
             "total": 2,
             "parts": {
                 "Diseases": 2
@@ -4299,8 +4441,24 @@
             }
         },
         {
+            "id": "HGNC:7108",
+            "name": "MKKS",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
             "id": "HGNC:7121",
             "name": "MKS1",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
+            "id": "HGNC:7165",
+            "name": "MMP19",
             "total": 2,
             "parts": {
                 "Diseases": 2
@@ -4341,6 +4499,14 @@
         {
             "id": "HGNC:7678",
             "name": "NDP",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
+            "id": "HGNC:7762",
+            "name": "NEUROD1",
             "total": 2,
             "parts": {
                 "Diseases": 2
@@ -4419,14 +4585,6 @@
             }
         },
         {
-            "id": "HGNC:8522",
-            "name": "OTX2",
-            "total": 2,
-            "parts": {
-                "Diseases": 2
-            }
-        },
-        {
             "id": "HGNC:19317",
             "name": "P3H2",
             "total": 2,
@@ -4499,6 +4657,14 @@
             }
         },
         {
+            "id": "HGNC:30836",
+            "name": "POC1B",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
             "id": "HGNC:9187",
             "name": "POLR2A",
             "total": 2,
@@ -4555,16 +4721,16 @@
             }
         },
         {
-            "id": "HGNC:18286",
-            "name": "RAX2",
+            "id": "HGNC:9884",
+            "name": "RB1",
             "total": 2,
             "parts": {
                 "Diseases": 2
             }
         },
         {
-            "id": "HGNC:9884",
-            "name": "RB1",
+            "id": "HGNC:19977",
+            "name": "RDH12",
             "total": 2,
             "parts": {
                 "Diseases": 2
@@ -4731,6 +4897,14 @@
             }
         },
         {
+            "id": "HGNC:20423",
+            "name": "SPATA7",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
             "id": "HGNC:53953",
             "name": "SREBF2-AS1",
             "total": 2,
@@ -4765,14 +4939,6 @@
         {
             "id": "HGNC:11641",
             "name": "TCF7L2",
-            "total": 2,
-            "parts": {
-                "Diseases": 2
-            }
-        },
-        {
-            "id": "HGNC:11799",
-            "name": "THRB",
             "total": 2,
             "parts": {
                 "Diseases": 2
@@ -4837,6 +5003,14 @@
         {
             "id": "HGNC:30809",
             "name": "TRIB2",
+            "total": 2,
+            "parts": {
+                "Diseases": 2
+            }
+        },
+        {
+            "id": "HGNC:16380",
+            "name": "TRIM32",
             "total": 2,
             "parts": {
                 "Diseases": 2
@@ -5029,14 +5203,6 @@
         {
             "id": "HGNC:13201",
             "name": "ADAMTS10",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
-            "id": "HGNC:17110",
-            "name": "ADAMTS18",
             "total": 1,
             "parts": {
                 "Diseases": 1
@@ -5331,14 +5497,6 @@
             }
         },
         {
-            "id": "HGNC:13210",
-            "name": "ARL6",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
             "id": "HGNC:20730",
             "name": "ARMC9",
             "total": 1,
@@ -5539,14 +5697,6 @@
             }
         },
         {
-            "id": "HGNC:966",
-            "name": "BBS1",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
             "id": "HGNC:26291",
             "name": "BBS10",
             "total": 1,
@@ -5581,14 +5731,6 @@
         {
             "id": "HGNC:18758",
             "name": "BBS7",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
-            "id": "HGNC:30000",
-            "name": "BBS9",
             "total": 1,
             "parts": {
                 "Diseases": 1
@@ -5789,14 +5931,6 @@
         {
             "id": "HGNC:1375",
             "name": "CA4",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
-            "id": "HGNC:1386",
-            "name": "CABP4",
             "total": 1,
             "parts": {
                 "Diseases": 1
@@ -6189,14 +6323,6 @@
         {
             "id": "HGNC:29182",
             "name": "CEP164",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
-            "id": "HGNC:28209",
-            "name": "CEP19",
             "total": 1,
             "parts": {
                 "Diseases": 1
@@ -7259,14 +7385,6 @@
             }
         },
         {
-            "id": "HGNC:28957",
-            "name": "EMC1",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
             "id": "HGNC:35412",
             "name": "EML6",
             "total": 1,
@@ -7277,14 +7395,6 @@
         {
             "id": "HGNC:3354",
             "name": "ENO3",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
-            "id": "HGNC:3360",
-            "name": "ENSA",
             "total": 1,
             "parts": {
                 "Diseases": 1
@@ -7565,14 +7675,6 @@
         {
             "id": "HGNC:29007",
             "name": "FRMPD4",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
-            "id": "HGNC:3960",
-            "name": "FSCN2",
             "total": 1,
             "parts": {
                 "Diseases": 1
@@ -7907,14 +8009,6 @@
             }
         },
         {
-            "id": "HGNC:10013",
-            "name": "GRK1",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
             "id": "HGNC:4595",
             "name": "GRM3",
             "total": 1,
@@ -7941,14 +8035,6 @@
         {
             "id": "HGNC:4670",
             "name": "GTPBP2",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
-            "id": "HGNC:4679",
-            "name": "GUCA1B",
             "total": 1,
             "parts": {
                 "Diseases": 1
@@ -8245,14 +8331,6 @@
         {
             "id": "HGNC:17861",
             "name": "IFT54",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
-            "id": "HGNC:14313",
-            "name": "IFT81",
             "total": 1,
             "parts": {
                 "Diseases": 1
@@ -9459,14 +9537,6 @@
             }
         },
         {
-            "id": "HGNC:7108",
-            "name": "MKKS",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
             "id": "HGNC:19331",
             "name": "MMAB",
             "total": 1,
@@ -9477,14 +9547,6 @@
         {
             "id": "HGNC:14668",
             "name": "MMEL1",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
-            "id": "HGNC:7165",
-            "name": "MMP19",
             "total": 1,
             "parts": {
                 "Diseases": 1
@@ -9869,14 +9931,6 @@
         {
             "id": "HGNC:13974",
             "name": "NELFE",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
-            "id": "HGNC:7762",
-            "name": "NEUROD1",
             "total": 1,
             "parts": {
                 "Diseases": 1
@@ -10603,14 +10657,6 @@
             }
         },
         {
-            "id": "HGNC:30836",
-            "name": "POC1B",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
             "id": "HGNC:26658",
             "name": "POC5",
             "total": 1,
@@ -11005,14 +11051,6 @@
         {
             "id": "HGNC:17964",
             "name": "RDH11",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
-            "id": "HGNC:19977",
-            "name": "RDH12",
             "total": 1,
             "parts": {
                 "Diseases": 1
@@ -11675,14 +11713,6 @@
             }
         },
         {
-            "id": "HGNC:20423",
-            "name": "SPATA7",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
             "id": "HGNC:26293",
             "name": "SPEF2",
             "total": 1,
@@ -12235,14 +12265,6 @@
             }
         },
         {
-            "id": "HGNC:16380",
-            "name": "TRIM32",
-            "total": 1,
-            "parts": {
-                "Diseases": 1
-            }
-        },
-        {
             "id": "HGNC:19014",
             "name": "TRIM42",
             "total": 1,
@@ -12767,11 +12789,13 @@
         {
             "id": "ODDB-6",
             "name": "AGE-RELATED MACULAR DEGENERATION",
-            "total": 54,
+            "total": 56,
             "parts": {
                 "nan": 4,
-                "PHASE1/PHASE2": 4,
-                "PHASE2": 21,
+                "PHASE1": 1,
+                "PHASE1 | PHASE2": 1,
+                "PHASE1/PHASE2": 3,
+                "PHASE2": 22,
                 "PHASE2/PHASE3": 2,
                 "PHASE3": 8,
                 "PHASE4": 15
@@ -12780,15 +12804,15 @@
         {
             "id": "ODDB-78",
             "name": "GLAUCOMA",
-            "total": 36,
+            "total": 39,
             "parts": {
                 "nan": 6,
-                "PHASE1": 4,
+                "PHASE1": 5,
                 "PHASE1/PHASE2": 3,
                 "PHASE2": 1,
                 "PHASE2/PHASE3": 1,
-                "PHASE3": 8,
-                "PHASE4": 13
+                "PHASE3": 9,
+                "PHASE4": 14
             }
         },
         {
@@ -12798,11 +12822,26 @@
             "parts": {
                 "nan": 5,
                 "PHASE1": 3,
+                "PHASE1 | PHASE2": 1,
                 "PHASE1/PHASE2": 1,
-                "PHASE2": 6,
+                "PHASE2": 5,
                 "PHASE2/PHASE3": 2,
                 "PHASE3": 5,
                 "PHASE4": 12
+            }
+        },
+        {
+            "id": "ODDB-38",
+            "name": "CHOROIDAL NEOVASCULARIZATION",
+            "total": 18,
+            "parts": {
+                "PHASE1": 3,
+                "PHASE1 | PHASE2": 1,
+                "PHASE1/PHASE2": 1,
+                "PHASE2": 3,
+                "PHASE2/PHASE3": 1,
+                "PHASE3": 3,
+                "PHASE4": 6
             }
         },
         {
@@ -12811,22 +12850,9 @@
             "total": 17,
             "parts": {
                 "nan": 4,
-                "PHASE1/PHASE2": 3,
+                "PHASE1/PHASE2": 2,
                 "PHASE2": 2,
-                "PHASE3": 3,
-                "PHASE4": 5
-            }
-        },
-        {
-            "id": "ODDB-38",
-            "name": "CHOROIDAL NEOVASCULARIZATION",
-            "total": 15,
-            "parts": {
-                "PHASE1": 2,
-                "PHASE1/PHASE2": 1,
-                "PHASE2": 2,
-                "PHASE2/PHASE3": 2,
-                "PHASE3": 3,
+                "PHASE3": 4,
                 "PHASE4": 5
             }
         },
@@ -12868,14 +12894,48 @@
             }
         },
         {
+            "id": "ODDB-DIS-MONDO-0020283",
+            "name": "UVEITIS",
+            "total": 13,
+            "parts": {
+                "PHASE1 | PHASE2": 1,
+                "PHASE2": 3,
+                "PHASE2 | PHASE3": 1,
+                "PHASE3": 8
+            }
+        },
+        {
             "id": "ODDB-123",
             "name": "MYOPIA",
-            "total": 10,
+            "total": 12,
             "parts": {
                 "EARLY_PHASE1": 1,
                 "nan": 2,
                 "PHASE2": 2,
+                "PHASE3": 2,
                 "PHASE4": 5
+            }
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0006733",
+            "name": "DRY EYE SYNDROME",
+            "total": 11,
+            "parts": {
+                "PHASE2": 3,
+                "PHASE2 | PHASE3": 1,
+                "PHASE3": 2,
+                "PHASE4": 5
+            }
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0019100",
+            "name": "NEUROMYELITIS OPTICA",
+            "total": 11,
+            "parts": {
+                "PHASE1 | PHASE2": 1,
+                "PHASE2": 6,
+                "PHASE2 | PHASE3": 3,
+                "PHASE3": 1
             }
         },
         {
@@ -12923,6 +12983,15 @@
             }
         },
         {
+            "id": "ODDB-DIS-MONDO-0006875",
+            "name": "OCULAR HYPERTENSION",
+            "total": 8,
+            "parts": {
+                "PHASE3": 3,
+                "PHASE4": 5
+            }
+        },
+        {
             "id": "ODDB-175",
             "name": "PROLIFERATIVE VITREORETINOPATHY",
             "total": 8,
@@ -12934,6 +13003,16 @@
             }
         },
         {
+            "id": "ODDB-193",
+            "name": "RETINITIS PIGMENTOSA",
+            "total": 8,
+            "parts": {
+                "nan": 1,
+                "PHASE2": 2,
+                "PHASE3": 5
+            }
+        },
+        {
             "id": "ODDB-98",
             "name": "KERATOCONUS",
             "total": 7,
@@ -12942,16 +13021,6 @@
                 "PHASE2": 2,
                 "PHASE3": 1,
                 "PHASE4": 3
-            }
-        },
-        {
-            "id": "ODDB-193",
-            "name": "RETINITIS PIGMENTOSA",
-            "total": 7,
-            "parts": {
-                "nan": 1,
-                "PHASE2": 2,
-                "PHASE3": 4
             }
         },
         {
@@ -12974,6 +13043,15 @@
             }
         },
         {
+            "id": "ODDB-68",
+            "name": "EXFOLIATION SYNDROME",
+            "total": 6,
+            "parts": {
+                "nan": 1,
+                "PHASE4": 5
+            }
+        },
+        {
             "id": "ODDB-69",
             "name": "EXUDATIVE AGE-RELATED MACULAR DEGENERATION",
             "total": 6,
@@ -12986,12 +13064,22 @@
             }
         },
         {
-            "id": "ODDB-68",
-            "name": "EXFOLIATION SYNDROME",
+            "id": "ODDB-229",
+            "name": "STRABISMUS",
+            "total": 6,
+            "parts": {
+                "nan": 2,
+                "PHASE3": 3,
+                "PHASE4": 1
+            }
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0005885",
+            "name": "OPTIC NEURITIS",
             "total": 5,
             "parts": {
-                "nan": 1,
-                "PHASE4": 4
+                "PHASE2": 2,
+                "PHASE3": 3
             }
         },
         {
@@ -13015,11 +13103,40 @@
             }
         },
         {
-            "id": "ODDB-229",
-            "name": "STRABISMUS",
+            "id": "ODDB-DIS-MONDO-0004785",
+            "name": "BLEPHARITIS",
             "total": 4,
             "parts": {
-                "nan": 3,
+                "PHASE2": 3,
+                "PHASE3": 1
+            }
+        },
+        {
+            "id": "ODDB-191",
+            "name": "RETINAL DYSTROPHY",
+            "total": 4,
+            "parts": {
+                "PHASE1 | PHASE2": 1,
+                "PHASE2": 2,
+                "PHASE3": 1
+            }
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0018616",
+            "name": "CENTRAL SEROUS CHORIORETINOPATHY",
+            "total": 3,
+            "parts": {
+                "PHASE2": 2,
+                "PHASE2 | PHASE3": 1
+            }
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0003005",
+            "name": "MACULAR RETINAL EDEMA",
+            "total": 3,
+            "parts": {
+                "PHASE2": 1,
+                "PHASE3": 1,
                 "PHASE4": 1
             }
         },
@@ -13038,15 +13155,6 @@
             "parts": {
                 "PHASE1": 1,
                 "PHASE2": 2
-            }
-        },
-        {
-            "id": "ODDB-191",
-            "name": "RETINAL DYSTROPHY",
-            "total": 3,
-            "parts": {
-                "PHASE2": 2,
-                "PHASE3": 1
             }
         },
         {
@@ -13069,11 +13177,28 @@
             }
         },
         {
+            "id": "ODDB-225",
+            "name": "STARGARDT DISEASE",
+            "total": 3,
+            "parts": {
+                "PHASE1 | PHASE2": 1,
+                "PHASE3": 2
+            }
+        },
+        {
             "id": "ODDB-5",
             "name": "ADVANCED AGE-RELATED MACULAR DEGENERATION",
             "total": 2,
             "parts": {
                 "PHASE3": 2
+            }
+        },
+        {
+            "id": "ODDB-25",
+            "name": "CATARACTS",
+            "total": 2,
+            "parts": {
+                "PHASE4": 2
             }
         },
         {
@@ -13112,6 +13237,23 @@
             }
         },
         {
+            "id": "ODDB-DIS-MONDO-0001330",
+            "name": "PRESBYOPIA",
+            "total": 2,
+            "parts": {
+                "PHASE2": 2
+            }
+        },
+        {
+            "id": "ODDB-187",
+            "name": "RETINAL DEGENERATION",
+            "total": 2,
+            "parts": {
+                "PHASE1 | PHASE2": 1,
+                "PHASE4": 1
+            }
+        },
+        {
             "id": "ODDB-263",
             "name": "VOGT-KOYANAGI-HARADA SYNDROME",
             "total": 2,
@@ -13125,6 +13267,14 @@
             "total": 1,
             "parts": {
                 "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0001478",
+            "name": "ANISOMETROPIA",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
             }
         },
         {
@@ -13144,6 +13294,14 @@
             }
         },
         {
+            "id": "ODDB-DIS-MONDO-0003799",
+            "name": "CONJUNCTIVITIS",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
+            }
+        },
+        {
             "id": "ODDB-87",
             "name": "HYPEROPIA",
             "total": 1,
@@ -13157,6 +13315,22 @@
             "total": 1,
             "parts": {
                 "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0006814",
+            "name": "IRITIS",
+            "total": 1,
+            "parts": {
+                "NA": 1
+            }
+        },
+        {
+            "id": "ODDB-DIS-MONDO-0004768",
+            "name": "KERATOCONJUNCTIVITIS",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
             }
         },
         {
@@ -13184,6 +13358,14 @@
             }
         },
         {
+            "id": "ODDB-DIS-MONDO-0004769",
+            "name": "ORBITAL PSEUDOTUMOR",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
+            }
+        },
+        {
             "id": "ODDB-178",
             "name": "PSEUDOXANTHOMA ELASTICUM",
             "total": 1,
@@ -13200,19 +13382,11 @@
             }
         },
         {
-            "id": "ODDB-187",
-            "name": "RETINAL DEGENERATION",
+            "id": "ODDB-DIS-MONDO-0006948",
+            "name": "RETINAL ARTERY OCCLUSION",
             "total": 1,
             "parts": {
-                "PHASE4": 1
-            }
-        },
-        {
-            "id": "ODDB-225",
-            "name": "STARGARDT DISEASE",
-            "total": 1,
-            "parts": {
-                "PHASE3": 1
+                "PHASE2": 1
             }
         }
     ],
@@ -13220,13 +13394,23 @@
         {
             "id": "ODDB-DRUG-9B9EA0EF918A",
             "name": "Dexamethasone",
-            "total": 14,
+            "total": 16,
             "parts": {
-                "nan": 1,
                 "PHASE1": 2,
                 "PHASE2": 3,
-                "PHASE3": 2,
-                "PHASE4": 6
+                "PHASE3": 4,
+                "PHASE4": 7
+            }
+        },
+        {
+            "id": "ODDB-DRUG-8BF2B9263222",
+            "name": "BEVACIZUMAB",
+            "total": 14,
+            "parts": {
+                "PHASE1": 1,
+                "PHASE2": 2,
+                "PHASE3": 3,
+                "PHASE4": 8
             }
         },
         {
@@ -13241,14 +13425,14 @@
             }
         },
         {
-            "id": "ODDB-DRUG-8BF2B9263222",
-            "name": "BEVACIZUMAB",
-            "total": 13,
+            "id": "ODDB-DRUG-3BC157F6BCC9",
+            "name": "Triamcinolone Acetonide",
+            "total": 12,
             "parts": {
-                "PHASE1": 1,
-                "PHASE2": 2,
-                "PHASE3": 2,
-                "PHASE4": 8
+                "nan": 2,
+                "PHASE2/PHASE3": 3,
+                "PHASE3": 4,
+                "PHASE4": 3
             }
         },
         {
@@ -13262,18 +13446,6 @@
             }
         },
         {
-            "id": "ODDB-DRUG-3BC157F6BCC9",
-            "name": "Triamcinolone Acetonide",
-            "total": 10,
-            "parts": {
-                "nan": 2,
-                "PHASE1/PHASE2": 1,
-                "PHASE2/PHASE3": 3,
-                "PHASE3": 1,
-                "PHASE4": 3
-            }
-        },
-        {
             "id": "ODDB-DRUG-B13A45839B88",
             "name": "CONBERCEPT",
             "total": 8,
@@ -13283,6 +13455,16 @@
                 "PHASE2": 1,
                 "PHASE3": 1,
                 "PHASE4": 3
+            }
+        },
+        {
+            "id": "ODDB-DRUG-20DE6E79F407",
+            "name": "Cyclosporine",
+            "total": 8,
+            "parts": {
+                "nan": 3,
+                "PHASE2": 4,
+                "PHASE4": 1
             }
         },
         {
@@ -13306,12 +13488,25 @@
             }
         },
         {
-            "id": "ODDB-DRUG-20DE6E79F407",
-            "name": "Cyclosporine",
+            "id": "ODDB-DRUG-8E776F57780E",
+            "name": "Methotrexate",
             "total": 7,
             "parts": {
-                "nan": 3,
-                "PHASE2": 4
+                "EARLY_PHASE1": 1,
+                "PHASE2": 2,
+                "PHASE2/PHASE3": 1,
+                "PHASE3": 1,
+                "PHASE4": 2
+            }
+        },
+        {
+            "id": "ODDB-DRUG-64BBC3A09BBE",
+            "name": "Prednisolone Acetate",
+            "total": 7,
+            "parts": {
+                "NA": 1,
+                "PHASE3": 1,
+                "PHASE4": 5
             }
         },
         {
@@ -13327,6 +13522,24 @@
             }
         },
         {
+            "id": "ODDB-DRUG-62E96866E84C",
+            "name": "Prednisolone",
+            "total": 6,
+            "parts": {
+                "PHASE3": 3,
+                "PHASE4": 3
+            }
+        },
+        {
+            "id": "ODDB-DRUG-02D04505B4E9",
+            "name": "Sirolimus",
+            "total": 6,
+            "parts": {
+                "PHASE1 | PHASE2": 3,
+                "PHASE2": 3
+            }
+        },
+        {
             "id": "ODDB-DRUG-2AF954055D68",
             "name": "Anecortave Acetate",
             "total": 5,
@@ -13334,6 +13547,15 @@
                 "PHASE1": 2,
                 "PHASE2/PHASE3": 1,
                 "PHASE3": 2
+            }
+        },
+        {
+            "id": "ODDB-DRUG-BCABF403AC8F",
+            "name": "DACLIZUMAB",
+            "total": 5,
+            "parts": {
+                "nan": 1,
+                "PHASE2": 4
             }
         },
         {
@@ -13376,6 +13598,16 @@
             }
         },
         {
+            "id": "ODDB-DRUG-25A4FE488FB4",
+            "name": "MYCOPHENOLATE MOFETIL",
+            "total": 5,
+            "parts": {
+                "PHASE2": 3,
+                "PHASE2/PHASE3": 1,
+                "PHASE3": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-43A2BAF30D38",
             "name": "Phenylephrine",
             "total": 5,
@@ -13385,21 +13617,23 @@
             }
         },
         {
+            "id": "ODDB-DRUG-E88C5B1A0C54",
+            "name": "Simvastatin",
+            "total": 5,
+            "parts": {
+                "PHASE1/PHASE2": 1,
+                "PHASE2 | PHASE3": 1,
+                "PHASE3": 1,
+                "PHASE4": 2
+            }
+        },
+        {
             "id": "ODDB-DRUG-85240FE4BAE6",
             "name": "BROLUCIZUMAB",
             "total": 4,
             "parts": {
                 "PHASE3": 2,
                 "PHASE4": 2
-            }
-        },
-        {
-            "id": "ODDB-DRUG-BCABF403AC8F",
-            "name": "DACLIZUMAB",
-            "total": 4,
-            "parts": {
-                "nan": 1,
-                "PHASE2": 3
             }
         },
         {
@@ -13414,45 +13648,26 @@
             }
         },
         {
-            "id": "ODDB-DRUG-8E776F57780E",
-            "name": "Methotrexate",
-            "total": 4,
-            "parts": {
-                "EARLY_PHASE1": 1,
-                "PHASE2": 1,
-                "PHASE2/PHASE3": 1,
-                "PHASE4": 1
-            }
-        },
-        {
-            "id": "ODDB-DRUG-25A4FE488FB4",
-            "name": "MYCOPHENOLATE MOFETIL",
-            "total": 4,
-            "parts": {
-                "PHASE2": 3,
-                "PHASE2/PHASE3": 1
-            }
-        },
-        {
-            "id": "ODDB-DRUG-346B4298790E",
-            "name": "PEGAPTANIB SODIUM",
+            "id": "ODDB-DRUG-F3C803B1F899",
+            "name": "Latanoprost",
             "total": 4,
             "parts": {
                 "PHASE4": 4
             }
         },
         {
-            "id": "ODDB-DRUG-62E96866E84C",
-            "name": "Prednisolone",
+            "id": "ODDB-DRUG-3C140E1B122F",
+            "name": "Loteprednol Etabonate",
             "total": 4,
             "parts": {
-                "PHASE3": 1,
-                "PHASE4": 3
+                "nan": 1,
+                "PHASE2": 1,
+                "PHASE4": 2
             }
         },
         {
-            "id": "ODDB-DRUG-64BBC3A09BBE",
-            "name": "Prednisolone Acetate",
+            "id": "ODDB-DRUG-346B4298790E",
+            "name": "PEGAPTANIB SODIUM",
             "total": 4,
             "parts": {
                 "PHASE4": 4
@@ -13488,15 +13703,6 @@
             }
         },
         {
-            "id": "ODDB-DRUG-02D04505B4E9",
-            "name": "Sirolimus",
-            "total": 4,
-            "parts": {
-                "PHASE1/PHASE2": 1,
-                "PHASE2": 3
-            }
-        },
-        {
             "id": "ODDB-DRUG-2ABC5041B40C",
             "name": "Tetracaine",
             "total": 4,
@@ -13523,9 +13729,8 @@
             "total": 4,
             "parts": {
                 "nan": 1,
-                "PHASE2/PHASE3": 1,
                 "PHASE3": 1,
-                "PHASE4": 1
+                "PHASE4": 2
             }
         },
         {
@@ -13559,11 +13764,28 @@
             }
         },
         {
+            "id": "ODDB-DRUG-93179F4D6751",
+            "name": "Atropine",
+            "total": 3,
+            "parts": {
+                "PHASE3": 2,
+                "PHASE4": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-E60CEB0362B8",
             "name": "AXITINIB",
             "total": 3,
             "parts": {
                 "PHASE3": 3
+            }
+        },
+        {
+            "id": "ODDB-DRUG-55AE1D6F5CE5",
+            "name": "Bimatoprost",
+            "total": 3,
+            "parts": {
+                "PHASE4": 3
             }
         },
         {
@@ -13574,6 +13796,15 @@
                 "PHASE2": 1,
                 "PHASE2/PHASE3": 1,
                 "PHASE4": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-6B7E4167B200",
+            "name": "Bromfenac",
+            "total": 3,
+            "parts": {
+                "PHASE2": 1,
+                "PHASE4": 2
             }
         },
         {
@@ -13616,11 +13847,11 @@
             }
         },
         {
-            "id": "ODDB-DRUG-F3C803B1F899",
-            "name": "Latanoprost",
+            "id": "ODDB-DRUG-88954723806F",
+            "name": "METFORMIN HYDROCHLORIDE",
             "total": 3,
             "parts": {
-                "PHASE4": 3
+                "PHASE1 | PHASE2": 3
             }
         },
         {
@@ -13633,12 +13864,39 @@
             }
         },
         {
+            "id": "ODDB-DRUG-3DBCDB27772B",
+            "name": "Ofloxacin",
+            "total": 3,
+            "parts": {
+                "nan": 1,
+                "PHASE3": 2
+            }
+        },
+        {
             "id": "ODDB-DRUG-A33D81E92D6F",
             "name": "PAZOPANIB",
             "total": 3,
             "parts": {
                 "PHASE1": 1,
                 "PHASE2": 2
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-5910",
+            "name": "Pilocarpine",
+            "total": 3,
+            "parts": {
+                "PHASE2": 1,
+                "PHASE3": 2
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-5865",
+            "name": "Prednisone",
+            "total": 3,
+            "parts": {
+                "PHASE2": 1,
+                "PHASE3": 2
             }
         },
         {
@@ -13652,12 +13910,12 @@
             }
         },
         {
-            "id": "ODDB-DRUG-E88C5B1A0C54",
-            "name": "Simvastatin",
+            "id": "ODDB-DRUG-PC-445643",
+            "name": "Tacrolimus",
             "total": 3,
             "parts": {
-                "PHASE1/PHASE2": 1,
-                "PHASE4": 2
+                "PHASE3": 2,
+                "PHASE4": 1
             }
         },
         {
@@ -13667,6 +13925,22 @@
             "parts": {
                 "PHASE2": 1,
                 "PHASE4": 2
+            }
+        },
+        {
+            "id": "ODDB-DRUG-DFA91087A076",
+            "name": "Timolol Maleate",
+            "total": 3,
+            "parts": {
+                "PHASE4": 3
+            }
+        },
+        {
+            "id": "ODDB-DRUG-A6FCE9D07278",
+            "name": "Travoprost",
+            "total": 3,
+            "parts": {
+                "PHASE4": 3
             }
         },
         {
@@ -13721,20 +13995,12 @@
             }
         },
         {
-            "id": "ODDB-DRUG-55AE1D6F5CE5",
-            "name": "Bimatoprost",
+            "id": "ODDB-DRUG-3C111549410A",
+            "name": "BORTEZOMIB",
             "total": 2,
             "parts": {
-                "PHASE4": 2
-            }
-        },
-        {
-            "id": "ODDB-DRUG-6B7E4167B200",
-            "name": "Bromfenac",
-            "total": 2,
-            "parts": {
-                "PHASE2": 1,
-                "PHASE4": 1
+                "PHASE1": 1,
+                "PHASE2": 1
             }
         },
         {
@@ -13753,6 +14019,14 @@
             "parts": {
                 "PHASE1": 1,
                 "PHASE1/PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-12D1C6DFEB9A",
+            "name": "Fluocinolone",
+            "total": 2,
+            "parts": {
+                "PHASE1": 2
             }
         },
         {
@@ -13791,12 +14065,12 @@
             }
         },
         {
-            "id": "ODDB-DRUG-3C140E1B122F",
-            "name": "Loteprednol Etabonate",
+            "id": "ODDB-DRUG-PC-6741",
+            "name": "Methylprednisolone",
             "total": 2,
             "parts": {
-                "nan": 1,
-                "PHASE4": 1
+                "PHASE2 | PHASE3": 1,
+                "PHASE3": 1
             }
         },
         {
@@ -13814,15 +14088,6 @@
             "total": 2,
             "parts": {
                 "PHASE2": 2
-            }
-        },
-        {
-            "id": "ODDB-DRUG-3DBCDB27772B",
-            "name": "Ofloxacin",
-            "total": 2,
-            "parts": {
-                "nan": 1,
-                "PHASE3": 1
             }
         },
         {
@@ -13868,20 +14133,20 @@
             }
         },
         {
+            "id": "ODDB-DRUG-PC-9868491",
+            "name": "Tafluprost",
+            "total": 2,
+            "parts": {
+                "PHASE4": 2
+            }
+        },
+        {
             "id": "ODDB-DRUG-8821CC018C76",
             "name": "TOCILIZUMAB",
             "total": 2,
             "parts": {
                 "nan": 1,
                 "PHASE2": 1
-            }
-        },
-        {
-            "id": "ODDB-DRUG-A6FCE9D07278",
-            "name": "Travoprost",
-            "total": 2,
-            "parts": {
-                "PHASE4": 2
             }
         },
         {
@@ -13902,6 +14167,30 @@
             }
         },
         {
+            "id": "ODDB-DRUG-PC-1979",
+            "name": "Aceclidine",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-4B29C454D59C",
+            "name": "Acetaminophen",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-12035",
+            "name": "Acetylcysteine",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-6136D7A090AD",
             "name": "AMANTADINE",
             "total": 1,
@@ -13915,6 +14204,14 @@
             "total": 1,
             "parts": {
                 "nan": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-11561674",
+            "name": "Apremilast",
+            "total": 1,
+            "parts": {
+                "PHASE1 | PHASE2": 1
             }
         },
         {
@@ -13934,11 +14231,27 @@
             }
         },
         {
-            "id": "ODDB-DRUG-93179F4D6751",
-            "name": "Atropine",
+            "id": "ODDB-DRUG-PC-2265",
+            "name": "Azathioprine",
             "total": 1,
             "parts": {
-                "PHASE4": 1
+                "PHASE2 | PHASE3": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-447043",
+            "name": "Azithromycin",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-44205240",
+            "name": "Baricitinib",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
             }
         },
         {
@@ -13982,8 +14295,8 @@
             }
         },
         {
-            "id": "ODDB-DRUG-3C111549410A",
-            "name": "BORTEZOMIB",
+            "id": "ODDB-DRUG-465FCE46E67F",
+            "name": "Bosentan",
             "total": 1,
             "parts": {
                 "PHASE1": 1
@@ -13998,11 +14311,59 @@
             }
         },
         {
+            "id": "ODDB-DRUG-PC-2578",
+            "name": "Carmustine",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-2678",
+            "name": "Cetirizine",
+            "total": 1,
+            "parts": {
+                "PHASE1 | PHASE2": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-4DADD71E3C44",
             "name": "Cholestyramine",
             "total": 1,
             "parts": {
                 "PHASE3": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-26987",
+            "name": "Clemastine",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-DAF5E79935FD",
+            "name": "Codeine",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-2907",
+            "name": "Cyclophosphamide",
+            "total": 1,
+            "parts": {
+                "PHASE2 | PHASE3": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-6253",
+            "name": "Cytarabine",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
             }
         },
         {
@@ -14022,11 +14383,35 @@
             }
         },
         {
+            "id": "ODDB-DRUG-EF169E607E0B",
+            "name": "Difluprednate",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-2C0B640724A6",
             "name": "DIPYRIDAMOLE",
             "total": 1,
             "parts": {
                 "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-C8D0637F9B56",
+            "name": "EMIXUSTAT",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-443872",
+            "name": "Eplerenone",
+            "total": 1,
+            "parts": {
+                "PHASE2 | PHASE3": 1
             }
         },
         {
@@ -14046,11 +14431,35 @@
             }
         },
         {
+            "id": "ODDB-DRUG-PC-36462",
+            "name": "Etoposide",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-6442177",
+            "name": "Everolimus",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-811A60C6A015",
             "name": "Fenofibrate",
             "total": 1,
             "parts": {
                 "PHASE4": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-444036",
+            "name": "Fluticasone Propionate",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
             }
         },
         {
@@ -14102,6 +14511,14 @@
             }
         },
         {
+            "id": "ODDB-DRUG-PC-3899",
+            "name": "Leflunomide",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-075029A119A1",
             "name": "LENVATINIB",
             "total": 1,
@@ -14118,6 +14535,14 @@
             }
         },
         {
+            "id": "ODDB-DRUG-PC-11965427",
+            "name": "Lifitegrast",
+            "total": 1,
+            "parts": {
+                "PHASE4": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-F72D952C144B",
             "name": "LINIFANIB",
             "total": 1,
@@ -14128,6 +14553,14 @@
         {
             "id": "ODDB-DRUG-BCB210D4609B",
             "name": "Mecamylamine",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-460612",
+            "name": "Melphalan",
             "total": 1,
             "parts": {
                 "PHASE2": 1
@@ -14150,11 +14583,35 @@
             }
         },
         {
+            "id": "ODDB-DRUG-PC-55245",
+            "name": "Mifepristone",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-8CACC2195B54",
             "name": "Mitomycin",
             "total": 1,
             "parts": {
                 "PHASE1": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-151075",
+            "name": "Nepafenac",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-6337614",
+            "name": "Palonosetron",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
             }
         },
         {
@@ -14174,11 +14631,43 @@
             }
         },
         {
+            "id": "ODDB-DRUG-PC-1775",
+            "name": "Phenytoin",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-1C9DEAB7E8E3",
+            "name": "Piclidenoson",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-6509979",
+            "name": "Pimecrolimus",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-70F653B38311",
             "name": "Potassium Iodide",
             "total": 1,
             "parts": {
                 "PHASE4": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-88418CD52ECE",
+            "name": "PREGABALIN",
+            "total": 1,
+            "parts": {
+                "PHASE2 | PHASE3": 1
             }
         },
         {
@@ -14190,11 +14679,35 @@
             }
         },
         {
+            "id": "ODDB-DRUG-PC-5042",
+            "name": "Rebamipide",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-219024",
+            "name": "Regadenoson",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-F2CF11F683F6",
             "name": "REGORAFENIB",
             "total": 1,
             "parts": {
                 "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-PC-5311412",
+            "name": "Rimexolone",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
             }
         },
         {
@@ -14222,6 +14735,22 @@
             }
         },
         {
+            "id": "ODDB-DRUG-B5649ED71B88",
+            "name": "SARILUMAB",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
+            "id": "ODDB-DRUG-CC7853F5DB76",
+            "name": "SATRALIZUMAB",
+            "total": 1,
+            "parts": {
+                "PHASE3": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-FD436C09EE94",
             "name": "SEPOFARSEN",
             "total": 1,
@@ -14246,6 +14775,14 @@
             }
         },
         {
+            "id": "ODDB-DRUG-7A18F38C89C9",
+            "name": "Squalamine",
+            "total": 1,
+            "parts": {
+                "PHASE2": 1
+            }
+        },
+        {
             "id": "ODDB-DRUG-202E06224A0C",
             "name": "Tg100-801",
             "total": 1,
@@ -14259,14 +14796,6 @@
             "total": 1,
             "parts": {
                 "PHASE2": 1
-            }
-        },
-        {
-            "id": "ODDB-DRUG-DFA91087A076",
-            "name": "Timolol Maleate",
-            "total": 1,
-            "parts": {
-                "PHASE4": 1
             }
         },
         {

@@ -14,6 +14,14 @@
 <link href="assets/evidence-filters.css?v=0.7.8" rel="stylesheet">
 <link href="assets/drug-comparison.css?v=0.7.9" rel="stylesheet">
 <link href="assets/visual-refresh.css?v=0.8.0" rel="stylesheet">
+<style>
+/* ODDB_SEARCH_HOVER_22 */
+.oddb-entity-hover22{position:fixed;z-index:1200;pointer-events:none;max-width:min(360px,calc(100vw - 24px));padding:10px 13px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;color:#172b3a;box-shadow:0 5px 18px #0f172a26;font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;overflow-wrap:anywhere;white-space:pre-wrap}
+.oddb-entity-hover22[hidden]{display:none!important}
+.oddb-entity-hover22-name{font-weight:650}
+.oddb-entity-hover22-type{margin-top:3px;font-size:12px;color:#526579}
+
+</style>
 </head>
 <body class="oddb-visual oddb-explore">
 <?php require __DIR__ . "/partials/site_nav.php"; ?>
@@ -30,13 +38,12 @@
   </div>
   <div class="entity-search-field">
    <svg class="entity-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
-   <input id="globalSearch" class="form-control" type="search" autocomplete="off" aria-label="Search ODDB entities" aria-describedby="entitySearchDescription globalSearchStatus" placeholder="Search disease, HGNC gene, variant, drug, trial or report…">
+   <input id="globalSearch" class="form-control" type="search" autocomplete="off" aria-label="Search ODDB entities" aria-describedby="entitySearchDescription globalSearchStatus" placeholder="Search diseases…">
    <button id="clearGlobalSearch" class="entity-search-clear" type="button" aria-label="Clear search">Clear</button>
    <div id="searchResults" class="search-results entity-search-results d-none"></div>
   </div>
   <div id="globalSearchTypeFilters" class="entity-search-filters" role="group" aria-label="Entity type filters">
-   <button type="button" class="entity-search-filter active" data-global-search-type="">All</button>
-   <button type="button" class="entity-search-filter" data-global-search-type="disease">Disease</button>
+   <button type="button" class="entity-search-filter active" aria-pressed="true" data-global-search-type="disease">Disease</button>
    <button type="button" class="entity-search-filter" data-global-search-type="gene">Gene</button>
    <button type="button" class="entity-search-filter" data-global-search-type="variant">Variant</button>
    <button type="button" class="entity-search-filter" data-global-search-type="drug">Drug</button>
@@ -75,6 +82,11 @@
    <div class="mt-3">
     <div class="small text-uppercase fw-bold text-secondary mb-2">Drug clinical phase / stage</div>
     <div id="drugPhaseChips" class="chip-wrap"></div>
+    <p class="small text-secondary mt-2 mb-0">
+     Clinical stages reflect source-reported drug-level development status.
+     Approval-stage status does not necessarily indicate approval for an ocular disease.
+     Drugs without a recorded stage are excluded from these filters.
+    </p>
    </div>
   </div>
  </section>
@@ -355,7 +367,7 @@
      <span><i class="state-ring expanded"></i>Expanded / discovered</span>
      <span class="legend-divider"></span>
      <span><i class="line disease-gene"></i>Disease–gene</span>
-     <span><i class="line direct"></i>Direct therapeutic evidence</span>
+     <span><i class="line direct"></i>Disease–drug evidence</span>
      <span><i class="line target"></i>Drug–target</span>
      <span><i class="line discovery"></i>Target-overlap discovery</span>
      <span><i class="line clinical"></i>Clinical evidence</span>
@@ -365,8 +377,34 @@
      <strong>Pinned entities</strong> stay in the workbench during further expansion and disease-network refreshes.
     </div>
 </section></div>
+<!-- ODDB_VIEWPORT_BUTTONS_21 -->
+<style>
+#oddbViewportControls21{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:10px 16px;border-bottom:1px solid #dbe5ed;background:#f7fafc}
+#oddbViewportControls21 .viewport-label{font-size:.8rem;font-weight:600;color:#475569;margin-right:4px}
+#oddbViewportControls21 .viewport-group{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+#oddbViewportControls21 button{min-height:36px;min-width:44px;background:#fff;white-space:nowrap}
+#oddbViewportControls21 button:hover{background:#eaf4f5;color:#125965}
+#oddbViewportControls21 button:focus-visible{outline:3px solid #0d6efd;outline-offset:2px}
+@media(max-width:575px){#oddbViewportControls21{padding:10px;gap:6px}#oddbViewportControls21 .viewport-label{width:100%}}
+</style>
+<div id="oddbViewportControls21" role="group" aria-label="Graph navigation">
+ <span class="viewport-label">Move and zoom</span>
+ <div class="viewport-group" role="group" aria-label="Graph zoom">
+  <button type="button" class="btn btn-sm btn-outline-secondary" data-viewport-action="in" aria-label="Zoom in" title="Zoom in around the centre of the graph">+ Zoom in</button>
+  <button type="button" class="btn btn-sm btn-outline-secondary" data-viewport-action="out" aria-label="Zoom out" title="Zoom out around the centre of the graph">− Zoom out</button>
+ </div>
+ <div class="viewport-group" role="group" aria-label="Move graph">
+  <button type="button" class="btn btn-sm btn-outline-secondary" data-viewport-action="left" aria-label="Move graph left" title="Move the graph left">← Left</button>
+  <button type="button" class="btn btn-sm btn-outline-secondary" data-viewport-action="right" aria-label="Move graph right" title="Move the graph right">Right →</button>
+  <button type="button" class="btn btn-sm btn-outline-secondary" data-viewport-action="up" aria-label="Move graph up" title="Move the graph up">↑ Up</button>
+  <button type="button" class="btn btn-sm btn-outline-secondary" data-viewport-action="down" aria-label="Move graph down" title="Move the graph down">↓ Down</button>
+ </div>
+ <button type="button" class="btn btn-sm btn-outline-secondary" data-viewport-action="fit" aria-label="Fit graph to view" title="Show the entire graph">Fit view</button>
+</div>
+
+
 <div class="wb-graph-key" aria-label="Relationship key">
- <span><i class="line direct" aria-hidden="true"></i>Direct therapeutic evidence</span>
+ <span><i class="line direct" aria-hidden="true"></i>Disease–drug evidence</span>
  <span><i class="line discovery" aria-hidden="true"></i>Target-overlap discovery</span>
  <span><i class="line clinical" aria-hidden="true"></i>Clinical evidence</span>
 </div>
@@ -408,7 +446,7 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.33.1/dist/cytoscape.min.js"></script>
-<script src="assets/explore.js?v=0.7.9a"></script>
+<script src="assets/explore.js?v=0.8.22"></script>
 <script src="assets/site-nav.js"></script>
 <script src="assets/workbench-ui.js?v=0.7.5"></script>
 <input id="analysisFile" type="file" accept=".json,application/json" hidden>

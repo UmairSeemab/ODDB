@@ -3,7 +3,7 @@
         {
             "id": "1",
             "name": "1",
-            "total": 126,
+            "total": 127,
             "parts": {
                 "Conjunctival Diseases": 1,
                 "Corneal Diseases": 9,
@@ -13,7 +13,7 @@
                 "Orbital Diseases": 2,
                 "Others": 9,
                 "Refractive Errors": 29,
-                "Retinal Diseases": 51,
+                "Retinal Diseases": 52,
                 "Uveal Diseases": 8
             }
         },
@@ -36,7 +36,7 @@
         {
             "id": "2",
             "name": "2",
-            "total": 102,
+            "total": 103,
             "parts": {
                 "Conjunctival Diseases": 3,
                 "Corneal Diseases": 2,
@@ -46,7 +46,7 @@
                 "Orbital Diseases": 3,
                 "Others": 8,
                 "Refractive Errors": 29,
-                "Retinal Diseases": 33,
+                "Retinal Diseases": 34,
                 "Uveal Diseases": 4
             }
         },
@@ -67,6 +67,22 @@
             }
         },
         {
+            "id": "3",
+            "name": "3",
+            "total": 82,
+            "parts": {
+                "Corneal Diseases": 3,
+                "Lens Diseases": 7,
+                "Ocular Hypertension": 13,
+                "Ocular Motility Disorders": 1,
+                "Orbital Diseases": 1,
+                "Others": 8,
+                "Refractive Errors": 18,
+                "Retinal Diseases": 28,
+                "Uveal Diseases": 3
+            }
+        },
+        {
             "id": "10",
             "name": "10",
             "total": 80,
@@ -80,22 +96,6 @@
                 "Others": 6,
                 "Refractive Errors": 19,
                 "Retinal Diseases": 29,
-                "Uveal Diseases": 3
-            }
-        },
-        {
-            "id": "3",
-            "name": "3",
-            "total": 80,
-            "parts": {
-                "Corneal Diseases": 3,
-                "Lens Diseases": 7,
-                "Ocular Hypertension": 13,
-                "Ocular Motility Disorders": 1,
-                "Orbital Diseases": 1,
-                "Others": 8,
-                "Refractive Errors": 18,
-                "Retinal Diseases": 26,
                 "Uveal Diseases": 3
             }
         },
@@ -158,6 +158,22 @@
             }
         },
         {
+            "id": "12",
+            "name": "12",
+            "total": 62,
+            "parts": {
+                "Corneal Diseases": 2,
+                "Lens Diseases": 5,
+                "Ocular Hypertension": 5,
+                "Ocular Motility Disorders": 2,
+                "Orbital Diseases": 1,
+                "Others": 7,
+                "Refractive Errors": 18,
+                "Retinal Diseases": 21,
+                "Uveal Diseases": 1
+            }
+        },
+        {
             "id": "7",
             "name": "7",
             "total": 61,
@@ -171,32 +187,16 @@
             }
         },
         {
-            "id": "12",
-            "name": "12",
-            "total": 60,
-            "parts": {
-                "Corneal Diseases": 2,
-                "Lens Diseases": 5,
-                "Ocular Hypertension": 5,
-                "Ocular Motility Disorders": 2,
-                "Orbital Diseases": 1,
-                "Others": 6,
-                "Refractive Errors": 18,
-                "Retinal Diseases": 20,
-                "Uveal Diseases": 1
-            }
-        },
-        {
             "id": "16",
             "name": "16",
-            "total": 55,
+            "total": 56,
             "parts": {
                 "Conjunctival Diseases": 2,
                 "Corneal Diseases": 2,
                 "Lens Diseases": 6,
                 "Ocular Hypertension": 4,
                 "Orbital Diseases": 1,
-                "Others": 6,
+                "Others": 7,
                 "Refractive Errors": 13,
                 "Retinal Diseases": 21
             }
@@ -248,11 +248,12 @@
         {
             "id": "13",
             "name": "13",
-            "total": 40,
+            "total": 41,
             "parts": {
                 "Corneal Diseases": 8,
                 "Lens Diseases": 2,
                 "Ocular Hypertension": 2,
+                "Others": 1,
                 "Refractive Errors": 16,
                 "Retinal Diseases": 12
             }
@@ -260,26 +261,26 @@
         {
             "id": "14",
             "name": "14",
-            "total": 37,
+            "total": 38,
             "parts": {
                 "Lens Diseases": 2,
                 "Ocular Hypertension": 6,
                 "Others": 1,
                 "Refractive Errors": 15,
-                "Retinal Diseases": 13
+                "Retinal Diseases": 14
             }
         },
         {
             "id": "20",
             "name": "20",
-            "total": 34,
+            "total": 35,
             "parts": {
                 "Corneal Diseases": 3,
                 "Lens Diseases": 6,
                 "Ocular Hypertension": 2,
                 "Others": 2,
                 "Refractive Errors": 9,
-                "Retinal Diseases": 12
+                "Retinal Diseases": 13
             }
         },
         {
@@ -614,11 +615,11 @@
         {
             "id": "ANAT-02",
             "name": "Retinal Diseases",
-            "total": 465,
+            "total": 472,
             "parts": {
-                "1": 51,
-                "2": 33,
-                "3": 26,
+                "1": 52,
+                "2": 34,
+                "3": 28,
                 "4": 27,
                 "5": 12,
                 "6": 39,
@@ -627,15 +628,15 @@
                 "9": 18,
                 "10": 29,
                 "11": 23,
-                "12": 20,
+                "12": 21,
                 "13": 12,
-                "14": 13,
+                "14": 14,
                 "15": 12,
                 "16": 21,
                 "17": 22,
                 "18": 9,
                 "19": 24,
-                "20": 12,
+                "20": 13,
                 "21": 3,
                 "22": 10,
                 "MT": 7,
@@ -759,7 +760,7 @@
         {
             "id": "ANAT-03",
             "name": "Others",
-            "total": 91,
+            "total": 94,
             "parts": {
                 "1": 9,
                 "2": 8,
@@ -772,10 +773,11 @@
                 "9": 3,
                 "10": 6,
                 "11": 5,
-                "12": 6,
+                "12": 7,
+                "13": 1,
                 "14": 1,
                 "15": 1,
-                "16": 6,
+                "16": 7,
                 "17": 5,
                 "18": 2,
                 "19": 2,

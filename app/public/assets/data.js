@@ -3,7 +3,8 @@
 
 const API='api/release.php';
 let payload=null;
-let activeFilter='all';
+let currentCounts=null;
+let activeFilter='current';
 
 const fmt=n=>Number(n||0).toLocaleString();
 const esc=s=>String(s??'')
@@ -21,13 +22,14 @@ function humanBytes(bytes){
 }
 
 function releaseLabel(group){
- if(group==='genetics') return 'Genetics core';
- if(group==='clinical') return 'Drug & clinical';
+ if(group==='current') return 'Current enrichment';
+ if(group==='genetics') return 'Historical genetics core';
+ if(group==='clinical') return 'Historical drug & clinical';
  return 'ODDB v1';
 }
 
 function renderOverview(){
- const c=payload.counts||{};
+ const c=currentCounts||{};
  const cards=[
   ['Diseases',c.disease],
   ['Genes',c.gene],
@@ -45,7 +47,7 @@ function renderOverview(){
 
 function filteredFiles(){
  const q=document.getElementById('datasetSearch').value.trim().toLowerCase();
- return (payload.files||[]).filter(file=>{
+ return (payload?.files||[]).filter(file=>{
   if(activeFilter!=='all' && file.group!==activeFilter) return false;
   if(!q) return true;
   return [
@@ -87,6 +89,7 @@ function renderCatalog(){
      <div><span>Release</span><strong>${esc(file.release_date||'—')}</strong></div>
      <div><span>Format</span><strong>${esc((file.format||'—').toUpperCase())}</strong></div>
     </div>
+    ${file.sha256?`<details class="small mb-2"><summary>SHA256 checksum</summary><code style="overflow-wrap:anywhere">${esc(file.sha256)}</code></details>`:''}
     <div class="dataset-actions">
      <a class="btn btn-primary btn-sm"
         href="download.php?id=${encodeURIComponent(file.id)}">Download</a>
@@ -106,27 +109,25 @@ function bind(){
  });
 }
 
-async function load(){
+async function loadCurrent(){
  try{
-  const r=await fetch(API,{cache:'no-store'});
-  const d=await r.json();
-  if(!r.ok||d.ok===false) throw new Error(d.error||`HTTP ${r.status}`);
-  payload=d;
+  const r=await fetch('api/stats.php',{cache:'no-store'}),d=await r.json();
+  if(!r.ok||!d.ok||!d.overview)throw new Error('Current release statistics unavailable');
+  const o=d.overview;for(const k of ['diseases','genes','variants','drugs','trials','clinical_reports'])if(!Number.isInteger(o[k])||o[k]<0)throw new Error('Invalid current release counts');
+  currentCounts={disease:o.diseases,gene:o.genes,variant:o.variants,drug:o.drugs,clinical_trial:o.trials,clinical_report:o.clinical_reports};
   renderOverview();
-  renderCatalog();
-  const n=(d.files||[]).length;
-  document.getElementById('catalogStatus').textContent=
-   `${fmt(n)} frozen release file${n===1?'':'s'} available for download`;
- }catch(err){
-  document.getElementById('releaseOverview').innerHTML=
-   `<div class="alert alert-danger mb-0">Could not load release metadata.</div>`;
-  document.getElementById('datasetCatalog').innerHTML='';
-  document.getElementById('noDatasets').classList.remove('d-none');
-  document.getElementById('noDatasets').textContent=
-   `Release catalog unavailable: ${String(err.message||err)}`;
-  document.getElementById('catalogStatus').textContent='Release catalog unavailable';
- }
+ }catch(_){document.getElementById('releaseOverview').innerHTML='<div class="alert alert-danger mb-0">Current release counts are temporarily unavailable. Historical file counts below describe their original snapshots.</div>';}
 }
+async function loadCatalog(){
+ try{
+  const r=await fetch(API,{cache:'no-store'}),d=await r.json();
+  if(!r.ok||d.ok===false)throw new Error('Historical catalog unavailable');
+  payload=d;renderCatalog();const n=(d.files||[]).length;
+  const current=(d.files||[]).filter(f=>f.group==='current').length;
+  document.getElementById('catalogStatus').textContent=`${fmt(current)} current enrichment files · ${fmt(n-current)} historical files`; 
+ }catch(_){document.getElementById('datasetCatalog').innerHTML='';document.getElementById('noDatasets').classList.remove('d-none');document.getElementById('noDatasets').textContent='Historical release catalog is temporarily unavailable.';document.getElementById('catalogStatus').textContent='Historical catalog unavailable';}
+}
+async function load(){await Promise.allSettled([loadCurrent(),loadCatalog()]);}
 
 document.addEventListener('DOMContentLoaded',()=>{bind();load()});
 })();

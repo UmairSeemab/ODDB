@@ -10,15 +10,15 @@ let selectedEntity=null;
 
 const ENTITY_INFO={
  Disease:{
-  count:'162 canonical diseases',
+  count:'185 canonical diseases',
   description:'Central disease layer connecting genetics, variants, direct therapeutic evidence and clinical evidence.',
   identifiers:'Canonical ODDB disease ID; source names, aliases and history retained.',
   relations:[
-   ['Disease–Gene','1,631 associations'],
+   ['Disease–Gene','1,662 associations'],
    ['Disease–Variant','106,838 associations'],
    ['Disease–Locus','2 associations'],
-   ['Disease–Drug','344 direct associations'],
-   ['Disease–Clinical Trial','1,235 links'],
+   ['Disease–Drug','424 evidence associations'],
+   ['Disease–Clinical Trial','1,342 links'],
    ['Disease–Clinical Report','1,370 links']
   ]
  },
@@ -27,7 +27,7 @@ const ENTITY_INFO={
   description:'HGNC-aligned gene layer. Structural/regulatory loci are deliberately excluded from the gene entity set.',
   identifiers:'HGNC identifier anchors canonical gene identity.',
   relations:[
-   ['Disease–Gene','1,631 associations'],
+   ['Disease–Gene','1,662 associations'],
    ['Gene–Variant','707,315 associations'],
    ['Drug–Target','1,009 associations']
   ]
@@ -48,28 +48,28 @@ const ENTITY_INFO={
   relations:[['Disease–Locus','2 associations']]
  },
  Drug:{
-  count:'805 canonical drugs',
+  count:'893 canonical drugs',
   description:'Therapeutic entity layer with explicit drug-form relationships and separate direct disease and molecular target evidence.',
   identifiers:'Canonical drug plus preserved source drug IDs/names; ChEMBL enrichment where validated.',
   relations:[
-   ['Disease–Drug','344 direct associations'],
+   ['Disease–Drug','424 evidence associations'],
    ['Drug–Target','1,009 associations'],
    ['Drug Form','99 relationships'],
-   ['Drug–Clinical Trial','1,448 links'],
+   ['Drug–Clinical Trial','1,566 links'],
    ['Drug–Clinical Report','1,575 links']
   ]
  },
  'Clinical Trial':{
-  count:'1,164 trials',
+  count:'1,255 trials',
   description:'Trial entities linked independently to diseases and drugs, preventing unsupported disease×drug cross-products.',
   identifiers:'Source clinical-trial identifiers retained at the trial entity level.',
   relations:[
-   ['Disease–Clinical Trial','1,235 links'],
-   ['Drug–Clinical Trial','1,448 links']
+   ['Disease–Clinical Trial','1,342 links'],
+   ['Drug–Clinical Trial','1,566 links']
   ]
  },
  'Clinical Report':{
-  count:'1,291 reports',
+  count:'1,382 reports',
   description:'Clinical report entities modeled independently from trials and linked to diseases/drugs through many-to-many tables.',
   identifiers:'Source report identifier and source mappings remain traceable.',
   relations:[

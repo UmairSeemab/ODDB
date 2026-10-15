@@ -27,7 +27,7 @@
    <div class="col-lg-4">
     <div class="hero-callout">
      <strong>Current documented model</strong>
-     <span>ODDB v1 frozen genetics + refined drug/clinical releases</span>
+     <span>ODDB v1 enrichment release · 15 October 2026</span>
     </div>
    </div>
   </div>
@@ -84,14 +84,14 @@
    <section id="entities" class="doc-section">
     <div class="eyebrow">Core entities</div>
     <h2 class="h3 fw-bold mb-2">Current released entity layers</h2>
-    <p class="text-secondary">Counts below describe the finalized ODDB v1 core and refined drug/clinical releases.</p>
+    <p class="text-secondary">Counts below describe the deployed ODDB v1 enrichment release. Counts are captured from its database when this deployment image is built.</p>
 
     <div class="entity-grid">
      <article class="entity-card entity-disease">
       <div class="entity-icon">D</div>
       <div>
        <h3>Disease</h3>
-       <div class="entity-count">162 canonical diseases</div>
+       <div class="entity-count">185 canonical diseases</div>
        <p>Canonical ocular disease concepts used as the central disease layer for genetics, variants, therapeutics and clinical evidence.</p>
       </div>
      </article>
@@ -127,7 +127,7 @@
       <div class="entity-icon">Rx</div>
       <div>
        <h3>Drug</h3>
-       <div class="entity-count">805 canonical drugs</div>
+       <div class="entity-count">893 canonical drugs</div>
        <p>Canonical therapeutic entities with explicit drug-form relationships and separate disease and target evidence.</p>
       </div>
      </article>
@@ -136,7 +136,7 @@
       <div class="entity-icon">T</div>
       <div>
        <h3>Clinical Trial</h3>
-       <div class="entity-count">1,164 trials</div>
+       <div class="entity-count">1,255 trials</div>
        <p>Trial entities linked independently to diseases and drugs, avoiding unsupported disease×drug cross-products.</p>
       </div>
      </article>
@@ -145,7 +145,7 @@
       <div class="entity-icon">R</div>
       <div>
        <h3>Clinical Report</h3>
-       <div class="entity-count">1,291 reports</div>
+       <div class="entity-count">1,382 reports</div>
        <p>Clinical evidence report entities modeled separately from trials and linked through many-to-many disease/drug associations.</p>
       </div>
      </article>
@@ -187,7 +187,7 @@
    <section id="relationships" class="doc-section">
     <div class="eyebrow">Relationships</div>
     <h2 class="h3 fw-bold mb-2">Released association layers</h2>
-    <p class="text-secondary">Association counts are row counts in the finalized ODDB v1 releases unless otherwise stated.</p>
+    <p class="text-secondary">Association counts are row counts in the deployed enrichment release unless otherwise stated.</p>
 
     <div class="table-responsive relationship-table-wrap">
      <table class="table relationship-table align-middle mb-0">
@@ -200,16 +200,16 @@
        </tr>
       </thead>
       <tbody>
-       <tr><td>Disease–Gene Association</td><td>1,631</td><td>Links a disease to a supported gene.</td><td>Stable association identity includes DiseaseID + HGNC_ID + inheritance context.</td></tr>
+       <tr><td>Disease–Gene Association</td><td>1,662</td><td>Links a disease to a supported gene.</td><td>Stable association identity includes DiseaseID + HGNC_ID + inheritance context.</td></tr>
        <tr><td>Gene–Variant Association</td><td>707,315</td><td>Links a variant to its associated gene.</td><td>Does not by itself establish disease relevance.</td></tr>
        <tr><td>Disease–Variant Association</td><td>106,838</td><td>Explicit disease–variant evidence.</td><td>Never inferred solely from disease–gene membership.</td></tr>
        <tr><td>Disease–Locus Association</td><td>2</td><td>Links disease to a non-gene locus.</td><td>Locus entities remain separate from HGNC genes.</td></tr>
        <tr><td>Drug–Target Association</td><td>1,009</td><td>Molecular pharmacology between drug and gene target.</td><td>Target evidence is not equivalent to disease-specific therapeutic evidence.</td></tr>
-       <tr><td>Disease–Drug Association</td><td>344</td><td>Direct disease-specific therapeutic evidence.</td><td>Kept separate from target-overlap discovery.</td></tr>
-       <tr><td>Disease–Drug Evidence</td><td>1,142</td><td>Evidence records supporting disease–drug context.</td><td>Evidence records should not be reduced to target overlap alone.</td></tr>
+       <tr><td>Disease–Drug Association</td><td>424</td><td>Disease-specific evidence, including registered clinical investigation. Efficacy is not implied.</td><td>Kept separate from target-overlap discovery.</td></tr>
+       <tr><td>Disease–Drug Evidence</td><td>1,299</td><td>Evidence records supporting disease–drug context.</td><td>Evidence records should not be reduced to target overlap alone.</td></tr>
        <tr><td>Drug Form Relationship</td><td>99</td><td>Connects parent drugs with salts/forms.</td><td>Drug forms are not silently collapsed into a parent entity.</td></tr>
-       <tr><td>Disease–Clinical Trial</td><td>1,235</td><td>Many-to-many disease links to trial entities.</td><td>A trial association does not prove efficacy or approval.</td></tr>
-       <tr><td>Drug–Clinical Trial</td><td>1,448</td><td>Many-to-many drug links to trial entities.</td><td>Do not cross-product trial diseases and drugs into asserted treatment pairs.</td></tr>
+       <tr><td>Disease–Clinical Trial</td><td>1,342</td><td>Many-to-many disease links to trial entities.</td><td>A trial association does not prove efficacy or approval.</td></tr>
+       <tr><td>Drug–Clinical Trial</td><td>1,566</td><td>Many-to-many drug links to trial entities.</td><td>Do not cross-product trial diseases and drugs into asserted treatment pairs.</td></tr>
        <tr><td>Disease–Clinical Report</td><td>1,370</td><td>Many-to-many disease links to clinical reports.</td><td>Source context is retained at report level.</td></tr>
        <tr><td>Drug–Clinical Report</td><td>1,575</td><td>Many-to-many drug links to clinical reports.</td><td>Source drug IDs and names remain preserved after canonical mapping.</td></tr>
       </tbody>
@@ -225,8 +225,8 @@
      <article class="taxonomy-card">
       <span class="taxonomy-badge">Disease</span>
       <h3>Anatomy / localization</h3>
-      <p>Each canonical disease is assigned to one curated ocular localization group in the current web taxonomy.</p>
-      <div class="taxonomy-foot">12 localization categories · 162/162 diseases currently classified</div>
+      <p>Diseases may belong to more than one curated ocular localization group. Counts by category can therefore exceed the number of distinct diseases.</p>
+      <div class="taxonomy-foot">12 localization categories · 185/185 diseases classified · 187 memberships</div>
      </article>
 
      <article class="taxonomy-card">
@@ -402,7 +402,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"></script>
-<script src="assets/documentation.js"></script>
+<script src="assets/documentation.js?v=23"></script>
 <script src="assets/site-nav.js"></script>
 </body>
 </html>

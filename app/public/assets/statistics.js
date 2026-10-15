@@ -127,7 +127,20 @@ function evidenceMetrics(entityCount,diseaseCount,drugCount){
  ].join('');
 }
 
-function stageLabel(v){const s=String(v??'');const m={APPROVAL:'Approval-stage',PHASE_1:'Phase 1',PHASE_1_2:'Combined Phase 1/2',PHASE_2:'Phase 2',PHASE_2_3:'Combined Phase 2/3',PHASE_3:'Phase 3',UNKNOWN:'Stage unknown',NO_STAGE_REPORTED:'No stage reported'};return m[s]||s.replaceAll('_',' ')}
+function stageLabel(v){
+ const s=String(v??'');
+ const labels={
+  APPROVAL:'Approval stage',
+  PHASE_1:'Phase 1',
+  PHASE_1_2:'Phase 1/2',
+  PHASE_2:'Phase 2',
+  PHASE_2_3:'Phase 2/3',
+  PHASE_3:'Phase 3',
+  UNKNOWN:'Unknown',
+  NO_STAGE_REPORTED:'Not reported'
+ };
+ return labels[s]||s.replaceAll('_',' ');
+}
 
 const shortVariant={
  'missense variant':'Missense','inframe deletion':'Inframe del.','frameshift variant':'Frameshift','intron variant':'Intron',

@@ -38,6 +38,7 @@
  } catch (_) {document.documentElement.classList.remove('oddb-intro-pending');}
 })();
 </script>
+<link rel="stylesheet" href="assets/visitors23.css?v=23">
 </head>
 <body class="oddb-visual oddb-home">
 <div id="oddbIntro" class="oddb-short-intro" role="dialog" aria-modal="true" aria-labelledby="oddbIntroTitle" aria-hidden="true">
@@ -62,16 +63,6 @@
      ODDB is an evidence-aware resource integrating ocular diseases, genes, variants,
      drugs, molecular targets and clinical trials in a unified platform.
     </p>
-
-    <div class="landing-search-wrap position-relative mb-3">
-     <div class="input-group input-group-lg shadow-sm">
-      <span class="input-group-text bg-white border-end-0">⌕</span>
-      <input id="landingSearch" class="form-control border-start-0"
-             placeholder="Search disease, gene, variant, drug or clinical trial…"
-             autocomplete="off">
-     </div>
-     <div id="landingSearchResults" class="landing-search-results d-none"></div>
-    </div>
 
     <div class="d-flex flex-wrap gap-2">
      <a href="explore.php" class="btn btn-primary btn-lg px-4">Explore ODDB</a>
@@ -218,6 +209,21 @@
    </details>
   </div>
  </section>
+<section id="oddbVisitors23" class="visitor23" aria-labelledby="visitorTitle23">
+ <div class="container py-5">
+  <div class="visitor23-heading"><div><div class="eyebrow">ODDB around the world</div><h2 id="visitorTitle23">A global research community</h2><p>Explore where ODDB is being accessed.</p></div><span class="visitor23-badge">Country-level activity</span></div>
+  <div class="visitor23-grid">
+   <div class="visitor23-planet"><canvas id="visitorGlobe23" role="img" aria-label="Rotatable globe showing aggregate country activity"></canvas><div class="visitor23-globe-label">Drag to rotate the globe</div><div class="visitor23-controls"><button type="button" id="visitorWest23" aria-label="Rotate globe west">←</button><button type="button" id="visitorReset23">Reset globe</button><button type="button" id="visitorEast23" aria-label="Rotate globe east">→</button></div></div>
+   <div><div class="visitor23-counters"><div><strong id="visitorViews23">—</strong><span>Page views since counting started</span></div><div><strong id="visitorToday23">—</strong><span>Estimated visitors today (UTC)</span></div><div><strong id="visitorCountries23">—</strong><span>Countries reached</span></div></div>
+    <p id="visitorYou23" class="visitor23-you">Your approximate country: checking…</p>
+    <p id="visitorStatus23" role="status">Loading visitor statistics…</p>
+    <div class="visitor23-table"><table><caption>Country activity since visitor counting started</caption><thead><tr><th scope="col">Country</th><th scope="col">Page views</th><th scope="col">Today*</th></tr></thead><tbody id="visitorRows23"></tbody></table></div>
+   </div>
+  </div>
+  <details class="visitor23-method"><summary>How these statistics work</summary><p>*Today means estimated daily visitors, based on a daily-changing token derived from an IP address and browser type. Shared networks, VPNs and changing addresses affect this estimate. Daily visitors are not verified individual people. Known bots and rapid repeats are filtered. No historical totals are inferred.</p><p>Only country totals are displayed. Globe dots represent countries, not individual people or precise positions. Raw IP addresses, search terms and referrers are not retained by this feature. Daily deduplication tokens expire at the next day’s first counted visit. Browsers requesting Do Not Track or Global Privacy Control are excluded from counting. Existing hosting access logs are separate.</p><p>Country lookup runs locally using <a href="https://db-ip.com" rel="noopener">IP Geolocation by DB-IP</a> (October 2026, CC BY 4.0). Map: <a href="https://www.naturalearthdata.com/" rel="noopener">Natural Earth</a>. Country locations can be inaccurate, especially with VPNs.</p></details>
+ </div>
+</section>
+
 </main>
 
 <footer class="site-footer">
@@ -230,8 +236,9 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/landing.js"></script>
+<script src="assets/landing.js?v=23"></script>
 <script src="assets/site-nav.js"></script>
 <script src="assets/intro-short-v0.8.5.js" defer></script>
+<script src="assets/visitors23.js?v=23" defer></script>
 </body>
 </html>

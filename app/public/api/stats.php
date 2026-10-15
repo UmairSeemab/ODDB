@@ -4,7 +4,7 @@ declare(strict_types=1);
 /* Immutable, verified release aggregate; never a substitute for interactive SQL APIs.
  * The unmodified SQL code below is the fallback if files are absent/corrupt.
  * Updating ODDB release data requires a newly validated snapshot. */
-$oddbStatsRelease = '2026-09-30';
+$oddbStatsRelease = '2026-10-15-enrichment-candidate';
 $oddbStatsRoot = dirname(__DIR__, 2) . '/config';
 $oddbStatsFile = $oddbStatsRoot . '/stats_api_' . $oddbStatsRelease . '.json';
 $oddbStatsManifestFile = $oddbStatsRoot . '/stats_api_' . $oddbStatsRelease . '.manifest.json';
@@ -22,6 +22,7 @@ try {
                 && hash_equals($oddbStatsHash, hash('sha256', $oddbStatsRaw))
                 && strlen($oddbStatsRaw) === ($oddbStatsManifest['size_bytes'] ?? null)
                 && ($oddbStatsManifest['data_release'] ?? null) === $oddbStatsRelease
+                && ($oddbStatsManifest['database'] ?? null) === getenv('ODDB_DB_NAME')
                 && is_array($oddbStatsDecoded)
                 && ($oddbStatsDecoded['ok'] ?? false) === true
                 && ($oddbStatsDecoded['release']['data_release'] ?? null) === $oddbStatsRelease
@@ -270,7 +271,7 @@ $relationshipMaps=[
 
 json_response([
  'ok'=>true,
- 'release'=>['name'=>'ODDB v1','data_release'=>'2026-09-30'],
+ 'release'=>['name'=>'ODDB v1 enrichment preview','data_release'=>'2026-10-14-staging'],
  'overview'=>$overview,
  'disease'=>[
   'anatomy'=>$anatomy,'inheritance'=>$inheritance,

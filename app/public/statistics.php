@@ -27,7 +27,7 @@
     </p>
    </div>
    <div class="col-lg-4 text-lg-end">
-    <div class="small text-secondary">Statistics from the validated ODDB v1 data release (2026-09-30).</div>
+    <div class="small text-secondary">Statistics from the ODDB v1 enrichment candidate (2026-10-15).</div>
    </div>
   </div>
  </div>
