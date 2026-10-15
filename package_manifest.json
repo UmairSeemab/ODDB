@@ -8,12 +8,16 @@
     "sha256": "fc39544ec9a37c1f706453d95353a74905b596bf1c23a2b683458a4e92703a93"
   },
   ".gitignore": {
-    "bytes": 626,
-    "sha256": "26f8a6dc15d050118902f4f3880ba1490397aeefb843fc987c8178090d70d690"
+    "bytes": 485,
+    "sha256": "35b51c01c08ae7c575b47762fc6613462fd4b77ec6a6ed31ed42e3fe5775e0e3"
+  },
+  ".gitleaksignore": {
+    "bytes": 167,
+    "sha256": "f0022e92cc44f45433d71654f297115e9ac73934bd261d4fa6e1ecb8d9f08920"
   },
   "CITATION.cff": {
-    "bytes": 490,
-    "sha256": "a57cf53ab20415e1ffa7db0fe11b95c470a34ca18297a6fbdc254587465a148c"
+    "bytes": 548,
+    "sha256": "f8317919f4866a2ad3ae2a996015a8c4da3d56f61cc969973d51569336f6ee2d"
   },
   "LICENSE": {
     "bytes": 1069,
@@ -36,8 +40,8 @@
     "sha256": "dd601183b6fda376fb6bd901ef4128e7b95653f8d6586422cd4116722d6a1b91"
   },
   "README.md": {
-    "bytes": 3423,
-    "sha256": "05a5f9019e6f0b1b026244ac9129ff8c1f5bd29c27631694bf96e97a99c1de76"
+    "bytes": 11180,
+    "sha256": "bb3179ededa4ecdad27020a954627c240279b9c9ae69e6cc47642f3679d8ad76"
   },
   "app/config/release_catalog.json": {
     "bytes": 72774,
@@ -383,9 +387,137 @@
     "bytes": 15165,
     "sha256": "ef5f8a5bf5900e88f14b43f7ad237866df5ce978c852701baf044d55a68cdaba"
   },
+  "app/scripts/audit_clingen_limited_inheritance_v0.4.3.py": {
+    "bytes": 8509,
+    "sha256": "8905e85ebb5c9ac217866d221ce014d5d8e016f7b14c6ff51e0b63145b56101d"
+  },
+  "app/scripts/audit_legacy_inheritance_resolution_v0.3.9.py": {
+    "bytes": 13355,
+    "sha256": "49d48e3a96b93ae1fa95adeaa3b736fab31ae7aede4ce9b502fe48ea4f3d2230"
+  },
+  "app/scripts/audit_legacy_variant_clinvar_bridge_v0.5.5.py": {
+    "bytes": 30540,
+    "sha256": "3de8fa292759a285eeaf329eec3c3539cbf2dc3f8ce29ece53fc9dfed4efcfe8"
+  },
+  "app/scripts/audit_legacy_variant_clinvar_bridge_v0.5.6.py": {
+    "bytes": 31176,
+    "sha256": "37bac9fc3a35fe43bde6797e0c9c50549fafcc88ae46503b26cc68e5682a80a1"
+  },
+  "app/scripts/audit_legacy_variant_mapping_v0.5.1.py": {
+    "bytes": 18993,
+    "sha256": "5684540d2f71087dc36002ce5f35b205588a4f8b1991686553ad13b6c34f27e1"
+  },
+  "app/scripts/audit_legacy_variant_mapping_v0.5.2.py": {
+    "bytes": 20820,
+    "sha256": "3e6953adfef596ca941ed35faba372610fc88247903786c7a8209dadeaef7c2f"
+  },
+  "app/scripts/audit_legacy_variant_mapping_v0.5.3.py": {
+    "bytes": 21704,
+    "sha256": "0d4b824d5cbd48b27b5c4f7227b4d92dbf614bbf4730c95ed6cd99fac72213cf"
+  },
+  "app/scripts/audit_legacy_variant_mapping_v0.5.4.py": {
+    "bytes": 23144,
+    "sha256": "bd96fb6960e0376b5bf7f778eb69011f498a5e8c58ca8548b10a4e26cec11720"
+  },
+  "app/scripts/audit_missing_inheritance_oddb_v1_v0.4.5.py": {
+    "bytes": 8532,
+    "sha256": "0f961e8c1a3977057f45c9a66f2a11d59b88ea2fec4f7ba3fcb65676504b51a2"
+  },
+  "app/scripts/audit_mondo_subtype_inheritance_v0.4.6.py": {
+    "bytes": 15175,
+    "sha256": "2516e3f88707859fa932325de7e6c66f9b703d534fd8d75f7f5eef16a62d5b94"
+  },
+  "app/scripts/augment_oddb_v1_inheritance_from_clingen_v0.4.2.py": {
+    "bytes": 16391,
+    "sha256": "e6037a1ac2bfa5567ea46eecf6863daa76ae820cb6d9f8914715f7d6c1dd22d0"
+  },
+  "app/scripts/augment_oddb_v1_inheritance_from_hpo_v0.4.4.py": {
+    "bytes": 17232,
+    "sha256": "1deb72a826653bbd683359eae29383e074cc640b735e112a81f1d8aba95e19b9"
+  },
+  "app/scripts/augment_oddb_v1_inheritance_from_ordo_v0.4.1.py": {
+    "bytes": 15528,
+    "sha256": "ba91e36c5b15403b95e2ac9d8622bd2d8247e572d00ce6921965255bff8d1ea6"
+  },
+  "app/scripts/backfill_inheritance_from_legacy_v0.3.2.py": {
+    "bytes": 9993,
+    "sha256": "4fc88bf303b1a643cec49cfa43b1044478aa23f3aacd46d47c1cb82b6f87f333"
+  },
+  "app/scripts/backfill_inheritance_from_retnet_exact_v0.3.3.py": {
+    "bytes": 12348,
+    "sha256": "51b21beae224bb59b2819f06bff5e10b3bf8e7e8bc5bfc01b2b3c84c8403f3ff"
+  },
+  "app/scripts/backfill_web_taxonomy.py": {
+    "bytes": 13606,
+    "sha256": "05765581a4cfb59ebc7901ecedda5bf641a12ad5075dde78a08752e59ab47080"
+  },
+  "app/scripts/backfill_web_taxonomy_v0.3.1.py": {
+    "bytes": 22948,
+    "sha256": "ef38820e4fcaf00f07737bc7d64307bb19bcd08c5dc2ae4246143c1401f530a0"
+  },
+  "app/scripts/build_oddb_v1_inheritance_taxonomy_v0.4.0.py": {
+    "bytes": 20809,
+    "sha256": "1b574091eb18c7699eb47eb48d044bfbf2fbaf0676a82d0534390b89a564017c"
+  },
+  "app/scripts/finalize_oddb_v1_inheritance_taxonomy_v0.4.7.py": {
+    "bytes": 19612,
+    "sha256": "c538bedb2c302efa242c89b4d2b042222405377fc96a8e8ab0cf3596023e2ccf"
+  },
+  "app/scripts/find_legacy_oddb_inheritance_taxonomy_v0.3.4.py": {
+    "bytes": 7586,
+    "sha256": "6a2f583865c0d76b0bc14271dd0af22064f8c47fb6ca272921563096bee443fb"
+  },
+  "app/scripts/find_oddb_inheritance_source.py": {
+    "bytes": 5852,
+    "sha256": "7b54b9583be31140369edba081d38270a2a35813ea10bbfb83bad2dec69fb8f4"
+  },
+  "app/scripts/import_legacy_inheritance_xlsx_v0.3.6.py": {
+    "bytes": 12733,
+    "sha256": "000c1510419126dcb6f7e327740b0221f87c31780be7b650391ff7fe0a1240d8"
+  },
+  "app/scripts/import_legacy_inheritance_xlsx_v0.3.7.py": {
+    "bytes": 15368,
+    "sha256": "ade0c4c1385ce946a1647fbde081fc7027ec480b0416f1ac7f27e638537a87ff"
+  },
+  "app/scripts/import_legacy_inheritance_xlsx_v0.3.8.py": {
+    "bytes": 16085,
+    "sha256": "9f921edfe36e18b19abdf30e70658aff0fc80d1f63ba9edb535ff8cfe51c43d4"
+  },
+  "app/scripts/import_variant_consequence_layer_v0.5.8.py": {
+    "bytes": 26530,
+    "sha256": "6393b7be65741e469a8b59032e80c170947736ca5138fe34eeb0265b794b6604"
+  },
+  "app/scripts/inspect_legacy_inheritance_pages_v0.3.5.py": {
+    "bytes": 4537,
+    "sha256": "6b8d0c543156c07773edc067dbcf5988309b3cdf5696adf7775ce8913fe35952"
+  },
+  "app/scripts/inspect_legacy_variant_workbook_v0.5.0.py": {
+    "bytes": 10792,
+    "sha256": "32a16f78ded5aca7195d1428a836a40071aa1ec8ce6e6b3c8bb5822d3c8d8e9c"
+  },
+  "app/scripts/prepare_variant_consequence_layer_v0.5.7.py": {
+    "bytes": 12987,
+    "sha256": "5b0e77d265c9ca079ab6d804986800a48a453132f5dd2e6b85de5da7ead6cb88"
+  },
+  "app/scripts/rebuild_release_catalog.py": {
+    "bytes": 8088,
+    "sha256": "054afe54bde652d8b43783be395aa2260f9a798154cafa79d95290112eb2d5ff"
+  },
+  "app/sql/001_web_taxonomy.sql": {
+    "bytes": 6199,
+    "sha256": "3b636b725d457aea49b6b8297da9ca416937d5ec2bed793a7eb78153bd668a36"
+  },
+  "app/sql/002_remove_isolated_cases_inheritance.sql": {
+    "bytes": 802,
+    "sha256": "8698932591f1951721bbd8b6c1e312e453094f84a5e4b52b332d153c78a6d6f7"
+  },
   "compose.yaml": {
     "bytes": 3060,
     "sha256": "2a460f70e23252b0cdf322d5c40b0a29c9e24b29bd2a00e4ef85654d3423bc63"
+  },
+  "deploy/Caddyfile": {
+    "bytes": 85,
+    "sha256": "87f69bf8f26580fcc67969729253b5496d94357e4c6a47d099444427ec4bc975"
   },
   "deploy/docker/Dockerfile": {
     "bytes": 626,
@@ -435,6 +567,10 @@
     "bytes": 740,
     "sha256": "78829dc6be4642a85d43bba94060cd4c992f42f94b294f86c205adc06955f3b5"
   },
+  "docs/releases/oddb-v1-2026-10-15.md": {
+    "bytes": 2995,
+    "sha256": "47065bc51f5a6810eb02467956d132e18fcc5d3a542c73af30ce05c14be01c55"
+  },
   "ops/manage.py": {
     "bytes": 14084,
     "sha256": "ecc265e6873fe57cdc2f57e829aa67abe52a95d264d2e17cac649d81f83b941b"
@@ -447,6 +583,14 @@
     "bytes": 2228,
     "sha256": "7373fadf754d96db32d98337c5bf47e90629ad472875732e6a4d3b792972f391"
   },
+  "retnet_pipeline/data/mapping/retnet_oddb_disease_mapping.tsv": {
+    "bytes": 3154,
+    "sha256": "3464ca616a939f8214875f79ea24eadc60ed557161761156b28fe093431895d6"
+  },
+  "retnet_pipeline/data/mapping/retnet_oddb_disease_mapping_2026-09-29.tsv": {
+    "bytes": 3158,
+    "sha256": "98ea3bcedf2d949a9a50bb6babfbe08ec9a9c751efb7a18dbe110d451890a034"
+  },
   "retnet_pipeline/data/raw/clinvar/2026-09-29/source_manifest.json": {
     "bytes": 838,
     "sha256": "dc781c7131db932d7c60c9babb81d8b1a7470378d452a06ee951d2b998cebe1e"
@@ -458,6 +602,10 @@
   "retnet_pipeline/data/raw/opentargets/26.09/source_manifest.json": {
     "bytes": 1685,
     "sha256": "9183fd74677a285e81543c2ea1f0159eb33cedcf137b089277a8f8f49adbf408"
+  },
+  "retnet_pipeline/data/source_manifest.tsv": {
+    "bytes": 382,
+    "sha256": "b8c263df9a7bd04d2b944a44f30d05df5be7cb5ed171137a2a2b5b1621153581"
   },
   "retnet_pipeline/mysql/README_ODDB_v1_MySQL.md": {
     "bytes": 5913,
@@ -474,6 +622,10 @@
   "retnet_pipeline/mysql/import_oddb_v1_mysql_fixed_v2.py": {
     "bytes": 53850,
     "sha256": "ce9eaef42b05b62be21babceed29cfa2575f897bb32855e2804e549a16e45a91"
+  },
+  "retnet_pipeline/mysql/oddb_v1_schema.sql": {
+    "bytes": 31738,
+    "sha256": "8053363cc54bc77f1ea0f574102807f620447d2f67a23e85160404cb0cdaa1d9"
   },
   "retnet_pipeline/mysql/requirements_mysql.txt": {
     "bytes": 16,
@@ -759,9 +911,17 @@
     "bytes": 11707,
     "sha256": "2b94f97816aede1c157cb09cebff7e8de4471bea0aac14fa81af9678a87b9b76"
   },
+  "schema/deployment.json": {
+    "bytes": 43930,
+    "sha256": "1cf76cb5c94a5204671ee62ce3e8c54bd6db396bf7015f3b30d71331b1157c70"
+  },
   "schema/oddb_enriched_schema.sql": {
     "bytes": 31316,
     "sha256": "c05adb2fca76711d288df7d6b4f53aba9f2093fc60888dec8a517eb8806ad417"
+  },
+  "schema/oddb_v1_schema.sql": {
+    "bytes": 50929,
+    "sha256": "60f031e3e514cee4dd7fe7d8f792df24496e8ffc1f7191298e8a909c733b7576"
   },
   "schema/table_counts.json": {
     "bytes": 1202,

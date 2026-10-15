@@ -7,6 +7,8 @@ ODDB brings together ocular diseases, genes, variants, drugs, clinical trials an
 
 ## Release overview
 
+Source release: [`oddb-v1-2026-10-15`](https://github.com/UmairSeemab/ODDB/releases/tag/oddb-v1-2026-10-15). See the [release notes](docs/releases/oddb-v1-2026-10-15.md) for scope and reproducibility limits.
+
 This source package captures the enriched application on **15 October 2026**. The following counts come from [the exported database table counts](schema/table_counts.tsv) and agree with the included current statistics snapshot.
 
 | Entity or relationship | Records |

@@ -1,6 +1,8 @@
 cff-version: 1.2.0
 message: "Please cite the ODDB repository and the exact release tag or commit used."
 type: software
+version: "oddb-v1-2026-10-15"
+date-released: "2026-10-15"
 license: MIT
 title: "ODDB: Ocular Disease Database"
 authors:
