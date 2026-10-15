@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/UmairSeemab/ODDB",
+  "base_commit": "93ff1dba3302ec6e95b6bc8880cf31105be91f33",
+  "created_utc": "20261015_135732",
+  "production_changed": false,
+  "database_rows_included": false,
+  "visitor_records_included": false,
+  "base_tables": 36,
+  "views_omitted": 4,
+  "overview_table_counts": {
+    "disease": 185,
+    "gene": 1249,
+    "variant": 707315,
+    "drug": 893,
+    "clinical_trial": 1255,
+    "clinical_report": 1382,
+    "disease_gene_association": 1662,
+    "disease_drug_association": 424
+  },
+  "excluded_files": 16,
+  "credential_replacements": 0,
+  "automated_screening_passed": true,
+  "manual_review_required": true,
+  "deployment_tested": false
+}
